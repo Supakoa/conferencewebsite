@@ -49,6 +49,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
