@@ -143,7 +143,7 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <div class="card">
-              <div class="card-body" style="background-color:#dd99ff">
+              <div class="card-body" style="background-color:#cc66ff">
               <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
