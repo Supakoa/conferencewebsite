@@ -69,7 +69,12 @@
                                 <?php 
                             
                             } ?>
-                            
+                              <div class="col-lg-6">
+                              <form action="">
+                                <input type="file">
+                              
+                              </form>
+                              </div>
                               </div>
                                 <div>
                                 <!-- ใส่อินพุชชนิดไฟล์ ไว้รับสลิป -->
