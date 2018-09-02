@@ -9,6 +9,9 @@ $_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
 $q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id";
 $result = mysqli_query($con, $q);
+$q_money = "SELECT paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.money_status AND paper.status = 2";
+$result_money = mysqli_query($con, $q_money);
+
 $q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
@@ -209,30 +212,25 @@ $r_name = mysqli_fetch_assoc($result_name);
                         <th>Paper id</th>
                         <th>Title</th>
                         <th>Status Pay</th>
-                        <th>Download</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                <?php while ($row = mysqli_fetch_array($result)) {
-                   $id_paper = $row["paper_id"];
+                <?php while ($row_money = mysqli_fetch_assoc($result_money)) {
+                   $id_paper = $row_money["paper_id"];
                     
                   ?>
                   <tr>
-                       <td><?php echo $row['paper_id'] ?></td>
-                        <td><?php echo $row['name_th'] ?></td>
-                        <td><?php echo $row['status'] ?></td>
+                       <td><?php echo $row_money['paper_id'] ?></td>
+                        <td><?php echo $row_money['name_th'] ?></td>
+                        <td><?php echo $row_money['status'] ?></td>
                         <td> 
 
                         <?php 
-                        if($row['status']=="ผ่าน"||$row['status']=="ไม่ผ่าน"){
-                            require 'modal/modal.php';
+                        if($row_money['money_status']=="7"){
+                            require 'modal/modal_money.php';
                         }
-                          elseif($row['status']=="แก้ไข"){
-                            require 'modal/modal2.php';
-                          }
-                          else{
-                            
-                          }
+                         
                         ?>
 
                          
