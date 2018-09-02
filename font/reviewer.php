@@ -69,11 +69,11 @@ $r_name = mysqli_fetch_assoc($result_name);
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#check" style="font-size:20px">CHECK</a>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">Uncheck</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">Uncheck</a>
+              <a class="nav-link js-scroll-trigger" href="#check" style="font-size:20px">CHECK</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">LOG-OUT</a>
@@ -93,48 +93,6 @@ $r_name = mysqli_fetch_assoc($result_name);
         </div>
       </div>
     </header>
-
-    <section class="text-center" id="check" style="background-color:#d9d9d9;">
-      <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">check</h2>
-            <hr class="star-dark mb-5">
-        <div class="row">
-        <div class="col-lg-10 mx-auto">
-            <table id="table2" class=" responsive display">
-            <thead>
-                <tr>
-                    <th>Paper id</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php while ($row2 = mysqli_fetch_array($result2)) {
-                $id_paper = $row2["paper_id"];
-
-                ?>
-              <tr>
-                  <td><?php echo $row2['paper_id'] ?></td>
-                    <td><?php echo $row2['name_th'] ?></td>
-                    <td><?php echo $row2['status'] ?></td>
-                    <td> 
-
-                    <?php 
-                    require 'modal/modal4.php';
-                    ?>
-
-                    
-                    </td>
-                </tr>
-            <?php 
-            } ?>
-            </tbody>
-            </table>
-      </div>
-    </div>
-  </div>
-    </section>
 
     <section class="text-center" id="uncheck" style="background-color:#d9d9d9;">
       <div class="container">
@@ -179,6 +137,48 @@ $r_name = mysqli_fetch_assoc($result_name);
         </div>
         
       </div>
+    </section>
+
+     <section class="text-center" id="check" style="background-color:#d9d9d9;">
+      <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">check</h2>
+            <hr class="star-dark mb-5">
+        <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <table id="table2" class=" responsive display">
+            <thead>
+                <tr>
+                    <th>Paper id</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php while ($row2 = mysqli_fetch_array($result2)) {
+                $id_paper = $row2["paper_id"];
+
+                ?>
+              <tr>
+                  <td><?php echo $row2['paper_id'] ?></td>
+                    <td><?php echo $row2['name_th'] ?></td>
+                    <td><?php echo $row2['status'] ?></td>
+                    <td> 
+
+                    <?php 
+                    require 'modal/modal4.php';
+                    ?>
+
+                    
+                    </td>
+                </tr>
+            <?php 
+            } ?>
+            </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
     </section>
    
 
