@@ -61,10 +61,13 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">FirstPage</a>
+              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">Paper</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">SecondPage</a>
+              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">Up Paper</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">Bill</a>
             </li>
             
             <li class="nav-item">
@@ -194,6 +197,51 @@ $r_name = mysqli_fetch_assoc($result_name);
       </div>
     </section>
 
+           <section class="text-center" id="third" style="background-color:#d9d9d9;">
+      <div class="container">
+      <h2 class="text-center text-uppercase text-secondary mb-0">Paper</h2>
+            <hr class="star-dark mb-5">
+            <table id="table" class="table responsive display">
+                <thead>
+                    <tr>
+                        <th>Paper id</th>
+                        <th>Title</th>
+                        <th>Status Pay</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php while ($row = mysqli_fetch_array($result)) {
+                   $id_paper = $row["paper_id"];
+                    
+                  ?>
+                  <tr>
+                       <td><?php echo $row['paper_id'] ?></td>
+                        <td><?php echo $row['name_th'] ?></td>
+                        <td><?php echo $row['status'] ?></td>
+                        <td> 
+
+                        <?php 
+                        if($row['status']=="ผ่าน"||$row['status']=="ไม่ผ่าน"){
+                            require 'modal/modal.php';
+                        }
+                          elseif($row['status']=="แก้ไข"){
+                            require 'modal/modal2.php';
+                          }
+                          else{
+                            
+                          }
+                        ?>
+
+                         
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </section>               
    
 
     <footer>
@@ -216,6 +264,9 @@ $r_name = mysqli_fetch_assoc($result_name);
     <script>
     $(document).ready( function () {
     $('#table_id').DataTable();
+    } );
+    $(document).ready( function () {
+    $('#table').DataTable();
     } );
     </script>
 
