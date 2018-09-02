@@ -1,6 +1,29 @@
 <?php
     require 'server.php';
     require 'server/check_login.php';
+
+    if(isset($_POST['update'])){
+        //paper
+        $e = $_POST['name_paper'];
+        $a = $_POST['start_paper'];
+        $b = $_POST['end_paper'];
+        //slip
+        $f = $_POST['name_slip'];
+        $c = $_POST['start_slip'];
+        $d = $_POST['end_slip'];
+
+        $s1 = "UPDATE `setting_timmer` SET `name_time`='$e',`time_start`='$a',`time_end`='$b' WHERE `order` = '1' ";
+        $s2 = "UPDATE `setting_timmer` SET `name_time`='$f',`time_start`='$c',`time_end`='$d' WHERE `order` = '2' ";
+        $q1 = mysqli_query($con,$s1);
+        $q2 = mysqli_query($con,$s2);
+    }
+
+    $st = "SELECT `name_time`, `time_start`, `time_end` FROM `setting_timmer` WHERE `order` = '1'";
+    $st2 = "SELECT `name_time`, `time_start`, `time_end` FROM `setting_timmer` WHERE `order` = 2";
+    $q_t = mysqli_query($con,$st);
+    $q_t2 = mysqli_query($con,$st2);
+    $r_t = mysqli_fetch_array($q_t);
+    $r_t2 = mysqli_fetch_array($q_t2);
 ?>
 
 <!DOCTYPE html>
@@ -49,34 +72,30 @@
         </nav>
 
         <div id="page-wrapper">
-            
             <div class="row">
-            <h1 class="page-header">Setting Timing</h1>
-            <form action="set_timing.php" method="post">
-                <div class="col-lg-6">
-                <h3>Paper</h3>
+                <div class="col-lg-12">
+                    <h1 class="page-header">Setting Timing</h1>
+                </div>
+                <form action="set_timing.php" method="post">
+                    <h3>Paper</h3>
+                    <span>Name for this journal : </span>
+                    <input type="input" name="name_paper" value="<?php echo $r_t['name_time'] ?>"><br>
                     <span>start time to upload paper : </span>
-                    <input class="form-control" type="date" name="start_paper"><br>
+                    <input type="date" name="start_paper" value="<?php echo $r_t['time_start'] ?>"><br>
                     <span>end time to upload paper : </span>
-                    <input class="form-control" type="date" name="end_paper"><br><br>
-                </div>
-                <div class="col-lg-6">
-                <h3>Slip</h3>
+                    <input type="date" name="end_paper" value="<?php echo $r_t['time_end'] ?>"><br><br>
+                    <h3>Slip</h3>
+                    <span>Name for this slip : </span>
+                    <input type="input" name="name_slip" value="<?php echo $r_t2['name_time'] ?>"><br>
                     <span>start time to upload paper : </span>
-                    <input class="form-control" type="date" name="date_paper"><br>
+                    <input type="date" name="start_slip" value="<?php echo $r_t2['time_start'] ?>"><br>
                     <span>end time to upload slip : </span>
-                    <input class="form-control" type="date" name="date_slip"><br><br>
-                </div>
-                
+                    <input type="date" name="end_slip" value="<?php echo $r_t2['time_end'] ?>"><br><br>
+                    <input type="submit" name="update"  value="Update">
                 </form>
             </div>
-            <div class="row">
-            <div class="col-lg-12">
-                    <div style="text-align:left;margin-left:450px">
-                        <input type="submit" class="btn btn-info btn-md"  value="Update">
-                    </div>
-                </div>
-            </div>
+           
+
     </div>
     
 
