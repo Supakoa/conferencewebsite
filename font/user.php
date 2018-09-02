@@ -227,7 +227,7 @@ $r_name = mysqli_fetch_assoc($result_name);
                         <td> 
 
                         <?php 
-                        if($row_money['money_status']=="7"){
+                        if($row_money['money_status']=="7"||$row_money['money_status']=="4"){
                             require 'modal/modal_money.php';
                         }
                          

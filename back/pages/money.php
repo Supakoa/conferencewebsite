@@ -83,9 +83,13 @@ $result = mysqli_query($con, $q);
                                     <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
                                     <td><?php echo $row['status'] ?></td>
                                     <?php
-                                    if($row['money_status'==6]){ ?>
+                                     if($row['money_status']=="6"){ ?>
                                     <td><?php require 'modal/modal_money.php' ?></td>
                                     <?php 
+                            }
+                            else{ ?>
+                                <td></td>
+                            <?php
                             }
                             ?>
                                    

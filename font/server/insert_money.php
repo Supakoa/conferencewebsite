@@ -22,7 +22,7 @@
     }
 
     // Allow certain file formats
-    if ($imageFileType != "pdf"||$imageFileType != "jpg") {
+    if ($imageFileType != ".pdf"&".jpg") {
         echo "Sorry, only PDF files are allowed.";
         $uploadOk = 0;
     }
@@ -42,12 +42,18 @@
 
     $paper = $_FILES["money"]["name"];
     $b = $new_taget_name;
+    echo $b."  ".$id_paper ;
     $a = "UPDATE `paper` SET`money_status`='6',`tmp_money`='$b' WHERE paper_id = '$id_paper'";
             
     $r_a = mysqli_query($con,$a);
   
-    
-    header("Location: ../user.php");
+    if($r_a){
+        echo eiei ;
+    }
+    else{
+        echo nono ;
+    }
+    // header("Location: ../user.php");
 
     // echo '<br><button><a href="form_insert_paper.php">Click Me!!</a></button>';
 ?>
