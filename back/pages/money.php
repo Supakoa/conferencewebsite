@@ -1,6 +1,12 @@
 <?php
-    require 'server.php';
-    require 'server/check_login.php';
+require 'server.php';
+require 'server/check_login.php';
+$_SESSION['counter_up'] = 0;
+    //set page
+$_SESSION['set_page'] = 1;
+$q = "SELECT paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.money_status AND paper.status = 2";
+$result = mysqli_query($con, $q);
+
 ?>
 
 <!DOCTYPE html>
@@ -56,19 +62,36 @@
                     <table id="moneytable" class="display rseponsive">
                         <thead>
                             <tr>
-                                <th>1</th>
-                                <th>2</th>
-                                <th>3</th>
-                                <th>4</th>
-                            </tr>
+                                    <th>Paper-id</th>
+                                    <th>ชื่อ Paper(Eng)</th>
+                                    <th>ชื่อ Paper(Th)</th>
+                                    <th>ชื่อผู้ส่ง</th>                                   
+                                    <th>สถานะการชำระเงิน</th>
+                                    <th></th>
+                                </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                        <?php while ($row = mysqli_fetch_array($result)) {
+                                    $id_paper = $row['paper_id']
+                                    ?>
+                                <tr>
+                                
+                                    <td><?php echo $row['paper_id'] ?></td>
+                                    <td><?php echo $row['name_eng'] ?></td>
+                                    <td><?php echo $row['name_th'] ?></td>
+                                    <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
+                                    <td><?php echo $row['status'] ?></td>
+                                    <?php
+                                    if($row['money_status'==6]){ ?>
+                                    <td><?php require 'modal/modal_money.php' ?></td>
+                                    <?php 
+                            }
+                            ?>
+                                   
+                                </tr>
+                                <?php 
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

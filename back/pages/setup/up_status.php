@@ -7,7 +7,7 @@
      
      if($result_up){
          if($status==2){
-            $up2 = "UPDATE `paper` SET `money_status`= 1 WHERE paper_id = $id";
+            $up2 = "UPDATE `paper` SET `money_status`= 7 WHERE paper_id = $id";
             $result_up2 = mysqli_query($con,$up2);
 
          }
