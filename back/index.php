@@ -8,6 +8,7 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
     <style>
@@ -28,7 +29,7 @@
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         }
         .form input {
-        font-family: "Roboto", sans-serif;
+            font-family: 'Mitr', sans-serif;
         outline: 0;
         background: #f2f2f2;
         width: 100%;
@@ -39,7 +40,7 @@
         font-size: 14px;
         }
         .form button {
-        font-family: "Roboto", sans-serif;
+            font-family: 'Mitr', sans-serif;
         text-transform: uppercase;
         outline: 0;
         background: #4CAF50;

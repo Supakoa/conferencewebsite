@@ -150,6 +150,7 @@ $_SESSION['set_page'] = 8;
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     
 

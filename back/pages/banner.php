@@ -46,6 +46,7 @@
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     
