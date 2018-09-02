@@ -15,7 +15,7 @@
       <div class="card">
                            
                             <div class="content">
-                                <form method = "POST" action= "setup/up_status.php?id=<?php echo $row['paper_id'] ?>">
+                                <form method = "POST" action= "setup/up_bill.php?id=<?php echo $row['paper_id'] ?>">
 
                                 <h4>Paper ID : <?php echo $row['paper_id'] ?></h4>
                                 <h5> Title : <?php echo $row['name_th'] ?></h5>
