@@ -71,9 +71,12 @@
                             } ?>
                             
                               </div>
-                           
+                                <div>
+                                <!-- ใส่อินพุชชนิดไฟล์ ไว้รับสลิป -->
+                                </div>
                                 <br>
                                 <div style="text-align:right" >
+                                <button type="submit" class="btn btn-primary btn-sm" id="sendMessageButton">Submit</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div><br>
                             </div>
