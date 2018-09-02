@@ -6,7 +6,7 @@ $_SESSION['counter_up'] = 0;
 $_SESSION['set_page'] = 1;
 $q = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
 $result = mysqli_query($con, $q);
-$q2 = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status";
+$q2 = "SELECT paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.status ORDER BY paper.paper_id ASC";
 $result2 = mysqli_query($con, $q2);
 ?>
 <!DOCTYPE html>
@@ -110,7 +110,7 @@ $result2 = mysqli_query($con, $q2);
                                                                 $objWrite = fopen("server/report.csv", "w");
                                                                 fwrite($objWrite, "\"Paper-id\",\"ชื่อ Paper(Eng)\",\"ชื่อ Paper(Th)\",\"ชื่อผู้ส่ง\",\"สถานะหลัก\" \n\n");
                                                                 while ($row2 = mysqli_fetch_array($result2)) {
-                                                                    fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\",\n\n");
+                                                                    fwrite($objWrite, "\"{$row2['paper_id']}\",\"{$row2['name_eng']}\",\"{$row2['name_th']}\",\"{$row2['first_name']} {$row2['last_name']}\",\" {$row2['status']}\" \n\n");
 
                                                                 }
                                                                 fclose($objWrite);

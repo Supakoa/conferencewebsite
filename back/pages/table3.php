@@ -106,7 +106,7 @@ $_SESSION['set_page'] = 4;
                                             <td><p style="font-size: 5"><?php echo $row_reviewer1['first_name'] . " " . $row_reviewer1['last_name'] ?></p> </td>
                                             <td><p style="font-size: 5"><?php echo $row_reviewer2['first_name'] . " " . $row_reviewer2['last_name'] ?></p></td>
                                             <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
-                                            <td><?php require 'setup/modal3.php' ?></td>
+                                            <td><?php require 'modal/modal3.php' ?></td>
                                         </tr> 
                                       <?php 
                                     } ?>
