@@ -67,7 +67,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">Up Paper</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">Bill</a>
+              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">Pay</a>
             </li>
             
             <li class="nav-item">
@@ -92,7 +92,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <section class="text-center" id="first" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Pay</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Paper</h2>
             <hr class="star-dark mb-5">
             <table id="table_id" class="table responsive display">
                 <thead>
@@ -199,7 +199,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 
            <section class="text-center" id="third" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Paper</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">Pay</h2>
             <hr class="star-dark mb-5">
             <table id="table" class="table responsive display">
                 <thead>
