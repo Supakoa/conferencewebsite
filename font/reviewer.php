@@ -1,6 +1,6 @@
 <?php
 require 'server/server.php';
-$_SESSION['id'] = '123456';
+// $_SESSION['id'] = '123456';
 $id = $_SESSION['id'];
 // $id = "321654";
   
@@ -62,7 +62,7 @@ $r_name = mysqli_fetch_assoc($result_name);
       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">Namereviewer</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -76,7 +76,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">Uncheck</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="" style="font-size:20px">LOG-OUT</a>
+              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">LOG-OUT</a>
             </li>
           </ul>
         </div>

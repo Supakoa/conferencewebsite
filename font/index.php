@@ -104,6 +104,16 @@
           <form action="server/register.php" method="POST">
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <div class="control-group">
+                <h5 style="color:#ffffff" >Type</h5>
+                <select class="form-control" name="type" required>
+                  <option disabled selected value="">เลือกประเภท</option>
+                  <option value="1">ผู้ส่ง Conference</option>
+                  <option value="3">ผู้เข้าร่วมการประชุม</option>
+                </select>
+                <br>
+                            
+              </div>
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
                             <h5 style="color:#ffffff">Username *</h5>
@@ -173,7 +183,7 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
-                            <h5 style="color:#ffffff">Example textarea</h5>
+                            <h5 style="color:#ffffff">Member</h5>
                             <textarea class="form-control" placeholder="Member" name="member" rows="3"></textarea>
                         </div>
                     </div>
