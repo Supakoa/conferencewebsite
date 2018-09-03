@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
@@ -28,11 +29,11 @@
 
   </head>
 
-  <body id="page-top">
+  <body id="page-top" >
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Website Conference</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">Website Conference</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -40,10 +41,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#login">Log-in</a>
+              <a class="nav-link js-scroll-trigger" href="#login" style="font-size:20px">เข้าสู่ระบบ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#register">Register</a>
+              <a class="nav-link js-scroll-trigger" href="#register" style="font-size:20px">สมัครสมาชิค</a>
             </li>
             
           </ul>
@@ -65,7 +66,7 @@
 
     <section class="text-center" id="login" style="background-color:#d9d9d9;">
     <div class="section-heading text-center">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Log-in</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
           <hr>
         </div><br>
       <div class="container">
@@ -83,7 +84,7 @@
                     <h4 style="color:#ffffff">Password</h4>
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="submit" class="btn btn-secondary">เข้าสู่ระบบ</button>
             </form>
                 </div>
               </div>
@@ -96,7 +97,7 @@
     <section class="features" id="register" style="background-color:#d9d9d9;">
       <div class="container">
         <div class="section-heading text-center">
-        <h2 class="text-center text-uppercase text-secondary mb-0" >Register</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิค</h2>
           <hr>
         </div>
         <div class="card" style="background-color:#dd99ff">
@@ -105,7 +106,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <div class="control-group">
-                <h5 style="color:#ffffff" >Type</h5>
+                <h5 style="color:#ffffff" >ประเภท</h5>
                 <select class="form-control" name="type" required>
                   <option disabled selected value="">เลือกประเภท</option>
                   <option value="1">ผู้ส่ง Conference</option>
@@ -127,8 +128,8 @@
                         </div>
                         <div class="col-lg-6 mx-auto"></div>
                         <div class="col-lg-6 mx-auto">
-                            <h5 style="color:#ffffff">Confirm password</h5>
-                            <input class="form-control" name="conpassword" type="password" placeholder="Confirm password" required="required" data-validation-required-message="Please enter your Confirm password.">
+                            <h5 style="color:#ffffff">ยืนยัน password</h5>
+                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -138,13 +139,13 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                     <div class="row">
                         <div class="col-lg-6 mx-auto">
-                            <h5 style="color:#ffffff">Firstname ** </h5>
-                            <input class="form-control" name="fname" type="text" placeholder="firstname" required="required" data-validation-required-message="Please enter your firstname.">
+                            <h5 style="color:#ffffff">ชื่อ ** </h5>
+                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required" data-validation-required-message="Please enter your firstname.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
-                            <h5 style="color:#ffffff">Lastname ** </h5>
-                            <input class="form-control" name="lname" type="text" placeholder="lastname" required="required" data-validation-required-message="Please enter your lastname.">
+                            <h5 style="color:#ffffff">นามสกุล ** </h5>
+                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required" data-validation-required-message="Please enter your lastname.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -154,16 +155,16 @@
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <div class="row">
                 <div class="col-lg-4 mx-auto">
-                        <h5 style="color:#ffffff">Gender</h5>
+                        <h5 style="color:#ffffff">เพศ</h5>
                         <select class="form-control" name="gender" required>
-                            <option disabled selected > Gender </option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option disabled selected > เพศ </option>
+                            <option value="male">ชาย</option>
+                            <option value="female">หญิง</option>
                         </select>
                         </div>
                         <div class="col-lg-8 mx-auto">
-                            <h5 style="color:#ffffff">Affiliate (You Institute, e.g. "Suan Sunandha Rajabhat University")</h5>
-                            <input class="form-control" name="address" type="text" placeholder="Address" required="required" data-validation-required-message="Please enter your affiliate.">
+                            <h6 style="color:#ffffff">บริษัทในเครือ (You Institute, e.g. "Suan Sunandha Rajabhat University")</h6>
+                            <input class="form-control" name="address" type="text" placeholder="บริษัทในเครือ" required="required" data-validation-required-message="Please enter your affiliate.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -178,13 +179,13 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-lg-6 mx-auto">
-                            <h5 style="color:#ffffff">Confirm email ** </h5>
-                            <input class="form-control" name="conemail" type="text" placeholder="Confirm email" required="required" data-validation-required-message="Please enter your Confirm email.">
+                            <h5 style="color:#ffffff">ยินยัน email ** </h5>
+                            <input class="form-control" name="conemail" type="text" placeholder="ยืนยัน email" required="required" data-validation-required-message="Please enter your Confirm email.">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
-                            <h5 style="color:#ffffff">Member</h5>
-                            <textarea class="form-control" placeholder="Member" name="member" rows="3"></textarea>
+                            <h5 style="color:#ffffff">สมาชิค</h5>
+                            <textarea class="form-control" placeholder="สมาชิค" name="member" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -192,7 +193,7 @@
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-secondary btn-xl"  id="sendMessageButton">Submit</button>
+                <button type="submit" class="btn btn-secondary btn-xl"  id="sendMessageButton">ตกลง</button>
               </div>
             </form>    
           </div>

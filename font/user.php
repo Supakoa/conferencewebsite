@@ -66,17 +66,17 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">Paper</a>
+              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">เอกสาร</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">Up Paper</a>
+              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มสำเนา</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">Pay</a>
+              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
             </li>
             
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">Log-out</a>
+              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
             </li>
           </ul>
         </div>
@@ -97,15 +97,15 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <section class="text-center" id="first" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Paper</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">เอกสาร</h2>
             <hr class="star-dark mb-5">
             <table id="table_id" class="table responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะ</th>
+                        <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -143,7 +143,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <section class="features" id="second" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Submit manuscript</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มสำเนา</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-10 mx-auto">
@@ -152,36 +152,36 @@ $r_name = mysqli_fetch_assoc($result_name);
               <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <h5 style="color:#ffffff">Paper File</h5>
+                        <h5 style="color:#ffffff">ไฟล์เอกสาร</h5>
                         <input class="form-control" name="paper" type="file" placeholder="File" required="required">
                     </div>
                 </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">Paper name Thai</h5>
-                  <input class="form-control" name="paper_th" type="text" placeholder="Paper name thai" required="required" data-validation-required-message="Please enter your Paper name thai.">
+                  <h5 style="color:#ffffff">ชื่อเอกสาร (Thailand)</h5>
+                  <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสาร thai" required="required" data-validation-required-message="Please enter your Paper name thai.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">Paper name English</h5>
-                  <input class="form-control" name="paper_eng" type="text" placeholder="Paper name English " required="required" data-validation-required-message="Please enter your Paper name english.">
+                  <h5 style="color:#ffffff">ชื่อเอกสาร (English)</h5>
+                  <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " required="required" data-validation-required-message="Please enter your Paper name english.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">Abstract</h5>
-                  <textarea class="form-control" name="abstract" rows="5" placeholder="Abtract" required="required" data-validation-required-message="Please enter a message."></textarea>
+                  <h5 style="color:#ffffff">บทความ</h5>
+                  <textarea class="form-control" name="abstract" rows="5" placeholder="บทความ" required="required" data-validation-required-message="Please enter a message."></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">Keyword</h5>
-                  <input class="form-control" name="keyword" type="text" placeholder="Keyword" required="required" data-validation-required-message="Please enter your Keyword.">
+                  <h5 style="color:#ffffff">คำหลัก</h5>
+                  <input class="form-control" name="keyword" type="text" placeholder="คำหลัก" required="required" data-validation-required-message="Please enter your Keyword.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <br>
               
               <div class="form-group text-center" >
-                <button type="submit" class="btn btn-secondary btn-md" id="sendMessageButton">Send</button>
+                <button type="submit" class="btn btn-secondary btn-md" id="sendMessageButton">ส่ง</button>
               </div>
             </form>
               </div>
@@ -204,14 +204,14 @@ $r_name = mysqli_fetch_assoc($result_name);
 
            <section class="text-center" id="third" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">Pay</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
             <hr class="star-dark mb-5">
             <table id="table" class="table responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status Pay</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะการจ่าย</th>
                         <th></th>
                     </tr>
                 </thead>

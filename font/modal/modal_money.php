@@ -25,25 +25,25 @@
                                 ?>
               <div class="row">
                                   <div class="col col-6-lg ms-auto">
-                                <h5 style="margin-left:10px">Paper ID : </h5>
+                                <h5 style="margin-left:10px">รหัสเอกสาร : </h5>
                                   </div>
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['paper_id'] ?></span></div>
                                 </div>
                                 <div class="row">
                                   <div class="col col-6-lg ms-auto">
-                                <h5 style="margin-left:10px" > Title : </h5>
+                                <h5 style="margin-left:10px" > คำนำ : </h5>
                                   </div>
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['name_th'] ?></span></div>
                                 </div>
                                 <div class="row">
                                   <div class="col col-6-lg ms-auto">
-                                <h5 style="margin-left:10px"> Status : </h5>
+                                <h5 style="margin-left:10px"> สถานะ : </h5>
                                   </div>
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_status['status'] ?></span></div>
                                 </div>
                                 <div class="row">
                                   <div class="col col-6-lg ms-auto">
-                                <h5 style="margin-left:10px"> Abstract : </h5>
+                                <h5 style="margin-left:10px"> บทความ : </h5>
                                   </div>
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['abstract'] ?></span><br></div> 
                                 </div>
@@ -72,13 +72,13 @@
           <div>
                             <form action="">
                                 <input type="file">
-                                <button type="submit" class="btn btn-primary btn-md" >Submit</button>
+                                <button type="submit" class="btn btn-primary btn-md" >ตกลง</button>
                               </form>
                              
         </div>
         <br>
           <div style="text-align:right;margin-right:15px" >
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
           </div><br>                     
       </div>
     </div>   
