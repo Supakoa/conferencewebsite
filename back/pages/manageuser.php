@@ -59,14 +59,14 @@
                             <thead>
                                 <th>Username</th>
                                 <th>Password</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Gender</th>
-                                <th>Address</th>
+                                <th>ชื่อ</th>
+                                <th>นามสกุล</th>
+                                <th>เพศ</th>
+                                <th>ที่อยู่</th>
                                 <th>E-mail</th>
-                                <th>Member</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>สมาชิค</th>
+                                <th>แก้ไข</th>
+                                <th>ลบ</th>
                             </thead>
                             <tbody>
                                 <?php while($ro_a = mysqli_fetch_array($r_a)){ ?>
@@ -83,7 +83,7 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit_modal<?php echo $ro_a['order'] ?>">
-                                        Edit
+                                        แก้ไข
                                         </button>
 
                                         <!-- Modal -->
@@ -98,16 +98,16 @@
                                             <div class="modal-body" style="text-align:center" >
                                                 <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
                                                 <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
-                                                <span>gender : </span><select name="gender" required>
+                                                <span>เพศ : </span><select name="gender" required>
                                                                             <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
-                                                                            <option value="male">male</option>
-                                                                            <option value="female" required>female</option>
+                                                                            <option value="male">ขาย</option>
+                                                                            <option value="female" required>หญิง</option>
                                                                         </select><br>
-                                                <span>firstname : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
-                                                <span>lastname : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
-                                                <span>address : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
+                                                <span>ชื่อ : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
+                                                <span>นามสกุล : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
+                                                <span>ที่อยู่ : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
                                                 <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
-                                                <span>member : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
+                                                <span>สมาชิค : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
@@ -122,7 +122,7 @@
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#submit_modal<?php echo $ro_a['order'] ?>">
-                                        Delete
+                                        ลบ
                                         </button>
 
                                         <!-- Modal -->

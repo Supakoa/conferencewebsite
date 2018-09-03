@@ -180,7 +180,7 @@ $_SESSION['set_page'] = 8;
                 <th scope="col" colp="2">ข้อความ</th>
                 <th scope="col" colp="2"></th>
                 <th scope="col" colp="2">ที่อยู่</th>
-                <th scope="col" colp="2"><center>ซ่อน</center></th>
+                <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
             </thead>
             <tbody>
               <?php $i = 1; ?>
@@ -191,10 +191,10 @@ $_SESSION['set_page'] = 8;
                     <th scope="row"></th>
                     <td><input type="text" name="link<?php echo $i ?>" value="<?php echo $row1['url'] ?>" required></td>
                     <?php if ($row1['hide'] == 0) { ?>
-                      <td><center><input type="checkbox" name="cb<?php echo $i ?>" ></center></td>
+                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" ></td>
                     <?php 
                 } else { ?>
-                      <td><center><input type="checkbox" name="cb<?php echo $i ?>" checked></center></td>
+                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" checked></td>
                     <?php 
                 } ?>
                 </tr>
@@ -213,7 +213,7 @@ $_SESSION['set_page'] = 8;
               <th scope="col" colp="2">ข้อความ</th>
               <th scope="col" colp="2">ชื่อไฟล์ปัจจุบัน</th>
               <th scope="col" colp="2">ไฟล์ข้อมูลPDF</th>
-              <th scope="col" colp="2"><center>ซ่อน</center></th>
+              <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
             </thead>
             <tbody>
               <?php while ($row2 = mysqli_fetch_array($q2)) {
@@ -223,12 +223,12 @@ $_SESSION['set_page'] = 8;
                     <td><input type="text" name="text<?php echo $i ?>" value="<?php echo $row2['text'] ?>" ></td>
                     <th scope="row"><?php echo $row2['real_name'] ?></th>
                     <!-- <td><input type="text" name="link<? php// echo $i ?>" value="<? php// echo $row2['url'] ?>" required></td> -->
-                    <td><input type="file" name="link<?php echo $i ?>" ></input></td>
+                    <td><input type="file" name="link<?php echo $i ?>" ></td>
                     <?php if ($row2['hide'] == 0) { ?>
-                      <td><center><input type="checkbox" name="cb<?php echo $i ?>"></center></td>
+                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>"></td>
                     <?php 
                  } else { ?>
-                      <td><center><input type="checkbox" name="cb<?php echo $i ?>" checked></center></td>
+                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" checked></td>
                     <?php 
                  } ?>
                 </tr>
@@ -237,7 +237,7 @@ $_SESSION['set_page'] = 8;
             </tbody>
         </table>
                 </div>
-                <center><input type="submit" class="btn btn-info btn-active" value="update" name="update"></center>
+                <center><input type="submit" class="btn btn-info btn-active" value="อัพเดท" name="update"></center>
             </div>
                     </form>
         </div><br>

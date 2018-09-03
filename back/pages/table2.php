@@ -64,8 +64,8 @@
                         <table id="table2" class="display responsive">
                             <thead>
                                 <tr>
-                                    <th>Paper-id</th>
-                                    <th>ชื่อ Paper</th>
+                                    <th>รหัสเอกสาร</th>
+                                    <th>ชื่อ เอกสาร</th>
                                     <th>ชื่อผู้ส่ง</th>
                                     <th>ผู้ตรวจ 1</th>
                                     <th>ผู้ตรวจ 2</th>

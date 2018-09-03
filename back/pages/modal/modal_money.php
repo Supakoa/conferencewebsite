@@ -17,12 +17,12 @@
                             <div class="content">
                                 <form method = "POST" action= "setup/up_bill.php?id=<?php echo $row['paper_id'] ?>">
 
-                                <h4>Paper ID : <?php echo $row['paper_id'] ?></h4>
-                                <h5> Title : <?php echo $row['name_th'] ?></h5>
-                                <h5> Status : <?php echo $row['status'] ?></h5>
-                                <h5> Keyword : <?php echo $row['key_word'] ?></h5>
-                                <h5> Abstract : <?php echo $row['abstract'] ?></h5>
-                                <label>Download Bill :</label>
+                                <h4>รหัสเอกสาร : <?php echo $row['paper_id'] ?></h4>
+                                <h5> คำนำ : <?php echo $row['name_th'] ?></h5>
+                                <h5> สถานะ : <?php echo $row['status'] ?></h5>
+                                <h5> คำหลัก : <?php echo $row['key_word'] ?></h5>
+                                <h5> บาทความ : <?php echo $row['abstract'] ?></h5>
+                                <label>Download ใบเสร็จ :</label>
            
                                 <a class="btn btn-info btn-sm" Download href="../../Bill/<?php echo $row['tmp_money'] ?>">Click Here</a>
                                 <?php
@@ -47,9 +47,9 @@
                                               <option  value = "4" >แก้ไข</option>
                                               </select>
                                               <br>
-                                <div align = "right" >
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <div style="text-align:right" >
+                                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                                <button type="submit" class="btn btn-primary">บันทึก </button>
                                 </div>
                                 
                                 </form>

@@ -80,25 +80,25 @@
                 <form action="set_timing.php" method="post">
                 <div class="col-lg-6">
                 <h3>เอกสาร</h3>
-                    <span>Name for this journal : </span>
+                    <span>ชื่อวารสาร : </span>
                     <input class="form-control" type="input" name="name_paper" value="<?php echo $r_t['name_time'] ?>"><br>
-                    <span>start time to upload paper : </span>
+                    <span>เริ่มเวลาอัพโหลดเอกสาร : </span>
                     <input class="form-control" type="date" name="start_paper" value="<?php echo $r_t['time_start'] ?>"><br>
-                    <span>end time to upload paper : </span>
+                    <span>สิ้นสุดเวลาอัพโหลดเอกสาร : </span>
                     <input class="form-control" type="date" name="end_paper" value="<?php echo $r_t['time_end'] ?>"><br><br>
                 </div>
                 <div class="col-lg-6">
                 <h3>ใบเสร็จ</h3>
-                    <span>Name for this slip : </span>
+                    <span>ชื่อใบเสร็จ : </span>
                     <input class="form-control" type="input" name="name_slip" value="<?php echo $r_t2['name_time'] ?>"><br>
-                    <span>start time to upload paper : </span>
+                    <span>เริ่มเวลาอัพโหลดเอกสาร : </span>
                     <input class="form-control" type="date" name="start_slip" value="<?php echo $r_t2['time_start'] ?>"><br>
-                    <span>end time to upload slip : </span>
+                    <span>สิ้นสุดเวลาอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="end_slip" value="<?php echo $r_t2['time_end'] ?>"><br><br>
                     
                 </div>
                 <div class="text-center">
-                <button class=" btn btn-info" type="submit" >Update</button>
+                <button class=" btn btn-info" type="submit" >อัพเดท</button>
                 </div>
                 </form>
             </div>

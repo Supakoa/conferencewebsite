@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-lg-12">
                             <h1 class="page-header">Banner</h1>
-                            <h5 style="text-align:center">Paper File</h5><br>
+                            <h5 style="text-align:center">ไฟล์เอกสาร</h5><br>
                             <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class=" col-lg-6">

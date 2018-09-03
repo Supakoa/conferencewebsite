@@ -16,11 +16,11 @@
                            
                             <div class="content">
                                 <form method = "POST" action= "setup/up_reviewer.php?id=<?php echo $row['paper_id'] ?>" >
-                                <h4>Paper ID : <?php echo $row['paper_id'] ?></h4>
-                                <h5> Title : <?php echo $row['name_th'] ?></h5>
-                                <h5> Status : <?php echo $row_status['status'] ?></h5>
-                                <h5> Field : <?php echo $row['field'] ?></h5>
-                                <h5> Abstract : <?php echo $row['abstract'] ?></h5>
+                                <h4>รหัสเอกสาร : <?php echo $row['paper_id'] ?></h4>
+                                <h5> คำนำ : <?php echo $row['name_th'] ?></h5>
+                                <h5> สถานะ : <?php echo $row_status['status'] ?></h5>
+                                <h5> แผนก : <?php echo $row['field'] ?></h5>
+                                <h5> บทความ : <?php echo $row['abstract'] ?></h5>
                                 <p>ผู้ตรวจคนที่ 1 : </p><select class="form-control" name="reviewer1" required>
                                               <option disabled >เลือกผู้ตรวจ</option>
                                <?php
@@ -44,9 +44,9 @@
 
                                  </select>
                                 <br>
-                                <div align = "right" >
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name = "save" >Save changes</button>
+                                <div style="text-align:right" >
+                                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                                <button type="submit" class="btn btn-primary" name = "save" >บันทึก</button>
                                 <?php
                                
                                 
