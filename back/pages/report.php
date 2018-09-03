@@ -45,7 +45,7 @@ $result2 = mysqli_query($con, $q2);
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
     <div id="wrapper">
         <!-- Navigation -->

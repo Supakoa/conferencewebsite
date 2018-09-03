@@ -46,7 +46,7 @@ $_SESSION['set_page'] = 4;
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
     <div id="wrapper">
         <!-- Navigation -->

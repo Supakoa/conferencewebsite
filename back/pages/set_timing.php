@@ -61,7 +61,7 @@
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
     <div id="wrapper">
         <!-- Navigation -->
@@ -75,24 +75,31 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Setting Timing</h1>
+                    <h1 class="page-header">ตั้งค่าเวลา</h1>
                 </div>
                 <form action="set_timing.php" method="post">
-                    <h3>Paper</h3>
+                <div class="col-lg-6">
+                <h3>เอกสาร</h3>
                     <span>Name for this journal : </span>
-                    <input type="input" name="name_paper" value="<?php echo $r_t['name_time'] ?>"><br>
+                    <input class="form-control" type="input" name="name_paper" value="<?php echo $r_t['name_time'] ?>"><br>
                     <span>start time to upload paper : </span>
-                    <input type="date" name="start_paper" value="<?php echo $r_t['time_start'] ?>"><br>
+                    <input class="form-control" type="date" name="start_paper" value="<?php echo $r_t['time_start'] ?>"><br>
                     <span>end time to upload paper : </span>
-                    <input type="date" name="end_paper" value="<?php echo $r_t['time_end'] ?>"><br><br>
-                    <h3>Slip</h3>
+                    <input class="form-control" type="date" name="end_paper" value="<?php echo $r_t['time_end'] ?>"><br><br>
+                </div>
+                <div class="col-lg-6">
+                <h3>ใบเสร็จ</h3>
                     <span>Name for this slip : </span>
-                    <input type="input" name="name_slip" value="<?php echo $r_t2['name_time'] ?>"><br>
+                    <input class="form-control" type="input" name="name_slip" value="<?php echo $r_t2['name_time'] ?>"><br>
                     <span>start time to upload paper : </span>
-                    <input type="date" name="start_slip" value="<?php echo $r_t2['time_start'] ?>"><br>
+                    <input class="form-control" type="date" name="start_slip" value="<?php echo $r_t2['time_start'] ?>"><br>
                     <span>end time to upload slip : </span>
-                    <input type="date" name="end_slip" value="<?php echo $r_t2['time_end'] ?>"><br><br>
-                    <input type="submit" name="update"  value="Update">
+                    <input class="form-control" type="date" name="end_slip" value="<?php echo $r_t2['time_end'] ?>"><br><br>
+                    
+                </div>
+                <div class="text-center">
+                <button class=" btn btn-info" type="submit" >Update</button>
+                </div>
                 </form>
             </div>
            

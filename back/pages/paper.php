@@ -156,9 +156,9 @@ $_SESSION['set_page'] = 8;
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
-    <div id="wrapper">
+    <div id="wrapper" >
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <?php require 'setup/main.php' ?>
