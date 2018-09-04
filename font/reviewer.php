@@ -16,11 +16,14 @@ WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND pap
 $result1 = mysqli_query($con, $q1); 
 $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status != 1  And (reviewer_paper.reviewer1 = '$id' OR reviewer_paper.reviewer2 = '$id')";
 $result2 = mysqli_query($con, $q2);
-$q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
+$q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
-
+if($r_name['role']!=2){
+  $_SESSION['online'] = 0 ;
+  header("Location: index.php");
+}
 
 
 ?>

@@ -18,7 +18,8 @@ $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
 if($r_name['role']!=1){
-
+  $_SESSION['online'] = 0 ;
+  header("Location: index.php");
 }
 
 
