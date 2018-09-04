@@ -79,7 +79,7 @@ require 'server/server.php';
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">55555555555555555</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -87,18 +87,12 @@ require 'server/server.php';
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">เอกสาร</a>
+              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
             </li>
-            <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มเอกสาร</a>
+              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">ช่องทางการจ่ายเงิน</a>
             </li>
-            <?php } ?>
-            <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
-            </li>
-            <?php } ?>
+            
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
             </li>
@@ -121,153 +115,85 @@ require 'server/server.php';
 
     <section class="text-center" id="first" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">เอกสาร</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
             <hr class="star-dark mb-5">
-            <table id="table_id" class="table responsive display">
-                <thead>
-                    <tr>
-                        <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
-                        <th>สถานะ</th>
-                        <th>แก้ไข</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php while ($row = mysqli_fetch_array($result)) {
-                   $id_paper = $row["paper_id"];
-                    
-                  ?>
-                  <tr>
-                       <td><?php echo $row['paper_id'] ?></td>
-                        <td><?php echo $row['name_th'] ?></td>
-                        <td><?php echo $row['status'] ?></td>
-                        <td> 
-
-                        <?php 
-                        if($row['status']=="ผ่าน"||$row['status']=="ไม่ผ่าน"){
-                            require 'modal/modal.php';
-                        }
-                          elseif($row['status']=="แก้ไข"){
-                            require 'modal/modal2.php';
-                          }
-                          else{
-                            
-                          }
-                        ?>
-
-                         
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
+                <div class="card">
+                    <h5 class="card-title">ข้อมูล</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>ประเภท :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left"> 
+                                <span>asd</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>ชื่อ-นามสกุล :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>โก๊ะ เอง</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>เพศ :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>asd</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>E-mail :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>asdasd@fgfdipojgp.co.co</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>สมาชิก :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>1.fdsf 2.dsfsd 3.dfsd</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>  
         </div>
       </div>
     </section>
-    <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
-    <section class="features" id="second" style="background-color:#d9d9d9;">
+
+    <section class="text-center" id="second" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
+      <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
+            <hr class="star-dark mb-5">
             <div class="card">
-              <div class="card-body" style="background-color:#cc66ff">
-              <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
-                <div class="control-group">
-                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <h5 style="color:#ffffff">ไฟล์เอกสาร</h5>
-                        <input class="form-control" name="paper" type="file" placeholder="File" required="required">
+                <h5 class="card-title">ช่องทางการจ่ายเงิน</h5>
+                <div class="card-body">
+                    <div class="row">
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>ธนาคารกรุงเทพ :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>546-4678-153</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>ธนาคารกสิกร :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>487984-54984-210</span>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <h5>ธนาคารไทยพาณิช :</h5>
+                            </div>
+                            <div class="col-lg-6" style="text-align:left">
+                                <span>123-488-8791</span>
+                            </div>
                     </div>
                 </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">ชื่อเอกสาร (Thailand)</h5>
-                  <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสาร thai" required="required" data-validation-required-message="Please enter your Paper name thai.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">ชื่อเอกสาร (English)</h5>
-                  <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " required="required" data-validation-required-message="Please enter your Paper name english.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">บทความ</h5>
-                  <textarea class="form-control" name="abstract" rows="5" placeholder="บทความ" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <h5 style="color:#ffffff">คำหลัก</h5>
-                  <input class="form-control" name="keyword" type="text" placeholder="คำหลัก" required="required" data-validation-required-message="Please enter your Keyword.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
-           
-
-              <br>
-              
-              <div class="form-group text-center" >
-                <button type="submit" class="btn btn-secondary btn-md" id="sendMessageButton">ส่ง</button>
-              </div>
-            </form>
-              </div>
             </div>
-            
-            
-          </div>
-        </div>
+        </div><br>
+        <label>(รูปภาพ)</label>
+        <button type="file" class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
       </div>
     </section>
-    <?php } ?>
-                          <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
-           <section class="text-center" id="third" style="background-color:#d9d9d9;">
-      <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
-            <hr class="star-dark mb-5">
-            <table id="table" class="table responsive display">
-                <thead>
-                    <tr>
-                        <th>รหัสเอกสาร</th>
-                        <th>คำนำ</th>
-                        <th>สถานะการจ่าย</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php while ($row_money = mysqli_fetch_assoc($result_money)) {
-                   $id_paper = $row_money["paper_id"];
-                    
-                  ?>
-                  <tr>
-                       <td><?php echo $row_money['paper_id'] ?></td>
-                        <td><?php echo $row_money['name_th'] ?></td>
-                        <td><?php echo $row_money['status'] ?></td>
-                        <td> 
-
-                        <?php 
-                        if($row_money['money_status']=="7"||$row_money['money_status']=="4"){
-                            require 'modal/modal_money.php';
-                        }
-                         
-                        ?>
-
-                         
-                        </td>
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-        </div>
-      </div>
-    </section>               
-    <?php } ?>
+  
 
     <footer>
       <div class="container">

@@ -87,7 +87,7 @@ $q3 = mysqli_query($con,$a3);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">เอกสาร</a>
+              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ประวัติส่วนตัว</a>
             </li>
             <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
             <li class="nav-item">
