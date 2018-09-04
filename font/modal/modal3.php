@@ -89,7 +89,7 @@
                             <p class="help-block text-danger"></p>
                                               <br>
 
-                                <div class="container" style="text-align:right;magin-right:15px" >
+                                <div class="container" style="text-align:right;margin-right:15px" >
                                 <button type="submit" class="btn btn-primary btn-sm" id="sendMessageButton">ตกลง</button>
                                 <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">ปิด</button>
                                 </div>

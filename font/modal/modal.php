@@ -73,7 +73,7 @@
                               </div>
                            
                                 <br>
-                                <div style="text-align:right;magin-right:15px" >
+                                <div style="text-align:right;margin-right:15px" >
                                 <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
                                 </div><br>
                             </div>
