@@ -57,7 +57,7 @@
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 textalign = "center" >การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
+              <h1>การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
             </div>
           </div>
         </div>

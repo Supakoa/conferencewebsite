@@ -90,7 +90,7 @@ if($r_name['role']!=1){
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >WELLCOM TO WEBSITE USER</h1>
+              <h1 class="mb-5" >การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
             </div>
           </div>
         </div>
