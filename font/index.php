@@ -243,7 +243,7 @@
 
     <footer>
     <div class="container">
-        <h2 style="color:white">เอกสารที่เกี่ยวข้อง</h2>
+        <h2 style="color:white">เว็บไซต์ที่เกี่ยวข้อง  และ  เอกสารที่เผยแพร่</h2>
         <div class="row">
           <div class="col-md-6">
           <ul class="list-inline list-social">
@@ -269,6 +269,7 @@
         </div>
         </div>
       </div>
+     <br><br>
       <div class="container">
         <div class="row">
           <div class="col-lg-3"></div>
