@@ -22,7 +22,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 if($r_name['role']!=2){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
-
+}
   //footer
   $a3 = "SELECT * FROM banner ";
   $q3 = mysqli_query($con,$a3);
