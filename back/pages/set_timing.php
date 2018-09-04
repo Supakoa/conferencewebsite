@@ -110,12 +110,11 @@
                     <span>เวลาสิ้นสุดอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="end_slip2" value="<?php echo $r_t3['time_end'] ?>"><br><br>
                 </div>
-
+            </div>
                 <div class="text-center">
                 <button class=" btn btn-info" type="submit" name="update" >อัพเดท</button>
-                </div>
+                </div><br>
                 </form>
-            </div>
            
 
     </div>
