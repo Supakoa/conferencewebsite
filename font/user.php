@@ -226,7 +226,7 @@ $q3 = mysqli_query($con,$a3);
       </div>
     </section>
     <?php } ?>
-                          <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
+            <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
            <section class="text-center" id="third" style="background-color:#d9d9d9;">
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
