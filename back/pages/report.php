@@ -45,7 +45,7 @@ $result2 = mysqli_query($con, $q2);
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
     <div id="wrapper">
         <!-- Navigation -->
@@ -65,9 +65,9 @@ $result2 = mysqli_query($con, $q2);
                         <table id="tablepaper" class="display responsive" >
                             <thead>
                                 <tr>
-                                    <th>Paper-id</th>
-                                    <th>ชื่อ Paper(Eng)</th>
-                                    <th>ชื่อ Paper(Th)</th>
+                                    <th>รหัสเอกสาร</th>
+                                    <th>ชื่อ เอกสาร(Eng)</th>
+                                    <th>ชื่อ เอกสาร(Th)</th>
                                     <th>ชื่อผู้ส่ง</th>                                   
                                     <th>สถานะหลัก</th>
                                     <th></th>
@@ -96,7 +96,7 @@ $result2 = mysqli_query($con, $q2);
                         </table>
                         <br>
                         <div style="text-align:center">
-                            <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">Download File</a>
+                            <a href="" class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal">ดาวโหลดไฟล์</a>
                         </div>
                        
                         <div class="modal fade" id="submit_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

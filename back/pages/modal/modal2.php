@@ -16,11 +16,11 @@
                            
                             <div class="content">
                                 <form>
-                                <h4>Paper ID : <?php echo $row['paper_id'] ?></h4>
-                                <h5> Title : <?php echo $row['name_th'] ?></h5>
-                                <h5> Status : <?php echo $row['status'] ?></h5>
+                                <h4>รหัสเอกสาร : <?php echo $row['paper_id'] ?></h4>
+                                <h5> คำนำ : <?php echo $row['name_th'] ?></h5>
+                                <h5> สถานะ : <?php echo $row['status'] ?></h5>
                                 
-                                <h5> Abstract : <?php echo $row['abstract'] ?></h5>
+                                <h5> บทความ : <?php echo $row['abstract'] ?></h5>
                                 <br>
                                 
                                 <?php
@@ -35,8 +35,8 @@
                                     
                                 <?php 
                             } ?>
-                                <div align = "right" >
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <div style="text-align:right" >
+                                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
                                 
                                 </div>
                                 

@@ -71,13 +71,13 @@ $r_name = mysqli_fetch_assoc($result_name);
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">Uncheck</a>
+              <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">ยังไม่ได้ตรวจ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#check" style="font-size:20px">CHECK</a>
+              <a class="nav-link js-scroll-trigger" href="#check" style="font-size:20px">ตรวจแล้ว</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">LOG-OUT</a>
+              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
             </li>
           </ul>
         </div>
@@ -98,7 +98,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <section class="text-center" id="uncheck" style="background-color:#d9d9d9;">
       <div class="container">
         <div class="section-heading text-center">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Uncheck</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">ยังไม่ได้ตรวจ</h2>
             <hr class="star-dark mb-5">
         </div>
         <div class="row">
@@ -106,10 +106,10 @@ $r_name = mysqli_fetch_assoc($result_name);
                 <table id="table1" class=" responsive display">
                 <thead>
                     <tr>
-                        <th>Paper id</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Edit</th>
+                        <th>รหัสเอกสาร</th>
+                        <th>คำนำ</th>
+                        <th>สถานะ</th>
+                        <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -142,17 +142,17 @@ $r_name = mysqli_fetch_assoc($result_name);
 
      <section class="text-center" id="check" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">check</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">ตรวจแล้ว</h2>
             <hr class="star-dark mb-5">
         <div class="row">
         <div class="col-lg-10 mx-auto">
             <table id="table2" class=" responsive display">
             <thead>
                 <tr>
-                    <th>Paper id</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>Edit</th>
+                    <th>รหัสเอกสาร</th>
+                    <th>คำนำ</th>
+                    <th>สถานะ</th>
+                    <th>แก้ไข</th>
                 </tr>
             </thead>
             <tbody>

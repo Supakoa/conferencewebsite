@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
     <div id="wrapper">
         <!-- Navigation -->
@@ -55,7 +55,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="container-fluid">
-                                <h3 style="text-align:center">สมัคร reviewer </h3><hr>
+                                <h3 style="text-align:center">สมัคร ผู้ตรวจ </h3><hr>
                                 
                                     <form action="" method="POST">
                                         <div class="form-group">
@@ -65,33 +65,33 @@
                                             <label for="password">Password **</label>
                                             <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" >
 
-                                            <label for="conpassword">Confirm Password </label>
+                                            <label for="conpassword">ยืนยัน Password </label>
                                             <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" >
 
-                                            <label for="fname">First name **</label>
+                                            <label for="fname">ชื่อ **</label>
                                             <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" >
 
-                                            <label for="lname">Last name **</label>
+                                            <label for="lname">นามสกุล **</label>
                                             <input type="text" class="form-control" name="lname" placeholder="นามสกุล" >
 
-                                            <label for="gender">Gender</label>
+                                            <label for="gender">เพศ</label>
                                             <select class="form-control" name="gender" required>
                                                 <option disabled selected value="">เพศ</option>
-                                                <option value="male">male</option>
-                                                <option value="female">female</option>
+                                                <option value="male">ชาย</option>
+                                                <option value="female">หญิง</option>
                                             </select>
 
-                                            <label for="address">Address</label>
+                                            <label for="address">ที่อยู่</label>
                                             <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea>
                                         
                                             <label for="username">Email *</label>
                                             <input type="text" class="form-control" name="email" placeholder="อีเมล์" >
                                             
-                                            <label for="password">Confirm Email *</label>
+                                            <label for="password">ยืนยัน Email *</label>
                                             <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" >
 
                                             </div>
-                                            <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">Submit</button><br>
+                                            <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button><br>
                                     </form><br>
                                 </div>
                             </div>

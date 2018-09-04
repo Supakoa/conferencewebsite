@@ -44,9 +44,9 @@ $result = mysqli_query($con, $q);
 
 </head>
 
-<body>
+<body style="font-family: 'Mitr', sans-serif;">
 
-    <div id="wrapper">
+    <div id="wrapper" >
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <?php require 'setup/main.php' ?>
@@ -63,9 +63,9 @@ $result = mysqli_query($con, $q);
                     <table id="moneytable" class="display rseponsive">
                         <thead>
                             <tr>
-                                    <th>Paper-id</th>
-                                    <th>ชื่อ Paper(Eng)</th>
-                                    <th>ชื่อ Paper(Th)</th>
+                                    <th>รหัสเอกสาร</th>
+                                    <th>ชื่อ เอกสาร(Eng)</th>
+                                    <th>ชื่อ เอกสาร(Th)</th>
                                     <th>ชื่อผู้ส่ง</th>                                   
                                     <th>สถานะการชำระเงิน</th>
                                     <th></th>

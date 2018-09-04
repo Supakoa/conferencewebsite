@@ -28,25 +28,25 @@
                                 ?>
             <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px">Paper ID : </h5>
+            <h5 style="margin-left:20px">รหัสเอกสาร : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['paper_id'] ?></span></div>
             </div>
             <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Title : </h5>
+            <h5 style="margin-left:20px"> คำนำ : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['name_th'] ?></span></div>
             </div>
             <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Status : </h5>
+            <h5 style="margin-left:20px"> สถานะ : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_status['status'] ?></span></div>
             </div>
             <div class="row">
             <div class="col col-6-lg ms-auto">
-            <h5 style="margin-left:20px"> Abstract : </h5>
+            <h5 style="margin-left:20px"> บทความ : </h5>
             </div>
             <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['abstract'] ?></span></div>
             </div>
@@ -73,8 +73,8 @@
                     
                               
                             </div>
-                            <div style="text-align:right">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <div style="text-align:right;magin-right:15px">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
                           </div> <br>  
                         </div>
                     </div>
