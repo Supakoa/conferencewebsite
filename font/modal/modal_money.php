@@ -69,9 +69,9 @@
                               } ?>
                               </div>
 
-          <div>
+          <div class="col col-12-lg ms-auto">
           <form action="server/insert_money.php?id=<?php echo $row_money['paper_id'] ?>" method="POST" enctype="multipart/form-data" >
-                                <input type="file"  name="money">
+                                <input type="file"  name="money" >
                                
                              
                              
