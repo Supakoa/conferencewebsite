@@ -4,26 +4,34 @@
 
     if(isset($_POST['update'])){
         //paper
-        $e = $_POST['name_paper'];
         $a = $_POST['start_paper'];
         $b = $_POST['end_paper'];
-        //slip
-        $f = $_POST['name_slip'];
-        $c = $_POST['start_slip'];
-        $d = $_POST['end_slip'];
+        //slip(paper)
+        $c = $_POST['start_slip1'];
+        $d = $_POST['end_slip1'];
+        //slip(view)
+        $h = $_POST['start_slip2'];
+        $i = $_POST['end_slip2'];
 
-        $s1 = "UPDATE `setting_timmer` SET `name_time`='$e',`time_start`='$a',`time_end`='$b' WHERE `order` = '1' ";
-        $s2 = "UPDATE `setting_timmer` SET `name_time`='$f',`time_start`='$c',`time_end`='$d' WHERE `order` = '2' ";
+        $s1 = "UPDATE `setting_timmer` SET `time_start`='$a',`time_end`='$b' WHERE `order` = '1' ";
+        $s2 = "UPDATE `setting_timmer` SET `time_start`='$c',`time_end`='$d' WHERE `order` = '2' ";
+        $s3 = "UPDATE `setting_timmer` SET `time_start`='$h',`time_end`='$i' WHERE `order` = '3' ";
         $q1 = mysqli_query($con,$s1);
         $q2 = mysqli_query($con,$s2);
+        $q3 = mysqli_query($con,$s3);
     }
 
-    $st = "SELECT `name_time`, `time_start`, `time_end` FROM `setting_timmer` WHERE `order` = '1'";
-    $st2 = "SELECT `name_time`, `time_start`, `time_end` FROM `setting_timmer` WHERE `order` = 2";
+    $st =  "SELECT * FROM `setting_timmer` WHERE `order` = '1'";
+    $st2 = "SELECT * FROM `setting_timmer` WHERE `order` = '2'";
+    $st3 = "SELECT * FROM `setting_timmer` WHERE `order` = '3'";
+
     $q_t = mysqli_query($con,$st);
     $q_t2 = mysqli_query($con,$st2);
+    $q_t3 = mysqli_query($con,$st3);
+
     $r_t = mysqli_fetch_array($q_t);
     $r_t2 = mysqli_fetch_array($q_t2);
+    $r_t3 = mysqli_fetch_array($q_t3);
 ?>
 
 <!DOCTYPE html>
@@ -78,27 +86,33 @@
                     <h1 class="page-header">ตั้งค่าเวลา</h1>
                 </div>
                 <form action="set_timing.php" method="post">
+
                 <div class="col-lg-6">
                 <h3>เอกสาร</h3>
-                    <span>ชื่อวารสาร : </span>
-                    <input class="form-control" type="input" name="name_paper" value="<?php echo $r_t['name_time'] ?>"><br>
-                    <span>เริ่มเวลาอัพโหลดเอกสาร : </span>
+                    <span>เวลาเริ่มอัพโหลดเอกสาร : </span>
                     <input class="form-control" type="date" name="start_paper" value="<?php echo $r_t['time_start'] ?>"><br>
-                    <span>สิ้นสุดเวลาอัพโหลดเอกสาร : </span>
+                    <span>เวลาสิ้นสุดอัพโหลดเอกสาร : </span>
                     <input class="form-control" type="date" name="end_paper" value="<?php echo $r_t['time_end'] ?>"><br><br>
                 </div>
+
                 <div class="col-lg-6">
-                <h3>ใบเสร็จ</h3>
-                    <span>ชื่อใบเสร็จ : </span>
-                    <input class="form-control" type="input" name="name_slip" value="<?php echo $r_t2['name_time'] ?>"><br>
-                    <span>เริ่มเวลาอัพโหลดเอกสาร : </span>
-                    <input class="form-control" type="date" name="start_slip" value="<?php echo $r_t2['time_start'] ?>"><br>
-                    <span>สิ้นสุดเวลาอัพโหลดใบเสร็จ : </span>
-                    <input class="form-control" type="date" name="end_slip" value="<?php echo $r_t2['time_end'] ?>"><br><br>
-                    
+                <h3>ใบเสร็จ(เอกสาร)</h3>
+                    <span>เวลาเริ่มอัพโหลดเอกสาร : </span>
+                    <input class="form-control" type="date" name="start_slip1" value="<?php echo $r_t2['time_start'] ?>"><br>
+                    <span>เวลาสิ้นสุดอัพโหลดใบเสร็จ : </span>
+                    <input class="form-control" type="date" name="end_slip1" value="<?php echo $r_t2['time_end'] ?>"><br><br>
                 </div>
+
+                <div class="col-lg-6">
+                <h3>ใบเสร็จ(ผู้เข้าชม)</h3>
+                    <span>เวลาเริ่มอัพโหลดเอกสาร : </span>
+                    <input class="form-control" type="date" name="start_slip2" value="<?php echo $r_t3['time_start'] ?>"><br>
+                    <span>เวลาสิ้นสุดอัพโหลดใบเสร็จ : </span>
+                    <input class="form-control" type="date" name="end_slip2" value="<?php echo $r_t3['time_end'] ?>"><br><br>
+                </div>
+
                 <div class="text-center">
-                <button class=" btn btn-info" type="submit" >อัพเดท</button>
+                <button class=" btn btn-info" type="submit" name="update" >อัพเดท</button>
                 </div>
                 </form>
             </div>
