@@ -21,6 +21,10 @@
             echo '3';
             header("Location: ../reviewer.php");
         }
+        elseif($r_a['role']==3){
+            echo '3';
+            header("Location: ../guest.php");
+        }
     }else{
       $_SESSION['status'] = 0; //not match
         header("Location: ../index.php");

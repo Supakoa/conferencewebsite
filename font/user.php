@@ -5,18 +5,20 @@ if($_SESSION['status'] != 1){
   header("Location: index.php");
 }
 //$id = $_SESSION['id'];
-$_SESSION['id'] = 'singha';
+// $_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
 $q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id";
 $result = mysqli_query($con, $q);
 $q_money = "SELECT paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.money_status AND paper.status = 2";
 $result_money = mysqli_query($con, $q_money);
 
-$q_name = "SELECT `first_name`,`last_name` FROM `user` WHERE `username`= '$id' ";
+$q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
+if($r_name['role']!=1){
 
+}
 
 
 ?>
@@ -69,7 +71,7 @@ $r_name = mysqli_fetch_assoc($result_name);
               <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">เอกสาร</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มสำเนา</a>
+              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มเอกสาร</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
@@ -143,7 +145,7 @@ $r_name = mysqli_fetch_assoc($result_name);
 
     <section class="features" id="second" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มสำเนา</h2>
+      <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-10 mx-auto">

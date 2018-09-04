@@ -22,7 +22,7 @@
     }
 
     // Allow certain file formats
-    if ($imageFileType != ".pdf"&".jpg") {
+    if ($imageFileType != ".pdf"||$imageFileType !=".jpg"||$imageFileType !=".png") {
         echo "Sorry, only PDF files are allowed.";
         $uploadOk = 0;
     }
@@ -48,12 +48,12 @@
     $r_a = mysqli_query($con,$a);
   
     if($r_a){
-        echo eiei ;
+        
     }
     else{
-        echo nono ;
+        
     }
-    // header("Location: ../user.php");
+    header("Location: ../user.php");
 
     // echo '<br><button><a href="form_insert_paper.php">Click Me!!</a></button>';
 ?>
