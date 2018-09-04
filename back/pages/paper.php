@@ -50,7 +50,7 @@ if (isset($_POST['update'])) {
 
         $ext = pathinfo(basename($_FILES[$sum2]["name"]), PATHINFO_EXTENSION);
         $new_taget_name = 'pdf_' . uniqid() . "." . $ext;
-        $target_path = "uploads/";
+        $target_path = "../../font/uploads/";
         $upload_path = $target_path . $new_taget_name;
         $uploadOk = 1;
 

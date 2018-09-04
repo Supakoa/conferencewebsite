@@ -1,3 +1,41 @@
+<?php
+  //connect database
+  require 'server/server.php';
+
+  //alert
+  if(isset($_SESSION['check_login'])){
+    echo '<script>alert("กรุณา Login เข้าสู่ระบบ.");</script>';
+  }
+  if(isset($_SESSION['status'])){
+    if($_SESSION['status']==0){
+      echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+    }
+  }
+  if(isset($_SESSION['register_alert'])){
+    if ($_SESSION['register_alert']==1) {
+      echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
+    }elseif ($_SESSION['register_alert']==2) {
+      echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
+    }elseif ($_SESSION['register_alert']==3) {
+      echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
+    }
+  }
+  if(isset($_SESSION['register_match'])){
+    if($_SESSION['register_match']==1){
+      echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
+    }
+  }
+  session_destroy();
+
+  $a = "SELECT * FROM show_url WHERE hide='0' && group_url = '1' ";
+  $b = "SELECT * FROM show_url WHERE hide='0' && group_url = '2' ";
+  $q_a = mysqli_query($con,$a);
+  $q_b = mysqli_query($con,$b);
+
+  $a3 = "SELECT * FROM banner ";
+  $q3 = mysqli_query($con,$a3);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -193,7 +231,7 @@
               <br>
               <div id="success"></div>
               <div class="form-group">
-                <button type="submit" class="btn btn-secondary btn-xl"  id="sendMessageButton">ตกลง</button>
+                <button type="submit" class="btn btn-secondary btn-xl"  name="r_b">ตกลง</button>
               </div>
             </form>    
           </div>
@@ -211,13 +249,9 @@
           <ul class="list-inline list-social">
           <li>
           <div class="text-center">
-                <a href="#">1</a><br>
-              
-                <a href="#">1</a><br>
-            
-                <a href="#">1</a><br>
-            
-                <a href="#">1</a><br>
+                <?php while($r1 = mysqli_fetch_array($q_a)){ ?>
+                  <a class=" text-center" target="_blank" href="<?php echo $r1['url']; ?>"><?php echo $r1['text']; ?></a><br>
+                <?php } ?>
               </div>
           </li>
         </ul>
@@ -226,13 +260,9 @@
         <ul class="list-inline list-social">
           <li>
           <div class="text-center">
-                <a href="#">1</a><br>
-              
-                <a href="#">1</a><br>
-            
-                <a href="#">1</a><br>
-            
-                <a href="#">1</a><br>
+                <?php while($r2 = mysqli_fetch_array($q_b)){ ?>
+                  <a class=" text-center" target="_blank" href="uploads/<?php echo $r2['url']; ?>"><?php echo $r2['text']; ?></a><br>
+                <?php } ?>
               </div>
           </li>
         </ul>
@@ -243,7 +273,11 @@
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            ใส่ตรงนี้
+            <?php 
+              //htis site is show footer.
+              $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
+            ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
         </div>

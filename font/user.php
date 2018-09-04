@@ -1,5 +1,6 @@
 <?php
 require 'server/server.php';
+require 'server/check_login.php';
 if($_SESSION['status'] != 1){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
