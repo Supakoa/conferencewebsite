@@ -22,9 +22,10 @@ $r_name = mysqli_fetch_assoc($result_name);
 if($r_name['role']!=2){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
-}
 
-
+  //footer
+  $a3 = "SELECT * FROM banner ";
+  $q3 = mysqli_query($con,$a3);
 ?>
 
 
@@ -192,7 +193,11 @@ if($r_name['role']!=2){
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            ใส่ตรงนี้
+            <?php 
+              //htis site is show footer.
+              $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
+            ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
         </div>

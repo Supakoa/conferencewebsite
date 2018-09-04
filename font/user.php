@@ -37,7 +37,9 @@ if($r_name['role']!=1){
   header("Location: index.php");
 }
 
-
+//footer
+$a3 = "SELECT * FROM banner ";
+$q3 = mysqli_query($con,$a3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -272,7 +274,11 @@ if($r_name['role']!=1){
         <div class="row">
           <div class="col-lg-4"></div>
           <div class="col-lg-4">
-            ใส่ตรงนี้
+            <?php 
+              //htis site is show footer.
+              $r_3 = mysqli_fetch_array($q3);
+              echo $r_3['footer'];
+            ?>
           </div><!-- content -->
           <div class="col-lg-4"></div>
         </div>
