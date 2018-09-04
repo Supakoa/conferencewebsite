@@ -70,15 +70,17 @@
                               </div>
 
           <div>
-                            <form action="">
-                                <input type="file">
-                                <button type="submit" class="btn btn-primary btn-md" >ตกลง</button>
-                              </form>
+          <form action="server/insert_money.php?id=<?php echo $row_money['paper_id'] ?>" method="POST" enctype="multipart/form-data" >
+                                <input type="file"  name="money">
+                               
+                             
                              
         </div>
         <br>
           <div style="text-align:right;margin-right:15px" >
+          <button type="submit" class="btn btn-primary btn-md" >ตกลง</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+            </form>
           </div><br>                     
       </div>
     </div>   

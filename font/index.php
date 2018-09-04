@@ -71,7 +71,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">Website Conference</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">CONFERENCE GE SSRU</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -82,7 +82,7 @@
               <a class="nav-link js-scroll-trigger" href="#login" style="font-size:20px">เข้าสู่ระบบ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#register" style="font-size:20px">สมัครสมาชิค</a>
+              <a class="nav-link js-scroll-trigger" href="#register" style="font-size:20px">สมัครสมาชิก</a>
             </li>
             
           </ul>
@@ -95,7 +95,7 @@
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >WELLCOME TO WEBSITE </h1>
+              <h1>การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
     <section class="features" id="register" style="background-color:#d9d9d9;">
       <div class="container">
         <div class="section-heading text-center">
-        <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิค</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิก</h2>
           <hr>
         </div>
         <div class="card" style="background-color:#dd99ff">
@@ -222,8 +222,8 @@
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="col col-lg-12 mx-auto">
-                            <h5 style="color:#ffffff">สมาชิค</h5>
-                            <textarea class="form-control" placeholder="สมาชิค" name="member" rows="3"></textarea>
+                            <h5 style="color:#ffffff">สมาชิก</h5>
+                            <textarea class="form-control" placeholder="สมาชิก" name="member" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
