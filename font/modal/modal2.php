@@ -73,14 +73,19 @@
                     
                               
                             </div>
-                            <div style="text-align:right;magin-right:15px">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                            <div>
+                            
+                            <div class="container">
+                            <form action="server/update_paper.php?id=<?php echo $row['paper_id'] ?>" method="post" enctype="multipart/form-data" ><hr>
+                            <h4>ส่งไฟล์แก้ไข</h4>
+                            <input type="file" name="paper" required="required" >
+                            <br>
+                            
+                            
+                            </div>
+                            <div style="text-align:right;margin-right:15px">
+                            <button type="submit" class="btn btn-primary"> ส่ง </button>
+                            <button type="button" class="btn btn-default"  data-dismiss="modal">ปิด</button>
+                            </form>
                           </div> <br>  
-                        </div>
-                    </div>
-                </div> 
-      </div>
-     
-    </div>
-  </div>
-</div>
+                        
