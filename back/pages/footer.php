@@ -1,7 +1,38 @@
 <?php
     require 'server.php';
     require 'server/check_login.php';
+    $q_banner = "SELECT * FROM `banner` ";
+    $result_banner = mysqli_query($con,$q_banner);
+    $row_banner = mysqli_fetch_array($result_banner);
+
+
+
+    if(isset($_POST['gogogo'])){
+        $a = $_POST['commentf'];
+        $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
+        $q_b = mysqli_query($con,$b);
+        if($q_b){
+            $_SESSION['alert'] = 2 ;
+           
+        }else{
+            $_SESSION['alert'] = 0 ;
+        }
+    }
+    if(isset($_SESSION['alert'])){
+        if($_SESSION['alert'] == 0 ){
+          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+        }
+        elseif ($_SESSION['alert'] == 1) {
+          echo '<script>alert("อัพเดท Banner เรียบร้อย.");</script>';
+        }
+        elseif ($_SESSION['alert'] == 2) {
+          echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
+        }
+        unset($_SESSION['alert']);
+      }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +84,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Footer</h1>
+                    <br><h2 class="text-center">ตั้งค่า footer</h2>
+                <form action="footer.php" method="POST">
+                <div class="row">
+                    <div class="col-lg-12" style="text-align:center">
+                    <textarea  name="commentf" cols="110" rows="10" ><?php echo $row_banner['footer']  ?></textarea>   
+                    <br><br>
+                    </div>
+                    <div class="col-lg-12" style="text-align:center">
+                    <button class="btn btn-success btn-md "   type="submit" name="gogogo">Upload</button>
+                    </div>
+                </div>
+                </form>
+                    <br>
                 </div>
             </div>
            
