@@ -191,15 +191,15 @@ if($r_name['role']!=2){
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
             <?php 
               //htis site is show footer.
               $r_3 = mysqli_fetch_array($q3);
               echo $r_3['footer'];
             ?>
           </div><!-- content -->
-          <div class="col-lg-4"></div>
+          <div class="col-lg-3"></div>
         </div>
         <p>&copy; Your Website 2018. All Rights Reserved.</p>
       </div>
