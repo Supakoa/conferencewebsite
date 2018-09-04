@@ -10,7 +10,7 @@
 
     if ($r_a = mysqli_fetch_array($result)) {
       $_SESSION['id'] = $login_id;
-      $_SESSION['f_online'] = 1; //online
+      $_SESSION['status'] = 1;//online
         if ($r_a['role']==1) {
             header("Location: ../user.php");
         }elseif($r_a['role']==2){
