@@ -16,6 +16,22 @@ $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= 
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
+$q_paper_time = "SELECT * FROM `setting_timmer` WHERE `order` = 1 ";
+$result_paper_time = mysqli_query($con, $q_paper_time);
+$r_paper_time = mysqli_fetch_assoc($result_paper_time);
+
+$q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";
+$result_pay_time = mysqli_query($con, $q_pay_time);
+$r_pay_time = mysqli_fetch_assoc($result_pay_time);
+
+date_default_timezone_set("Asia/Bangkok");
+$today = date('Y-m-d'); 
+$paper_start = $r_paper_time['time_start'];
+$paper_end = $r_paper_time['time_end']; 
+$pay_start = $r_pay_time['time_start'];
+$pay_end = $r_pay_time['time_end'];
+
+
 if($r_name['role']!=1){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
@@ -71,13 +87,16 @@ if($r_name['role']!=1){
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">เอกสาร</a>
             </li>
+            <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มเอกสาร</a>
             </li>
+            <?php } ?>
+            <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
             </li>
-            
+            <?php } ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
             </li>
@@ -143,7 +162,7 @@ if($r_name['role']!=1){
         </div>
       </div>
     </section>
-
+    <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
     <section class="features" id="second" style="background-color:#d9d9d9;">
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
@@ -204,7 +223,8 @@ if($r_name['role']!=1){
         </div>
       </div>
     </section>
-
+    <?php } ?>
+                          <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
            <section class="text-center" id="third" style="background-color:#d9d9d9;">
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
@@ -245,7 +265,7 @@ if($r_name['role']!=1){
         </div>
       </div>
     </section>               
-   
+    <?php } ?>
 
     <footer>
       <div class="container">
