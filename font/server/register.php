@@ -43,7 +43,12 @@
         $a = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,member,role) 
             VALUES ('$username','$password','$gender','$fname','$lname','$address','$email','$member','$type')";
 
+
         $r_a = mysqli_query($con,$a);
+        $b = "INSERT INTO `bill_guest`(`username`) VALUES ('$username')";
+
+        $r_b = mysqli_query($con,$b);
+        
         if ($r_a) {
             $_SESSION['user_match']=2;
             header("Location: ../index.php");

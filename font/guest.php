@@ -1,11 +1,11 @@
 <?php
 require 'server/server.php';
-// if($_SESSION['status'] != 1){
-//   $_SESSION['online'] = 0 ;
-//   header("Location: index.php");
-// }
-// $id = $_SESSION['id'];
-$_SESSION['id'] = 'singha';
+if($_SESSION['status'] != 1){
+  $_SESSION['online'] = 0 ;
+  header("Location: index.php");
+}
+
+// $_SESSION['id'] = 'singha';
 $id = $_SESSION['id'];
 $q = "SELECT * FROM `user` WHERE `username` = '$id' ";
 $result = mysqli_query($con, $q);
@@ -17,10 +17,10 @@ $r_name = mysqli_fetch_assoc($result_name);
 
 
 
-// if($r_name['role']!=1){
-//   $_SESSION['online'] = 0 ;
-//   header("Location: index.php");
-// }
+if($r_name['role']!=3){
+  $_SESSION['online'] = 0 ;
+  header("Location: index.php");
+}
 
 //footer
 $a3 = "SELECT * FROM banner ";
@@ -195,7 +195,7 @@ $q3 = mysqli_query($con, $a3);
         if (isset($_POST['gogo'])) {
           $ext = pathinfo(basename($_FILES["money"]["name"]), PATHINFO_EXTENSION);
           $new_taget_name = 'Bill_' . uniqid() . "." . $ext;
-          $target_path = "../../Bill/";
+          $target_path = "../Bill/";
           $upload_path = $target_path . $new_taget_name;
           $uploadOk = 1;
         
@@ -207,7 +207,7 @@ $q3 = mysqli_query($con, $a3);
           }
           
               // Allow certain file formats
-          if ($imageFileType != ".pdf" || $imageFileType != ".jpg" || $imageFileType != ".png") {
+          if ($imageFileType != ".pdf" && $imageFileType != ".jpg" && $imageFileType != ".png") {
             echo "Sorry, only PDF files are allowed.";
             $uploadOk = 0;
           }
@@ -230,12 +230,12 @@ $q3 = mysqli_query($con, $a3);
               $paper = $_FILES["money"]["name"];
               $b = $new_taget_name;
               echo $b . "  " . $id_paper;
-              $a = "UPDATE `paper` SET`money_status`='6',`tmp_money`='$b' WHERE paper_id = '$id_paper'";
+              $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = $id ;";
         
               $r_a = mysqli_query($con, $a);
         
-              if ($r_a) {
-                // แสดงรูปจากเบส
+              if ($r_a){
+               echo "<img src=\"banner/".$b."\" alt=\"banner\">";
               } else {
                 // แสดงข้อความว่าผิดพลาด
               }
