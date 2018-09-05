@@ -207,7 +207,7 @@ $q3 = mysqli_query($con, $a3);
           }
           
               // Allow certain file formats
-          if ($imageFileType != ".pdf" && $imageFileType != ".jpg" && $imageFileType != ".png") {
+          if ($imageFileType != "pdf" && $imageFileType != "jpg" && $imageFileType != "png") {
             echo "Sorry, only PDF files are allowed.";
             $uploadOk = 0;
           }
