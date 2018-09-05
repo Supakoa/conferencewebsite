@@ -7,7 +7,7 @@
       }
     $id  = $_SESSION['id'];
     // $id = "123456";
-    //required post
+    //required post&get
     $done = $_POST['done'];
     $score = $_POST['score'];
     $comment = $_POST['comment'];

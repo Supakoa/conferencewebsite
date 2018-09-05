@@ -59,6 +59,9 @@ if ($uploadOk == 0) {
             VALUES ('$paper','$b','$paper_th','$paper_eng','$abstract','$keyword','5')";
 
         $r_a = mysqli_query($con, $a);
+        if($r_a){
+            $_SESSION['alert'] = 2;
+        }
         $c = "SELECT * FROM paper ORDER BY paper_id DESC LIMIT 1";
         $result_c = mysqli_query($con, $c);
         $row_c = mysqli_fetch_array($result_c);
@@ -79,7 +82,7 @@ if ($uploadOk == 0) {
         header("Location: ../user.php");
     }
     else{
-        
+        $_SESSION['alert'] = 1;
         header("Location: ../user.php");
     }
 

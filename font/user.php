@@ -1,5 +1,6 @@
 <?php
 require 'server/server.php';
+require 'server/show_alert.php';
 if($_SESSION['status'] != 1){
   $_SESSION['online'] = 0 ;
   header("Location: index.php");
@@ -30,6 +31,7 @@ $paper_start = $r_paper_time['time_start'];
 $paper_end = $r_paper_time['time_end']; 
 $pay_start = $r_pay_time['time_start'];
 $pay_end = $r_pay_time['time_end'];
+
 
 
 if($r_name['role']!=1){
@@ -272,15 +274,15 @@ $q3 = mysqli_query($con,$a3);
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4"></div>
-          <div class="col-lg-4">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-6">
             <?php 
               //htis site is show footer.
               $r_3 = mysqli_fetch_array($q3);
               echo $r_3['footer'];
             ?>
           </div><!-- content -->
-          <div class="col-lg-4"></div>
+          <div class="col-lg-3"></div>
         </div>
         <p>&copy; Your Website 2018. All Rights Reserved.</p>
       </div>

@@ -4,7 +4,7 @@
      $_SESSION['online'] = 0 ;
      header("Location: ../index.php");
    }
-$id = $_GET['id'];
+ $id = $_GET['id'];
  $ext = pathinfo(basename($_FILES["paper"]["name"]), PATHINFO_EXTENSION);
  $new_taget_name = 'pdf_' . uniqid() . "." . $ext;
  $target_path = "../uploads/";
