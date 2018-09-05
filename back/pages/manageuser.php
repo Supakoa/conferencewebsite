@@ -1,6 +1,13 @@
 <?php
+    //require database check_online show_message
     require 'server.php';
     require 'server/check_login.php';
+    require 'server/show_alert.php';
+
+    //connect database form table user
+    $a = "SELECT * FROM user";
+    $r_a = mysqli_query($con,$a);
+
 ?>
 
 <!DOCTYPE html>
@@ -82,12 +89,12 @@
 
                                     <td>
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#edit_modal<?php echo $ro_a['order'] ?>">
+                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#conedit_modal<?php echo $ro_a['order'] ?>">
                                         แก้ไข
                                         </button>
 
                                         <!-- Modal -->
-                                        <div class="modal fade" id="edit_modal<?php echo $ro_a['order'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="conedit_modal<?php echo $ro_a['order'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                         <form action="server/edit_user.php?id=<?php echo $ro_a['order'] ?>" method="POST">
                                             <div class="modal-content">
