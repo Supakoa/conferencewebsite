@@ -25,6 +25,14 @@
       echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
     }
   }
+  if(isset($_SESSION['user_match'])){
+    if($_SESSION['user_match']==2){
+      echo '<script>alert("ลงทะเบียนสำเร็จ.");</script>';
+    }
+    if($_SESSION['user_match']==3){
+      echo '<script>alert("เกิดข้อผิดพลาด.");</script>';
+    }
+  }
   session_destroy();
 
   $a = "SELECT * FROM show_url WHERE hide='0' && group_url = '1' ";
