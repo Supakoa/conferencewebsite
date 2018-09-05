@@ -1,7 +1,7 @@
 <?php
 require 'server/server.php';
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
+if ($_SESSION['status'] != 1) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 
@@ -14,11 +14,18 @@ $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= 
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
+$q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";
+$result_pay_time = mysqli_query($con, $q_pay_time);
+$r_pay_time = mysqli_fetch_assoc($result_pay_time);
+
+date_default_timezone_set("Asia/Bangkok");
+$today = date('Y-m-d'); 
+$pay_start = $r_pay_time['time_start'];
+$pay_end = $r_pay_time['time_end'];
 
 
-
-if($r_name['role']!=3){
-  $_SESSION['online'] = 0 ;
+if ($r_name['role'] != 3) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 
@@ -198,9 +205,9 @@ $q3 = mysqli_query($con, $a3);
           $target_path = "../Bill/";
           $upload_path = $target_path . $new_taget_name;
           $uploadOk = 1;
-        
+
           $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
-        
+
           if ($_FILES["money"]["size"] > 8000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
@@ -217,29 +224,31 @@ $q3 = mysqli_query($con, $a3);
             echo "Sorry, your file was not uploaded.";
           } else {
             if ($pay_start <= $today && $today <= $pay_end) {
-        
-        
-        
+
+
+
               if (move_uploaded_file($_FILES["money"]["tmp_name"], $upload_path)) {
-                echo 'Move success.';
+                echo 'Move success.<br>';
               } else {
                 echo 'Move fail';
               }
-        
-        
+
+
               $paper = $_FILES["money"]["name"];
               $b = $new_taget_name;
-              echo $b . "  " . $id_paper;
-              $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = $id ;";
-        
+              
+              $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = '$id' ;";
+
               $r_a = mysqli_query($con, $a);
-        
-              if ($r_a){
-               echo "<img src=\"banner/".$b."\" alt=\"banner\">";
+
+              if ($r_a) {
+                ?>
+               <img src="../bill/<?php echo $b ?>" alt="banner">
+               <?php
               } else {
                 // แสดงข้อความว่าผิดพลาด
               }
-              
+
             } else {
         
               // แสดงข้อความว่าเกินเวลา
