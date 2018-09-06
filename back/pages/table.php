@@ -61,7 +61,7 @@ $_SESSION['set_page'] = 2;
             <div class="row">
                 <h1 class="page-header">ยังไม่ได้ตรวจ</h1>
                 <div class="col-lg-12 table-responsive-lg">
-                        <table id="table1" class="display table">
+                <table id="table1" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
@@ -74,8 +74,8 @@ $_SESSION['set_page'] = 2;
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                <?php while ($row = mysqli_fetch_array($result)) { ?>
                                         <?php
                                         $id_paper = $row["paper_id"];
 
@@ -100,14 +100,15 @@ $_SESSION['set_page'] = 2;
                                         <td><p style="font-size: 5">ยังไม่ได้ระบุ</p> </td>
                                         <td><p style="font-size: 5">ยังไม่ได้ระบุ</p></td>
                                         <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
-                                        <td>
-                                        <?php require 'modal/modal.php' ?>
-                                        </td>
+                                        <td><?php require 'modal/modal.php' ?></td>
+                                        
                                         </tr> 
-                                      <?php 
+                                        <?php 
                                     } ?>
+                                      
                             </tbody>
-                        </table>
+                </table>
+               
                 </div>
             </div>
         </div>
