@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal<?php echo $row['paper_id'] ?>">
+<button type="button" class="btn btn-primary form-control btn-sm" data-toggle="modal" data-target="#myModal<?php echo $row['paper_id'] ?>">
   รายละเอียด
 </button>
 

@@ -59,9 +59,9 @@ $_SESSION['set_page'] = 2;
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">ยังไม่ได้ตรวจ</h1>
-                        <table id="table" class="display responsive">
+                <h1 class="page-header">ยังไม่ได้ตรวจ</h1>
+                <div class="col-lg-12 table-responsive-lg">
+                        <table id="table1" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
@@ -106,19 +106,13 @@ $_SESSION['set_page'] = 2;
                                         </tr> 
                                       <?php 
                                     } ?>
-                                  
-                               
                             </tbody>
                         </table>
-                    
-            </div>
-        </div>
-
                 </div>
             </div>
-           
-
+        </div>
     </div>
+            
     
 
     <!-- jQuery -->
@@ -142,10 +136,10 @@ $_SESSION['set_page'] = 2;
     <script src="../dist/js/sb-admin-2.js"></script>
     <script type="text/javascript">
         $(document).ready( function () {
-            $('#table').DataTable();
+            $('#table1').DataTable();
         } );
 
-        $('#myModal').on('shown.bs.modal', function () {
+        $('#myModal ').on('shown.bs.modal', function () {
         $('#myInput').focus()
         })
 	</script>

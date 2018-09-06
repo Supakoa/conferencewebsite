@@ -174,71 +174,70 @@ $_SESSION['set_page'] = 8;
                     <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">ตั้งค่าเว็บไซต์ที่เกี่ยวข้อง</h4><br>
 
                     <form method="POST" action="paper.php" enctype="multipart/form-data">
-                    <table class="table table responsive">
-            <thead class="thead-drak">
-                <th scope="col" colp="2">ข้อที่</th>
-                <th scope="col" colp="2">ข้อความ</th>
-                <th scope="col" colp="2"></th>
-                <th scope="col" colp="2">ที่อยู่</th>
-                <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
-            </thead>
-            <tbody>
-              <?php $i = 1; ?>
-              <?php while ($row1 = mysqli_fetch_array($q1)) { ?>
-                <tr>
-                    <th scope="row"><?php echo $i . " )." ?></th>
-                    <td><input type="text" name="text<?php echo $i ?>" value="<?php echo $row1['text'] ?>" required></td>
-                    <th scope="row"></th>
-                    <td><input type="text" name="link<?php echo $i ?>" value="<?php echo $row1['url'] ?>" required></td>
-                    <?php if ($row1['hide'] == 0) { ?>
-                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" ></td>
-                    <?php 
-                } else { ?>
-                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" checked></td>
-                    <?php 
-                } ?>
-                </tr>
-              <?php $i = $i + 1;
-            } ?>
-            </tbody>
-        </table>
-
-
+                    <table class="table  table-responsive-lg">
+                        <thead class="thead-drak">
+                            <th scope="col" colp="2">ข้อที่</th>
+                            <th scope="col" colp="2">ข้อความ</th>
+                            <th scope="col" colp="2"></th>
+                            <th scope="col" colp="2">ที่อยู่</th>
+                            <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
+                        </thead>
+                        <tbody>
+                                <?php $i = 1; ?>
+                                <?php while ($row1 = mysqli_fetch_array($q1)) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $i . " )." ?></th>
+                                <td><input class="form-control" type="text" name="text<?php echo $i ?>" value="<?php echo $row1['text'] ?>" required></td>
+                                <th scope="row"></th>
+                                <td><input class="form-control" type="text" name="link<?php echo $i ?>" value="<?php echo $row1['url'] ?>" required></td>
+                                <?php if ($row1['hide'] == 0) { ?>
+                                <td ><input class="form-control" type="checkbox" name="cb<?php echo $i ?>" ></td>
+                                <?php 
+                                    } else { ?>
+                                <td ><input class="form-control" type="checkbox" name="cb<?php echo $i ?>" checked></td>
+                                    <?php 
+                                    } ?>
+                            </tr>
+                                <?php $i = $i + 1;
+                                } ?>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col-lg-12">
-                <table class="table table responsive">
-        <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">ตั้งค่าเอกสารเผยแพร่</h4><br>
-            <thead class="thead-drak">
-              <th scope="col" colp="2">ข้อที่</th>
-              <th scope="col" colp="2">ข้อความ</th>
-              <th scope="col" colp="2">ชื่อไฟล์ปัจจุบัน</th>
-              <th scope="col" colp="2">ไฟล์ข้อมูลPDF</th>
-              <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
-            </thead>
-            <tbody>
-              <?php while ($row2 = mysqli_fetch_array($q2)) {
-                 $a = $i - 4; ?>
-                <tr>
-                    <th scope="row"><?php echo $a . " )." ?></th>
-                    <td><input type="text" name="text<?php echo $i ?>" value="<?php echo $row2['text'] ?>" ></td>
-                    <th scope="row"><?php echo $row2['real_name'] ?></th>
-                    <!-- <td><input type="text" name="link<? php// echo $i ?>" value="<? php// echo $row2['url'] ?>" required></td> -->
-                    <td><input type="file" name="link<?php echo $i ?>" ></td>
-                    <?php if ($row2['hide'] == 0) { ?>
-                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>"></td>
-                    <?php 
-                 } else { ?>
-                      <td style="text-align:center"><input type="checkbox" name="cb<?php echo $i ?>" checked></td>
-                    <?php 
-                 } ?>
-                </tr>
-              <?php $i = $i + 1;
-         } ?>
-            </tbody>
-        </table>
+                    <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">ตั้งค่าเอกสารเผยแพร่</h4><br>
+                        <table class="table  table-responsive-lg">
+                            <thead class="thead-drak">
+                                <th scope="col" colp="2">ข้อที่</th>
+                                <th scope="col" colp="2">ข้อความ</th>
+                                <th scope="col" colp="2">ชื่อไฟล์ปัจจุบัน</th>
+                                <th scope="col" colp="2">ไฟล์ข้อมูลPDF</th>
+                                <th scope="col" colp="2" style="text-align:center">ซ่อน</th>
+                            </thead>
+                            <tbody>
+                                    <?php while ($row2 = mysqli_fetch_array($q2)) {
+                                    $a = $i - 4; ?>
+                                <tr>
+                                    <th scope="row"><?php echo $a . " )." ?></th>
+                                    <td><input class="form-control" type="text" name="text<?php echo $i ?>" value="<?php echo $row2['text'] ?>" ></td>
+                                    <th scope="row"><?php echo $row2['real_name'] ?></th>
+                                    <td><input class="form-control" type="file" name="link<?php echo $i ?>" ></td>
+                                    <?php if ($row2['hide'] == 0) { ?>
+                                    <td ><input class="form-control" type="checkbox" name="cb<?php echo $i ?>"></td>
+                                    <?php 
+                                        } else { ?>
+                                    <td ><input class="form-control" type="checkbox" name="cb<?php echo $i ?>" checked></td>
+                                        <?php 
+                                        } ?>
+                                </tr>
+                                    <?php $i = $i + 1;
+                                    } ?>
+                            </tbody>
+                        </table>
                 </div>
-                <center><input type="submit" class="btn btn-info btn-active" value="อัพเดท" name="update"></center>
             </div>
+                                    <div class="text-center">
+                                        <input type="submit" class="btn btn-info btn-active" value="อัพเดท" name="update">
+                                    </div>
                     </form>
         </div><br>
     </div>

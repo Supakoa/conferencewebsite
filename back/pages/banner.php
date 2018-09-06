@@ -83,10 +83,9 @@
             </div>
                 
                                     <div class="container-fluid ">
-                                        <div class="jumbotron" >
-                                            <div style="text-align:left">
-                                                <img src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="banner">
-                                            </div>
+                                        <div class="jumboton" >
+                                                <img style="max-width: 100%;height: auto;" class="img-fluid"  src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="Responsive image">
+                                            
                                         </div>
                                         <div class="container" style="text-align:center;">
                                                     <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">Update Banner</button>

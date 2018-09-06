@@ -125,7 +125,8 @@ $q3 = mysqli_query($con,$a3);
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">เอกสาร</h2>
             <hr class="star-dark mb-5">
-            <table id="table_id" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table_id" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -163,6 +164,8 @@ $q3 = mysqli_query($con,$a3);
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
+            
         </div>
       </div>
     </section>
@@ -233,7 +236,8 @@ $q3 = mysqli_query($con,$a3);
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
             <hr class="star-dark mb-5">
-            <table id="table" class="table responsive display">
+            <div class="table-responsive-lg">
+            <table id="table" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -266,6 +270,8 @@ $q3 = mysqli_query($con,$a3);
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
+            
         </div>
       </div>
     </section>               

@@ -58,10 +58,10 @@
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 table-responsive-lg">
                     <h1 class="page-header">รอตรวจ</h1>
                  
-                        <table id="table2" class="display responsive">
+                        <table id="table2" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
