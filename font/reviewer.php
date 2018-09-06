@@ -92,7 +92,7 @@ if($r_name['role']!=2){
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >WELLCOM TO WEBSITE REVIEWER</h1>
+              <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป</h1>
             </div>
           </div>
         </div>

@@ -114,7 +114,7 @@ $q3 = mysqli_query($con,$a3);
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
+              <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
             </div>
           </div>
         </div>
