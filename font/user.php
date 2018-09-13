@@ -1,8 +1,8 @@
 <?php
 require 'server/server.php';
 require 'server/show_alert.php';
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
+if ($_SESSION['status'] != 1) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 //$id = $_SESSION['id'];
@@ -26,22 +26,22 @@ $result_pay_time = mysqli_query($con, $q_pay_time);
 $r_pay_time = mysqli_fetch_assoc($result_pay_time);
 
 date_default_timezone_set("Asia/Bangkok");
-$today = date('Y-m-d'); 
+$today = date('Y-m-d');
 $paper_start = $r_paper_time['time_start'];
-$paper_end = $r_paper_time['time_end']; 
+$paper_end = $r_paper_time['time_end'];
 $pay_start = $r_pay_time['time_start'];
 $pay_end = $r_pay_time['time_end'];
 
 
 
-if($r_name['role']!=1){
-  $_SESSION['online'] = 0 ;
+if ($r_name['role'] != 1) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 
 //footer
 $a3 = "SELECT * FROM banner ";
-$q3 = mysqli_query($con,$a3);
+$q3 = mysqli_query($con, $a3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@ $q3 = mysqli_query($con,$a3);
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name'] . " " . $r_name['last_name'] ?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -91,16 +91,18 @@ $q3 = mysqli_query($con,$a3);
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ประวัติส่วนตัว</a>
             </li>
-            <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
+            <?php if ($paper_start <= $today && $today <= $paper_end) { ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มเอกสาร</a>
             </li>
-            <?php } ?>
-            <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
+            <?php 
+          } ?>
+            <?php if ($pay_start <= $today && $today <= $pay_end) { ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
             </li>
-            <?php } ?>
+            <?php 
+          } ?>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
             </li>
@@ -137,8 +139,8 @@ $q3 = mysqli_query($con,$a3);
                 </thead>
                 <tbody>
                 <?php while ($row = mysqli_fetch_array($result)) {
-                   $id_paper = $row["paper_id"];
-                    
+                  $id_paper = $row["paper_id"];
+
                   ?>
                   <tr>
                        <td><?php echo $row['paper_id'] ?></td>
@@ -147,21 +149,20 @@ $q3 = mysqli_query($con,$a3);
                         <td> 
 
                         <?php 
-                        if($row['status']=="ผ่าน"||$row['status']=="ไม่ผ่าน"){
-                            require 'modal/modal.php';
+                        if ($row['status'] == "ผ่าน" || $row['status'] == "ไม่ผ่าน") {
+                          require 'modal/modal.php';
+                        } elseif ($row['status'] == "แก้ไข") {
+                          require 'modal/modal2.php';
+                        } else {
+
                         }
-                          elseif($row['status']=="แก้ไข"){
-                            require 'modal/modal2.php';
-                          }
-                          else{
-                            
-                          }
                         ?>
 
                          
                         </td>
                     </tr>
-                <?php } ?>
+                <?php 
+              } ?>
                 </tbody>
             </table>
             </div>
@@ -169,7 +170,9 @@ $q3 = mysqli_query($con,$a3);
         </div>
       </div>
     </section>
-    <?php if($paper_start<=$today&&$today<=$paper_end){ ?>
+    <?php if ($paper_start <= $today && $today <= $paper_end) { ?>
+
+
     <section class="features" id="second" style="background-color:#d9d9d9;">
       <div class="container">
       <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
@@ -230,11 +233,12 @@ $q3 = mysqli_query($con,$a3);
         </div>
       </div>
     </section>
-    <?php } ?>
-            <?php if($pay_start<=$today&&$today<=$pay_end){ ?>
-           <section class="text-center" id="third" style="background-color:#d9d9d9;">
-      <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
+    <?php 
+  } ?>
+            <?php if ($pay_start <= $today && $today <= $pay_end) { ?>
+    <section class="text-center" id="third" style="background-color:#d9d9d9;">
+          <div class="container">
+           <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
             <hr class="star-dark mb-5">
             <div class="table-responsive-lg">
             <table id="table" class="table display">
@@ -248,8 +252,8 @@ $q3 = mysqli_query($con,$a3);
                 </thead>
                 <tbody>
                 <?php while ($row_money = mysqli_fetch_assoc($result_money)) {
-                   $id_paper = $row_money["paper_id"];
-                    
+                  $id_paper = $row_money["paper_id"];
+
                   ?>
                   <tr>
                        <td><?php echo $row_money['paper_id'] ?></td>
@@ -258,24 +262,26 @@ $q3 = mysqli_query($con,$a3);
                         <td> 
 
                         <?php 
-                        if($row_money['money_status']=="7"||$row_money['money_status']=="4"){
-                            require 'modal/modal_money.php';
+                        if ($row_money['money_status'] == "7" || $row_money['money_status'] == "4") {
+                          require 'modal/modal_money.php';
                         }
-                         
+
                         ?>
 
                          
                         </td>
                     </tr>
-                <?php } ?>
+                <?php 
+              } ?>
                 </tbody>
             </table>
             </div>
             
         </div>
-      </div>
+        </div>
     </section>               
-    <?php } ?>
+    <?php 
+  } ?>
 
     <footer>
       <div class="container">
@@ -284,8 +290,8 @@ $q3 = mysqli_query($con,$a3);
           <div class="col-lg-6">
             <?php 
               //htis site is show footer.
-              $r_3 = mysqli_fetch_array($q3);
-              echo $r_3['footer'];
+            $r_3 = mysqli_fetch_array($q3);
+            echo $r_3['footer'];
             ?>
           </div><!-- content -->
           <div class="col-lg-3"></div>

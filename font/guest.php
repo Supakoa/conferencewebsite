@@ -19,7 +19,7 @@ $result_pay_time = mysqli_query($con, $q_pay_time);
 $r_pay_time = mysqli_fetch_assoc($result_pay_time);
 
 date_default_timezone_set("Asia/Bangkok");
-$today = date('Y-m-d'); 
+$today = date('Y-m-d');
 $pay_start = $r_pay_time['time_start'];
 $pay_end = $r_pay_time['time_end'];
 
@@ -79,25 +79,25 @@ $q3 = mysqli_query($con, $a3);
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">ผู้เข้าร่วมการประชุมวิชาการ</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:20px">ผู้เข้าร่วมการประชุมวิชาการ</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">ช่องทางการจ่ายเงิน</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
-            </li>
-          </ul>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">ช่องทางการจ่ายเงิน</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
+              </li>
+            </ul>
+          </div>
       </div>
     </nav>
 
@@ -115,7 +115,7 @@ $q3 = mysqli_query($con, $a3);
 
     <section class="text-center" id="first" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
             <hr class="star-dark mb-5">
                 <div class="card">
                     <h5 class="card-title">ข้อมูล</h5>
@@ -145,19 +145,15 @@ $q3 = mysqli_query($con, $a3);
                             <div class="col-lg-6" style="text-align:left">
                                 <span><?php echo $row['email']; ?></span>
                             </div>
-                            <div class="col-lg-6" style="text-align:left">
-                          
-                        
                         </div>
                     </div>
                 </div>  
-        </div>
       </div>
     </section>
 
     <section class="text-center" id="second" style="background-color:#d9d9d9;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
             <hr class="star-dark mb-5">
             <div class="card">
                 <h5 class="card-title">ช่องทางการจ่ายเงิน</h5>
@@ -184,19 +180,19 @@ $q3 = mysqli_query($con, $a3);
                             <div class="col-lg-12" style="text-align:left">
                                 <br>
                             </div>
-                         
                             <div class="col-lg-12" style="text-align: right">
                                 <span>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</span>
                             </div>
                     </div>
                 </div>
             </div>
-        </div><br>
+      </div><br>
+        
         <h2 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h2>
         <hr><br>
         <form action="guest.php" method="post"  enctype="multipart/form-data" >
-        <input type="file" name="money" >
-        <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
+          <input type="file" name="money" >
+          <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
         </form>
         <?php
         if (isset($_POST['gogo'])) {
@@ -236,7 +232,7 @@ $q3 = mysqli_query($con, $a3);
 
               $paper = $_FILES["money"]["name"];
               $b = $new_taget_name;
-              
+
               $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = '$id' ;";
 
               $r_a = mysqli_query($con, $a);
@@ -245,18 +241,18 @@ $q3 = mysqli_query($con, $a3);
                 ?>
                <img src="../bill/<?php echo $b ?>" alt="banner">
                <?php
-              } else {
-                // แสดงข้อความว่าผิดพลาด
-              }
 
             } else {
+                // แสดงข้อความว่าผิดพลาด
+            }
+
+          } else {
         
               // แสดงข้อความว่าเกินเวลา
-            }
           }
         }
-        ?>
-      </div>
+      }
+      ?>
     </section>
   
 
