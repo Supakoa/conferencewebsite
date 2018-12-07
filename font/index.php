@@ -42,6 +42,7 @@
 
   $a3 = "SELECT * FROM banner ";
   $q3 = mysqli_query($con,$a3);
+  $r_3 = mysqli_fetch_array($q3);
 ?>
 
 <!DOCTYPE html>
@@ -98,17 +99,11 @@
       </div>
     </nav>
 
-    <header class="masthead" >
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-12 my-auto">
-            <div class="header-content mx-auto">
-              <h1>การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <header>
+      
     </header>
+    
+    <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%" srcset="">
 
     <section class="text-center" id="login" style="background-color:#d9d9d9;">
     <div class="section-heading text-center">
@@ -284,7 +279,7 @@
           <div class="col-lg-6">
             <?php 
               //htis site is show footer.
-              $r_3 = mysqli_fetch_array($q3);
+              
               echo $r_3['footer'];
             ?>
           </div><!-- content -->
