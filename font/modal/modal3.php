@@ -81,8 +81,8 @@
                                               <option  value = "3" >ไม่ผ่าน</option>
                                               <option  value = "4" >แก้ไข</option>
                                               </select>
-                                              <label>คะแนน  </label>
-                            <input class="form-control" name="score" type="text" placeholder="score" required="required" data-validation-required-message="Please enter Score.">
+                                              <label>คะแนน </label>
+                            <input class="form-control" name="score" type="number" max = "100" min = "0" placeholder="score" required="required" data-validation-required-message="Please enter Score.">
                             <p class="help-block text-danger"></p>
                             <label>คอมเมนท์  </label>
                             <input class="form-control" name="comment" type="text" placeholder="comment" required="required" data-validation-required-message="Please enter comment.">

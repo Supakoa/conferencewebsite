@@ -5,7 +5,7 @@
     require 'server/show_alert.php';
 
     //connect database form table user
-    $a = "SELECT * FROM user";
+    $a = "SELECT * FROM user WHERE  1 ";
     $r_a = mysqli_query($con,$a);
 
 ?>
@@ -71,7 +71,10 @@
                                 <th>เพศ</th>
                                 <th>ที่อยู่</th>
                                 <th>E-mail</th>
-                                <th>สมาชิค</th>
+                                <th>เบอร์โทรศัพท์</th>
+                                <th>Member</th>
+                                
+                                <th>สถานะ</th>
                                 <th>แก้ไข</th>
                                 <th>ลบ</th>
                             </thead>
@@ -85,7 +88,19 @@
                                             <td><?php echo $ro_a['gender'] ?></td>
                                             <td><?php echo $ro_a['address'] ?></td>
                                             <td><?php echo $ro_a['email'] ?></td>
+                                            <td><?php echo $ro_a['Tel'] ?></td>
                                             <td><?php echo $ro_a['member'] ?></td>
+                                            <td>
+                                            <?php
+                                            if($ro_a['role']=='1'){
+                                                echo "ผู้ใช้";
+                                            } 
+                                            else{
+                                                echo "ผู้ทรงคุณวุฒิ";
+                                            }
+                                            
+                                            ?>
+                                            </td>
 
                                     <td>
                                         <!-- Button trigger modal -->
@@ -114,7 +129,7 @@
                                                 <span>นามสกุล : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
                                                 <span>ที่อยู่ : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
                                                 <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
-                                                <span>สมาชิค : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
+                                                
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
