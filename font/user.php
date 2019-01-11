@@ -128,7 +128,7 @@ $q3 = mysqli_query($con, $a3);
 
         <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;" srcset="">
 
-        <section class="text-center" id="first" style="background-color:#ffffff;">
+        <section class="text-center" id="first" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เอกสาร</h2>
                 <hr class="star-dark mb-5">
@@ -137,7 +137,7 @@ $q3 = mysqli_query($con, $a3);
                         <thead>
                             <tr>
                                 <th>รหัสเอกสาร</th>
-                                <th>คำนำ</th>
+                                <th>ชื่อเรื่อง</th>
                                 <th>สถานะ</th>
                                 <th>แก้ไข</th>
                             </tr>
@@ -178,7 +178,7 @@ $q3 = mysqli_query($con, $a3);
     <?php if ($paper_start <= $today && $today <= $paper_end) { ?>
 
 
-        <section class="features" id="second" style="background-color:#ffffff;">
+        <section class="features" id="second" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
                 <hr class="star-dark mb-5">
@@ -241,7 +241,7 @@ $q3 = mysqli_query($con, $a3);
     <?php }
     ?>
     <?php if ($pay_start <= $today && $today <= $pay_end) { ?>
-        <section class="text-center" id="third" style="background-color:#fffff;">
+        <section class="text-center" id="third" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
                 <hr class="star-dark mb-5">
