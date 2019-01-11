@@ -88,7 +88,7 @@
                                             
                                         </div>
                                         <div class="container" style="text-align:center;">
-                                                    <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">Update Banner</button>
+                                                    <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">อัพเดต Banner</button>
 
                                         <div class="modal fade" id="submit_modal_banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-sm" role="document">

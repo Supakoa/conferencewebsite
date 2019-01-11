@@ -91,7 +91,7 @@ if (isset($_SESSION['alert'])) {
                     <br>
                 </div>
                     <div class="col-lg-12" style="text-align:center">
-                        <button class="btn btn-success btn-md "   type="submit" name="gogogo">Upload</button>
+                        <button class="btn btn-success btn-md "   type="submit" name="gogogo">อัพโหลด</button>
                     </div>
                     </form>
             </div>

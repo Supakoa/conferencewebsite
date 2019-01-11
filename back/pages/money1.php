@@ -4,7 +4,7 @@ require 'server/check_login.php';
 $_SESSION['counter_up'] = 0;
     //set page
 $_SESSION['set_page'] = 1;
-$q = "SELECT user.username,user.first_name,user.last_name,user.email,user.Tel,bill_guest.status,status_tb.status AS st_name FROM `user`,`bill_guest`,`status_tb` WHERE user.username = bill_guest.username && user.role = '3' && bill_guest.status = status_tb.id ";
+$q = "SELECT user.username,user.first_name,user.last_name,user.email,user.Tel,bill_guest.status,bill_guest.tmp_name,status_tb.status AS st_name FROM `user`,`bill_guest`,`status_tb` WHERE user.username = bill_guest.username && user.role = '3' && bill_guest.status = status_tb.id ";
 $result = mysqli_query($con, $q);
 
 ?>
@@ -73,7 +73,6 @@ $result = mysqli_query($con, $q);
                         </thead>
                         <tbody>
                         <?php while ($row = mysqli_fetch_array($result)) {
-                                    $id_paper = $row['username']
                                     ?>
                                 <tr>
                                 
@@ -84,7 +83,7 @@ $result = mysqli_query($con, $q);
                                     <td><?php echo $row['st_name'] ?></td>
                                     <?php
                                      if($row['status']=="6"){ ?>
-                                    <td><?php require 'modal/modal_money.php' ?></td>
+                                    <td><?php require 'modal/modal_money1.php' ?></td>
                                     <?php 
                             }
                             else{ ?>
