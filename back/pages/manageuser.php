@@ -69,7 +69,7 @@
                                 <th>ชื่อ</th>
                                 <th>นามสกุล</th>
                                 <th>เพศ</th>
-                                <th>ที่อยู่</th>
+                                <th>สังกัด</th>
                                 <th>E-mail</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>Member</th>
@@ -123,11 +123,22 @@
                                                     <div class="row">
                                                         <div class="col-lg-6">
                                                             <label for="user_name">username  </label>
-                                                            <input class="form-control" id="user_name" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username">
+                                                            <input class="form-control" id="user_name" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label for="pass_word">password  </label>
-                                                            <input class="form-control" id="pass_word" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password">
+                                                            <input class="form-control" id="pass_word" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="f_name">ชื่อ  </label>
+                                                            <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label fpr="l_name">นามสกุล  </label>
+                                                            <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -139,26 +150,20 @@
                                                                             <option value="female" required>หญิง</option>
                                                                         </select>
                                                         </div>
-                                                        <div class="col-lg-6"></div>
-                                                    </div>
-                                                    <div class="row">
                                                         <div class="col-lg-6">
-                                                            <label for="f_name">ชื่อ  </label>
-                                                            <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname">
-                                                        </div>
-                                                        <div class="col-lg-6">
-                                                            <label fpr="l_name">นามสกุล  </label>
-                                                            <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6">
-                                                            <label for="addre">ที่อยู่  </label>
+                                                            <label for="addre">สังกัด  </label>
                                                             <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
                                                         </div>
+                                                    </div>
+                                                    <div class="row">
+                                                       
                                                         <div class="col-lg-6">
                                                             <label for="e_mail">e-mail  </label>
-                                                            <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email">
+                                                            <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="tel">เบอร์โทรศัพท์</label>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
                                                         </div>
                                                     </div>
                                                 

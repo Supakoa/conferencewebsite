@@ -191,7 +191,7 @@ $q3 = mysqli_query($con, $a3);
         <h2 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h2>
         <hr><br>
         <form action="guest.php" method="post"  enctype="multipart/form-data" >
-          <input type="file" name="money" required>
+          <input type="file" name="money" accept=".pdf,.jpg,.png" required>
           <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
         </form>
         <?php
@@ -233,7 +233,7 @@ $q3 = mysqli_query($con, $a3);
               $paper = $_FILES["money"]["name"];
               $b = $new_taget_name;
 
-              $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = '$id' ;";
+              $a = "UPDATE `bill_guest` SET `tmp_name`='$b',`status`='6' WHERE `username` = '$id' ;";
 
               $r_a = mysqli_query($con, $a);
 
