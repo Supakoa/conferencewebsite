@@ -159,7 +159,7 @@ $r_3 = mysqli_fetch_array($q3);
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto">
                                             <h5 style="color:#ffffff">Username *</h5>
-                                            <input class="form-control" name="username" type="text" placeholder="Username" required="required" data-validation-required-message="Please enter your username.">
+                                            <input class="form-control" name="username" type="text" placeholder="Username" required="required" pattern="([!-~]{8})" title="" data-validation-required-message="Please enter your username.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col-lg-6 mx-auto">
@@ -181,12 +181,12 @@ $r_3 = mysqli_fetch_array($q3);
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto">
                                             <h5 style="color:#ffffff">ชื่อ ** </h5>
-                                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required" data-validation-required-message="Please enter your firstname.">
+                                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกภาษาไทย" data-validation-required-message="Please enter your firstname.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col-lg-6 mx-auto">
                                             <h5 style="color:#ffffff">นามสกุล ** </h5>
-                                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required" data-validation-required-message="Please enter your lastname.">
+                                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกภาษาไทย" data-validation-required-message="Please enter your lastname.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
@@ -231,7 +231,7 @@ $r_3 = mysqli_fetch_array($q3);
                                         </div>
                                         <div class="col col-lg-12 mx-auto">
                                             <h5 style="color:#ffffff">สมาชิก</h5>
-                                            <textarea class="form-control" placeholder="สมาชิก(ถ้ามี)" name="member" rows="3"></textarea>
+                                            <textarea class="form-control" placeholder="รายชื่อสมาชิก(ถ้ามี)" name="member" rows="3"></textarea>
                                         </div>
                                     </div>
                                 </div>

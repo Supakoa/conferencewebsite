@@ -92,7 +92,7 @@ $q3 = mysqli_query($con, $a3);
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ประวัติส่วนตัว</a>
+                            <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ประวัติการส่งเอกสาร</a>
                         </li>
                         <?php if ($paper_start <= $today && $today <= $paper_end) { ?>
                             <li class="nav-item">
@@ -195,15 +195,15 @@ $q3 = mysqli_query($con, $a3);
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <h5 style="color:#ffffff">ชื่อเอกสาร (Thailand)</h5>
-                                            <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสาร thai" required="required" data-validation-required-message="Please enter your Paper name thai.">
+                                            <h5 style="color:#ffffff">ชื่อเอกสาร (Thai)</h5>
+                                            <input class="form-control" name="paper_th" type="text" placeholder="ชื่อเอกสาร thai" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกชื่อภาษาไทย" required="required" data-validation-required-message="Please enter your Paper name thai.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ชื่อเอกสาร (English)</h5>
-                                            <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " required="required" data-validation-required-message="Please enter your Paper name english.">
+                                            <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " pattern="^[!-~]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
