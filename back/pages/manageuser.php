@@ -5,7 +5,7 @@
     require 'server/show_alert.php';
 
     //connect database form table user
-    $a = "SELECT * FROM user WHERE  1 ";
+    $a = "SELECT * FROM user ";
     $r_a = mysqli_query($con,$a);
 
 ?>
@@ -95,8 +95,10 @@
                                             if($ro_a['role']=='1'){
                                                 echo "ผู้ใช้";
                                             } 
-                                            else{
+                                            else if($ro_a['role']=='2'){
                                                 echo "ผู้ทรงคุณวุฒิ";
+                                            }else{
+                                                echo "ผู้เข้าร่วมการประชุม" ; 
                                             }
                                             
                                             ?>
