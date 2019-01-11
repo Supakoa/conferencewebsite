@@ -105,7 +105,7 @@ $r_3 = mysqli_fetch_array($q3);
 
         <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%" srcset="">
 
-        <section class="text-center" id="login" style="background-color:#ffffff;">
+        <section class="text-center" id="login" style="background-color:#F6F8FA;">
             <div class="section-heading text-center">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
                 <hr>
@@ -135,7 +135,7 @@ $r_3 = mysqli_fetch_array($q3);
             </div>
         </section>
 
-        <section class="features" id="register" style="background-color:#ffffff;">
+        <section class="features" id="register" style="background-color:#F6F8FA;">
             <div class="container">
                 <div class="section-heading text-center">
                     <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิก</h2>
@@ -158,19 +158,19 @@ $r_3 = mysqli_fetch_array($q3);
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto">
-                                            <h5 style="color:#ffffff">Username *</h5>
-                                            <input class="form-control" name="username" type="text" placeholder="Username" required="required" pattern="([!-~]{8})" title="" data-validation-required-message="Please enter your username.">
+                                            <h5 for="username" style="color:#ffffff">Username *</h5>
+                                            <input class="form-control" name="username" type="text" placeholder="Username" required="required" pattern="([!-~]{6})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" data-validation-required-message="Please enter your username.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col-lg-6 mx-auto">
-                                            <h5 style="color:#ffffff">Password *</h5>
-                                            <input class="form-control" name="password" type="password" placeholder="Password" required="required" data-validation-required-message="Please enter your password.">
+                                            <h5 for = "password" style="color:#ffffff">Password *</h5>
+                                            <input class="form-control" name="password" type="password" placeholder="Password" required="required" pattern="({6})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your password.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col-lg-6 mx-auto"></div>
                                         <div class="col-lg-6 mx-auto">
-                                            <h5 style="color:#ffffff">ยืนยัน password</h5>
-                                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password" required="required" data-validation-required-message="Please enter your Confirm password.">
+                                            <h5 for = "conpassword" style="color:#ffffff">ยืนยัน password</h5>
+                                            <input class="form-control" name="conpassword" type="password" placeholder="ยืนยัน password" required="required" pattern="({6})" title="ขั้นต่ำ 6 ตัวอักษร" data-validation-required-message="Please enter your Confirm password.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
@@ -181,12 +181,12 @@ $r_3 = mysqli_fetch_array($q3);
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto">
                                             <h5 style="color:#ffffff">ชื่อ ** </h5>
-                                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกภาษาไทย" data-validation-required-message="Please enter your firstname.">
+                                            <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your firstname.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col-lg-6 mx-auto">
                                             <h5 style="color:#ffffff">นามสกุล ** </h5>
-                                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกภาษาไทย" data-validation-required-message="Please enter your lastname.">
+                                            <input class="form-control" name="lname" type="text" placeholder="นามสกุล" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your lastname.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
