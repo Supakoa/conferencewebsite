@@ -113,7 +113,7 @@ $q3 = mysqli_query($con, $a3);
       </div>
     </header>
 
-    <section class="text-center" id="first" style="background-color:#ffffff;">
+    <section class="text-center" id="first" style="background-color:#F6F8FA;">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
             <hr class="star-dark mb-5">
@@ -151,7 +151,7 @@ $q3 = mysqli_query($con, $a3);
       </div>
     </section>
 
-    <section class="text-center" id="second" style="background-color:#ffffff;">
+    <section class="text-center" id="second" style="background-color:#F6F8FA;">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
             <hr class="star-dark mb-5">
