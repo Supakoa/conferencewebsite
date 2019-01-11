@@ -81,13 +81,13 @@
                                     <form action="server/insert_register.php" method="POST">
                                         <div class="form-group">
                                             <label >Username **</label>
-                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" pattern="([!-~]{6})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
+                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
 
                                             <label for="password">Password **</label>
-                                            <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" pattern="({6})" title="ขั้นต่ำ 6 ตัวอักษร" required>
+                                            <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
                                             <label for="conpassword">ยืนยัน Password </label>
-                                            <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" pattern="({6})" title="ขั้นต่ำ 6 ตัวอักษร" required>
+                                            <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
                                             <label for="fname">ชื่อ **</label>
                                             <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
