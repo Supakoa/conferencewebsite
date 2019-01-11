@@ -38,7 +38,15 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="money.php"><i class="fa fa-money fa-fw"></i> การเงิน</a>
+                            <a href="#"><i class="fa fa-money fa-fw"></i> การเงิน<span class="fa arrow"></span></a>
+                                <ul class="nav nav-cecond-level">
+                                    <li>
+                                        <a href="money.php">ผู้ส่งเอกสาร</a>
+                                    </li>
+                                    <li>
+                                        <a href="money1.php">ผู้เข้าร่วมประชุม</a>
+                                    </li>
+                                </ul>
                         </li>
                         <li>
                             <a href="set_timing.php"><i class="fa fa-clock-o fa-fw"></i>ตั้งค่ากำหนดการ</a>

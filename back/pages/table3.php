@@ -127,7 +127,7 @@ $_SESSION['set_page'] = 4;
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

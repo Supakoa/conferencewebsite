@@ -4,7 +4,7 @@ require 'server/check_login.php';
 $_SESSION['counter_up'] = 0;
     //set page
 $_SESSION['set_page'] = 1;
-$q = "SELECT paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.money_status AND paper.status = 2";
+$q = "SELECT user.username,user.first_name,user.last_name,user.email,user.Tel,bill_guest.status,status_tb.status AS st_name FROM `user`,`bill_guest`,`status_tb` WHERE user.username = bill_guest.username && user.role = '3' && bill_guest.status = status_tb.id ";
 $result = mysqli_query($con, $q);
 
 ?>
@@ -57,33 +57,33 @@ $result = mysqli_query($con, $q);
 
         <div id="page-wrapper">
             <div class="row">
-            <h1 class="page-header">ผู้ส่งเอกสาร</h1>
+            <h1 class="page-header">ผู้เข้าร่วมประชุม</h1>
 
                 <div class="col-lg-12">
                     <table id="moneytable" class="display rseponsive">
                         <thead>
                             <tr>
-                                    <th>รหัสเอกสาร</th>
-                                    <th>ชื่อ เอกสาร(Eng)</th>
-                                    <th>ชื่อ เอกสาร(Th)</th>
-                                    <th>ชื่อผู้ส่ง</th>                                   
+                                    <th>Username</th>
+                                    <th>ชื่อ-นามสกุล </th>
+                                    <th>E-mail</th>                                   
+                                    <th>เบอร์ติดต่อ</th>
                                     <th>สถานะการชำระเงิน</th>
                                     <th></th>
                                 </tr>
                         </thead>
                         <tbody>
                         <?php while ($row = mysqli_fetch_array($result)) {
-                                    $id_paper = $row['paper_id']
+                                    $id_paper = $row['username']
                                     ?>
                                 <tr>
                                 
-                                    <td><?php echo $row['paper_id'] ?></td>
-                                    <td><?php echo $row['name_eng'] ?></td>
-                                    <td><?php echo $row['name_th'] ?></td>
+                                    <td><?php echo $row['username'] ?></td>
                                     <td><?php echo $row['first_name'] . " " . $row['last_name'] ?></td>
-                                    <td><?php echo $row['status'] ?></td>
+                                    <td><?php echo $row['email'] ?></td>
+                                    <td><?php echo $row['Tel'] ?></td>
+                                    <td><?php echo $row['st_name'] ?></td>
                                     <?php
-                                     if($row['money_status']=="6"){ ?>
+                                     if($row['status']=="6"){ ?>
                                     <td><?php require 'modal/modal_money.php' ?></td>
                                     <?php 
                             }

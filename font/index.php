@@ -105,7 +105,7 @@ $r_3 = mysqli_fetch_array($q3);
 
         <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%" srcset="">
 
-        <section class="text-center" id="login" style="background-color:#d9d9d9;">
+        <section class="text-center" id="login" style="background-color:#ffffff;">
             <div class="section-heading text-center">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
                 <hr>
@@ -135,7 +135,7 @@ $r_3 = mysqli_fetch_array($q3);
             </div>
         </section>
 
-        <section class="features" id="register" style="background-color:#d9d9d9;">
+        <section class="features" id="register" style="background-color:#ffffff;">
             <div class="container">
                 <div class="section-heading text-center">
                     <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิก</h2>
