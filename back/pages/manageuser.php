@@ -119,18 +119,48 @@
                                                 <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิค</h3>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
-                                                <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
-                                                <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
-                                                <span>เพศ : </span><select name="gender" required>
+                                            <div class="modal-body"  >
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="user_name">username  </label>
+                                                            <input class="form-control" id="user_name" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="pass_word">password  </label>
+                                                            <input class="form-control" id="pass_word" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                        <label for="gen_der">เพศ  </label>
+                                                        <select class="form-control" id="gen_der" name="gender" required>
                                                                             <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
                                                                             <option value="male">ขาย</option>
                                                                             <option value="female" required>หญิง</option>
-                                                                        </select><br>
-                                                <span>ชื่อ : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
-                                                <span>นามสกุล : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
-                                                <span>ที่อยู่ : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
-                                                <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
+                                                                        </select>
+                                                        </div>
+                                                        <div class="col-lg-6"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="f_name">ชื่อ  </label>
+                                                            <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label fpr="l_name">นามสกุล  </label>
+                                                            <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="addre">ที่อยู่  </label>
+                                                            <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="e_mail">e-mail  </label>
+                                                            <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email">
+                                                        </div>
+                                                    </div>
                                                 
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
