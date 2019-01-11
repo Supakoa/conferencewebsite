@@ -38,12 +38,14 @@ if ($_FILES["paper"]["size"] > 8000000) {
     // Allow certain file formats
 if ($imageFileType != "pdf") {
     echo "Sorry, only PDF files are allowed.";
+    $_SESSION['alert'] = 6;
     $uploadOk = 0;
 }
 
     // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
+
 } else {
     if ($paper_start <= $today && $today <= $paper_end) {
         if (move_uploaded_file($_FILES["paper"]["tmp_name"], $upload_path)) {
@@ -61,7 +63,7 @@ if ($uploadOk == 0) {
         $r_a = mysqli_query($con, $a);
         if($r_a){
             $_SESSION['alert'] = 2;
-        }
+        
         $c = "SELECT * FROM paper ORDER BY paper_id DESC LIMIT 1";
         $result_c = mysqli_query($con, $c);
         $row_c = mysqli_fetch_array($result_c);
@@ -80,6 +82,12 @@ if ($uploadOk == 0) {
         $r_r_a = mysqli_query($con, $r_a);
 
         header("Location: ../user.php");
+        }
+        else{
+            $_SESSION['alert'] = 1;
+            header("Location: ../user.php");
+        }
+        
     }
     else{
         $_SESSION['alert'] = 1;
@@ -87,5 +95,6 @@ if ($uploadOk == 0) {
     }
 
 }
+        header("Location: ../user.php");
     // echo '<br><button><a href="form_insert_paper.php">Click Me!!</a></button>';
 ?>

@@ -1,6 +1,8 @@
 <?php
 require 'server.php';
 require 'server/check_login.php';
+require 'server/show_alert.php';
+
 
 $q = "SELECT * FROM paper WHERE status = 5 ";
 $result = mysqli_query($con, $q);
@@ -21,7 +23,7 @@ $_SESSION['set_page'] = 2;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin  - Admin Conference Page ยังไม่ได้ตรวจ</title>
+    <title>Admin  - Admin Conference Page ยังไม่ได้เลือกผู้ตรวจ</title>
     <link rel="stylesheet" href="../DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
 

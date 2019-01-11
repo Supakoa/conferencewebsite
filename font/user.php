@@ -32,7 +32,9 @@ $paper_start = $r_paper_time['time_start'];
 $paper_end = $r_paper_time['time_end'];
 $pay_start = $r_pay_time['time_start'];
 $pay_end = $r_pay_time['time_end'];
-
+$a3 = "SELECT * FROM banner ";
+$q3 = mysqli_query($con, $a3);
+$r_3 = mysqli_fetch_array($q3);
 
 
 if ($r_name['role'] != 1) {
@@ -96,13 +98,13 @@ $q3 = mysqli_query($con, $a3);
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">เพิ่มเอกสาร</a>
                             </li>
-                            <?php }
+                        <?php }
                         ?>
                         <?php if ($pay_start <= $today && $today <= $pay_end) { ?>
                             <li class="nav-item">
                                 <a class="nav-link js-scroll-trigger" href="#third" style="font-size:20px">จ่ายเงิน</a>
                             </li>
-                            <?php }
+                        <?php }
                         ?>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
@@ -111,18 +113,18 @@ $q3 = mysqli_query($con, $a3);
                 </div>
             </div>
         </nav>
-
-      <header class="masthead" >
-          <div class="container h-100">
-            <div class="row h-100">
-              <div class="col-lg-12 my-auto">
-                <div class="header-content mx-auto">
-                  <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-      </header>
+        <!-- 
+              <header class="masthead" >
+                  <div class="container h-100">
+                    <div class="row h-100">
+                      <div class="col-lg-12 my-auto">
+                        <div class="header-content mx-auto">
+                          <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </header> -->
 
         <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;" srcset="">
 
@@ -164,7 +166,7 @@ $q3 = mysqli_query($con, $a3);
 
                                     </td>
                                 </tr>
-                                <?php }
+                            <?php }
                             ?>
                         </tbody>
                     </table>
@@ -188,7 +190,7 @@ $q3 = mysqli_query($con, $a3);
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ไฟล์เอกสาร</h5>
-                                            <input class="form-control" name="paper" type="file" placeholder="File" required="required">
+                                            <input class="form-control" name="paper" type="file"  accept=".pdf" placeholder="File" required="required">
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -236,7 +238,7 @@ $q3 = mysqli_query($con, $a3);
                 </div>
             </div>
         </section>
-        <?php }
+    <?php }
     ?>
     <?php if ($pay_start <= $today && $today <= $pay_end) { ?>
         <section class="text-center" id="third" style="background-color:#d9d9d9;">
@@ -273,7 +275,7 @@ $q3 = mysqli_query($con, $a3);
 
                                     </td>
                                 </tr>
-                                <?php }
+                            <?php }
                             ?>
                         </tbody>
                     </table>
@@ -282,7 +284,7 @@ $q3 = mysqli_query($con, $a3);
             </div>
         </div>
     </section>               
-    <?php }
+<?php }
 ?>
 
 <footer>

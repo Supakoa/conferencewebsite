@@ -15,6 +15,9 @@
         elseif($_SESSION['alert']==5){
             echo '<script>alert("ล้มเหลวเพราะนอนเหนือเวลาที่กำหนด.");</script>';
         }
+        elseif($_SESSION['alert']==6){
+            echo '<script>alert("อัพโหลดเฉพาะไฟล์ PDF.");</script>';
+        }
         $_SESSION['alert']=0;
     }
 ?>
