@@ -78,8 +78,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                
                                 <?php while ($row = mysqli_fetch_array($result)) { ?>
+                                    <tr>
                                         <?php
                                         $id_paper = $row["paper_id"];
 

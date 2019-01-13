@@ -17,6 +17,7 @@
                             <div class="content">
                                     <img src="../../Bill/<?php echo $row ['tmp_name']?>" class="img-fluid" style="width:100%" alt="Responsive image">
                             <br><br>
+                            <form action="setup/up_bill1.php?id=<?php echo $row['username'] ?>" method="post"></form>
                              <p>ยืนยันสถานะ : </p><select class="form-control" name="done" required>
                                                <option disabled selected >เลือกสถานะ</option>
                                               <option  value = "8" >ชำระแล้ว</option>
