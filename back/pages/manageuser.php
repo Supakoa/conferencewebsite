@@ -59,7 +59,7 @@
 
         <div id="page-wrapper">
             <div class="row">
-            <h1 class="page-header">จัดการสมาชิค</h1>
+            <h1 class="page-header">จัดการสมาชิก</h1>
 
                 <div class="col-lg-12">
                 <table class="table responsive display" id="tableuser">
@@ -73,7 +73,6 @@
                                 <th>E-mail</th>
                                 <th>เบอร์โทรศัพท์</th>
                                 <th>Member</th>
-                                
                                 <th>สถานะ</th>
                                 <th>แก้ไข</th>
                                 <th>ลบ</th>
@@ -116,7 +115,7 @@
                                         <form action="server/edit_user.php?id=<?php echo $ro_a['order'] ?>" method="POST">
                                             <div class="modal-content">
                                             <div class="modal-header" style="text-align:center" >
-                                                <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิค</h3>
+                                                <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิก</h3>
                                                 </button>
                                             </div>
                                             <div class="modal-body"  >
@@ -166,6 +165,12 @@
                                                             <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label for="mem">สมาชิก  </label>
+                                                        <textarea id="mem" class="form-control" name="member" value="" cols="30" rows="10" placeholder="member"><?php echo $ro_a['member'] ?></textarea>
+                                                    </div>
+                                                     </div>
                                                 
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
@@ -194,7 +199,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body" style="text-align:center" >
-                                                <h5>ยืนยันการลบข้อมูลสมาชิค</h5>
+                                                <h5>ยืนยันการลบข้อมูลสมาชิก</h5>
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
