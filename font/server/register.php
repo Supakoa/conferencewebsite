@@ -69,7 +69,7 @@
 
 
         $r_a = mysqli_query($con,$a);
-        $b = "INSERT INTO `bill_guest`(`username`) VALUES ('$username')";
+        $b = "INSERT INTO `bill_guest`(`username`, `status`) VALUES ('$username','7')";
 
         $r_b = mysqli_query($con,$b);
         
