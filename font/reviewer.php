@@ -26,6 +26,7 @@ if($r_name['role']!=2){
   //footer
   $a3 = "SELECT * FROM banner ";
   $q3 = mysqli_query($con,$a3);
+  $r_3 = mysqli_fetch_array($q3);
 ?>
 
 
@@ -67,12 +68,12 @@ if($r_name['role']!=2){
       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse text-center" id="navbarResponsive">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name']." ".$r_name['last_name'] ?></a>
           <ul class="navbar-nav ml-auto">
           <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#uncheck" style="font-size:20px">ยังไม่ได้ตรวจ</a>
@@ -87,17 +88,20 @@ if($r_name['role']!=2){
         </div>
       </div>
     </nav>  
-    <header class="masthead" >
+    <!-- <header class="masthead" >
       <div class="container h-100">
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
+              <img class="img-responsive" src="..." alt="Chania" > 
               <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป</h1>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
+    <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%" srcset="">
+
 
     <section class="text-center" id="uncheck" style="background-color:#d9d9d9;">
       <div class="container">
@@ -197,7 +201,7 @@ if($r_name['role']!=2){
           <div class="col-lg-6">
             <?php 
               //htis site is show footer.
-              $r_3 = mysqli_fetch_array($q3);
+              
               echo $r_3['footer'];
             ?>
           </div><!-- content -->

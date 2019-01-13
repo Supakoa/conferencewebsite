@@ -84,12 +84,12 @@ $q3 = mysqli_query($con, $a3);
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name'] . " " . $r_name['last_name'] ?></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse text-center" id="navbarResponsive">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px"><?php echo $r_name['first_name'] . " " . $r_name['last_name'] ?></a>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ประวัติการส่งเอกสาร</a>
@@ -126,7 +126,7 @@ $q3 = mysqli_query($con, $a3);
                   </div>
               </header> -->
 
-        <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" alt="" style="width:100%;" srcset="">
+        <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%;" srcset="">
 
         <section class="text-center" id="first" style="background-color:#F6F8FA;">
             <div class="container">
@@ -279,7 +279,7 @@ $q3 = mysqli_query($con, $a3);
                 </div>
 
             </div>
-        </div>
+        </div><br><br>
     </section>               
 <?php }
 ?>
