@@ -1,48 +1,49 @@
 <?php
-//connect database
-require 'server/server.php';
+    //connect database
+    require 'server/server.php';
 
-//alert
-if (isset($_SESSION['check_login'])) {
-    echo '<script>alert("กรุณา Login เข้าสู่ระบบ.");</script>';
-}
-if (isset($_SESSION['status'])) {
-    if ($_SESSION['status'] == 0) {
-        echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+    //alert
+    if (isset($_SESSION['check_login'])) {
+        echo '<script>alert("กรุณา Login เข้าสู่ระบบ.");</script>';
     }
-}
-if (isset($_SESSION['register_alert'])) {
-    if ($_SESSION['register_alert'] == 1) {
-        echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
-    } elseif ($_SESSION['register_alert'] == 2) {
-        echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
-    } elseif ($_SESSION['register_alert'] == 3) {
-        echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
+    if (isset($_SESSION['status'])) {
+        if ($_SESSION['status'] == 0) {
+            echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
+        }
     }
-}
-if (isset($_SESSION['register_match'])) {
-    if ($_SESSION['register_match'] == 1) {
-        echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
-    }
-}
-if (isset($_SESSION['user_match'])) {
-    if ($_SESSION['user_match'] == 2) {
-        echo '<script>alert("ลงทะเบียนสำเร็จ.");</script>';
-    }
-    if ($_SESSION['user_match'] == 3) {
-        echo '<script>alert("เกิดข้อผิดพลาด.");</script>';
-    }
-}
-session_destroy();
+    // if (isset($_SESSION['register_alert'])) {
+    //     if ($_SESSION['register_alert'] == 1) {
+    //         echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
+    //     } elseif ($_SESSION['register_alert'] == 2) {
+    //         echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
+    //     } elseif ($_SESSION['register_alert'] == 3) {
+    //         echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
+    //     }
+    // }
+    // if (isset($_SESSION['register_match'])) {
+    //     if ($_SESSION['register_match'] == 1) {
+    //         echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
+    //     }
+    // }
+    // if (isset($_SESSION['user_match'])) {
+    //     if ($_SESSION['user_match'] == 2) {
+    //         echo '<script>alert("ลงทะเบียนสำเร็จ.");</script>';
+    //     }
+    //     if ($_SESSION['user_match'] == 3) {
+    //         echo '<script>alert("เกิดข้อผิดพลาด.");</script>';
+    //     }
+    // }
 
-$a = "SELECT * FROM show_url WHERE hide='0' && group_url = '1' ";
-$b = "SELECT * FROM show_url WHERE hide='0' && group_url = '2' ";
-$q_a = mysqli_query($con, $a);
-$q_b = mysqli_query($con, $b);
+    session_destroy();
 
-$a3 = "SELECT * FROM banner ";
-$q3 = mysqli_query($con, $a3);
-$r_3 = mysqli_fetch_array($q3);
+    $a = "SELECT * FROM show_url WHERE hide='0' && group_url = '1' ";
+    $b = "SELECT * FROM show_url WHERE hide='0' && group_url = '2' ";
+    $q_a = mysqli_query($con, $a);
+    $q_b = mysqli_query($con, $b);
+
+    $a3 = "SELECT * FROM banner ";
+    $q3 = mysqli_query($con, $a3);
+    $r_3 = mysqli_fetch_array($q3);
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +74,11 @@ $r_3 = mysqli_fetch_array($q3);
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
+
+        <!-- sweet alert 2 -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     </head>
 
@@ -303,6 +309,11 @@ $r_3 = mysqli_fetch_array($q3);
 
         <!-- Custom scripts for this template -->
         <script src="js/new-age.min.js"></script>
+
+        <!-- php check alert -->
+        <?php 
+            require '../alert.php'; 
+        ?>
 
     </body>
 

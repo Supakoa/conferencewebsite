@@ -12,11 +12,13 @@
     $r_a = mysqli_fetch_array($result);
     
     if($r_a){
-        $_SESSION['online']=1;
+        $_SESSION['online'] = 1;
         header("Location: ../report.php");
+        exit();
     }else{
         $_SESSION['alert'] = 14;
         header("Location: ../../index.php");
+        exit();
     }
 
     // echo $username."<br>".$password;

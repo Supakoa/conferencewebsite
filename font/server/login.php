@@ -1,4 +1,5 @@
 <?php
+    // connect databse
     require 'server.php';
     
     $login_id = mysqli_real_escape_string($con,$_POST['username']);
@@ -15,13 +16,17 @@
             header("Location: ../user.php");
         }elseif($r_a['role']==2){
             header("Location: ../reviewer.php");
+            exit();
         }
         elseif($r_a['role']==3){
             echo '3';
             header("Location: ../guest.php");
+            exit();
         }
     }else{
-        $_SESSION['status'] = 0; //not match
+        // $_SESSION['status'] = 0; //not match
+        $_SESSION['alert'] = 14;
         header("Location: ../index.php");
+        exit();
     }
 ?>

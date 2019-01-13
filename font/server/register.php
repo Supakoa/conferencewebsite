@@ -19,23 +19,41 @@
     $r_a = mysqli_query($con,$a);
 
     //check username password email
-    $alert=0;
+    // $alert=0;
     if ($password!=$conpassword||$email!=$conemail) {
-        $_SESSION['register_alert']=3;
+        // $_SESSION['register_alert']=3;
+        $_SESSION['alert'] = 6;
+
         if ($email==$conemail&&$password!=$conpassword) {
-            $_SESSION['register_alert']=1;
+
+            // $_SESSION['register_alert']=1;
+            $_SESSION['alert'] = 7;
+            header("Location: ../index.php");
+            exit();
+
         }elseif ($email!=$conemail&&$password==$conpassword) {
-            $_SESSION['register_alert']=2;
+
+            // $_SESSION['register_alert']=2;
+            $_SESSION['alert'] = 8;
+            header("Location: ../index.php");
+            exit();
+
         }
-        $alert=1;
+        // $alert=1;
+        header("Location: ../index.php");
+        exit();
     }
     if (mysqli_fetch_array($r_a)) {
-        $_SESSION['register_match']=1;
-        $alert=1;
-    }
-    if($alert==1){
+        // $_SESSION['register_match']=1;
+        // $alert=1;
+        $_SESSION['alert'] = 9;
         header("Location: ../index.php");
+        exit();
     }
+    // if($alert==1){
+    //     header("Location: ../index.php");
+    //     exit();
+    // }
     else {
         //encode password
         $password = base64_encode($_POST['password']);
@@ -51,11 +69,15 @@
         $r_b = mysqli_query($con,$b);
         
         if ($r_a) {
-            $_SESSION['user_match']=2;
+            // $_SESSION['user_match']=2;
+            $_SESSION['alert'] = 3;
             header("Location: ../index.php");
+            exit();
         }else {
-            $_SESSION['user_match']=3;
+            // $_SESSION['user_match']=3;
+            $_SESSION['alert'] = 4;
             header("Location: ../index.php");
+            exit();
         }
     }
 
