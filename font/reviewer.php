@@ -11,7 +11,7 @@ if($_SESSION['status'] != 1){
 
 $q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb,reviewer_answer
 WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status = 1 And 
-reviewer_paper.reviewer = '$id'  AND (reviewer_answer.reviewer_id = $id AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
+reviewer_paper.reviewer = '$id'  AND (reviewer_answer.reviewer_id = '$id' AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
 $result1 = mysqli_query($con, $q1); 
 $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status != 1  And reviewer_paper.reviewer = '$id' ";
 $result2 = mysqli_query($con, $q2);

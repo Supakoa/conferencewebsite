@@ -22,7 +22,7 @@
                                 <h5> แผนก : <?php echo $row['field'] ?></h5>
                                 <h5> บทความ : <?php echo $row['abstract'] ?></h5>
                                 <p>ผู้ตรวจคนที่ 1 : </p><select class="form-control" name="reviewer1" required>
-                                              <option disabled >เลือกผู้ตรวจ</option>
+                                              <option disabled selected value= "" >เลือกผู้ตรวจ</option>
                                <?php
                               $q_reviewer = "SELECT * FROM user WHERE role = 2 ";
                               $result_reviewer = mysqli_query($con, $q_reviewer);
@@ -33,7 +33,7 @@
 
                                  </select>
                                  <p>ผู้ตรวจคนที่ 2 : </p><select class="form-control" name="reviewer2" required>
-                                              <option disabled >เลือกผู้ตรวจ</option>
+                                              <option disabled selected value= "" >เลือกผู้ตรวจ</option>
                                <?php
                               $q_reviewer = "SELECT * FROM user WHERE role = 2 ";
                               $result_reviewer = mysqli_query($con, $q_reviewer);

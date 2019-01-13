@@ -15,6 +15,15 @@
             else{
                $_SESSION['alert'] = 4;
             }
+         }elseif($status==4){
+            $up2 = "UPDATE `reviewer_answer` SET `reviewer_id`=' ',status`=' ',`comment`=' ',`score`=' ' WHERE `paper_id` = '$id' ";
+            $result_up2 = mysqli_query($con,$up2);
+            if($result_up2){
+               $_SESSION['alert'] = 3;
+            }
+            else{
+               $_SESSION['alert'] = 4;
+            }
          }
         $_SESSION['counter_up'] = 1;
         $_SESSION['alert'] = 3;

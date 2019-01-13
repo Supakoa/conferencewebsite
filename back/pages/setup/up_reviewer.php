@@ -1,7 +1,7 @@
 <?php
 
 require '../server.php';
-require 'server/check_login.php';
+require '../server/check_login.php';
 
 $id = $_GET["id"];
 $reviewer1 = $_POST['reviewer1'];
