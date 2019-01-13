@@ -226,7 +226,7 @@ $r_3 = mysqli_fetch_array($q3);
                                         </div>
                                         <div class="col-lg-12 mx-auto">
                                             <h5 style="color:#ffffff">เบอร์โทรศัพท์มือถือ **</h5>
-                                            <input class="form-control" name="tel" type="text" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
+                                            <input class="form-control" name="tel" type="text" maxlength="10" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                         <div class="col col-lg-12 mx-auto">

@@ -14,19 +14,11 @@
       <div class="modal-body">
       <div class="card">
                            
-                          <?php 
+                           <?php 
                            $re_paper = $row['paper_id'];
                            $q_reviewer = "SELECT * FROM `reviewer_paper` WHERE `paper_id` = '$re_paper' ";
                            $result_reviewer= mysqli_query($con,$q_reviewer);
-                           $row_reviewer = mysqli_fetch_array($result_reviewer);
-                           $re_re1 = $row_reviewer['reviewer1'];
-                           $re_re2 = $row_reviewer['reviewer2'];
-                           $q_reviewer1 = "SELECT `first_name`,`last_name` FROM `user` WHERE `username` = '$re_re1' ";
-                           $result_reviewer1= mysqli_query($con,$q_reviewer1);
-                           $row_reviewer1 = mysqli_fetch_array($result_reviewer1);
-                           $q_reviewer2 = "SELECT `first_name`,`last_name` FROM `user` WHERE `username` = '$re_re2' ";
-                           $result_reviewer2= mysqli_query($con,$q_reviewer2);
-                           $row_reviewer2 = mysqli_fetch_array($result_reviewer2);
+                           $i = 0 ;
 
                            ?>
                             <div class="content">
@@ -37,9 +29,15 @@
                                 
                                 <h5> บทความ : <?php echo $row['abstract'] ?></h5>
                                 
-                                <h5> ผู้ตรวจ 1  : <?php echo $row_reviewer1['first_name'].' '.$row_reviewer2['last_name'] ?></h5>
-                                <h5> ผู้ตรวจ 2  : <?php echo $row_reviewer2['first_name'].' '.$row_reviewer2['last_name'] ?></h5>
+                                <?php while ($row_reviewer = mysqli_fetch_array($result_reviewer)) {
+                                  $name = $row_reviewer['reviewer'];
+                                  $q_reviewer_name = "SELECT * FROM user WHERE username  = '$name' ";
+                                  $result_reviewer_name = mysqli_query($con, $q_reviewer_name);
+                                  $row_reviewer_name = mysqli_fetch_array($result_reviewer_name);
+                                 ?>
+                                <h5> ผู้ตรวจ <?php echo ++$i; ?> : <?php echo $row_reviewer_name['first_name'].' '.$row_reviewer_name['last_name'] ?></h5>
                                 <br>
+                                <?php } ?>
                                 
                                 <?php
                                 $i = 1;
