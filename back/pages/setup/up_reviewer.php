@@ -8,7 +8,10 @@ if ($reviewer1 == $reviewer2) {
     $_SESSION['counter_up'] = 6; //สองคนซ้ำกัน
     header("Location: ../table.php");
 } else {
-    $up = "UPDATE `reviewer_paper` SET `reviewer1`='$reviewer1',`reviewer2`='$reviewer2' WHERE paper_id = $id";
+    $up = "INSERT INTO `reviewer_paper`(`paper_id`, `reviewer`) VALUES ('$id','$reviewer1')";
+    $result_up = mysqli_query($con, $up);
+
+    $up = "INSERT INTO `reviewer_paper`(`paper_id`, `reviewer`) VALUES ('$id','$reviewer2')";
     $result_up = mysqli_query($con, $up);
     $u_r1 = "UPDATE `reviewer_answer` SET `reviewer_id`='$reviewer1'WHERE  paper_id = $id AND reviewer_id = ' ' limit 1";
     $re_u_r1 = mysqli_query($con, $u_r1);

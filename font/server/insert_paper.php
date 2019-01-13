@@ -69,8 +69,8 @@ if ($uploadOk == 0) {
         $row_c = mysqli_fetch_array($result_c);
         $last_paper = $row_c['paper_id'];
 
-        $r_p = "INSERT INTO `reviewer_paper`( `paper_id`) VALUES ('$last_paper')";
-        $r_r_p = mysqli_query($con, $r_p);
+        // $r_p = "INSERT INTO `reviewer_paper`( `paper_id`) VALUES ('$last_paper')";
+        // $r_r_p = mysqli_query($con, $r_p);
 
         $id = $_SESSION['id'];
 

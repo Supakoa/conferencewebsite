@@ -203,7 +203,7 @@ $q3 = mysqli_query($con, $a3);
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ชื่อเอกสาร (English)</h5>
-                                            <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " pattern="^[!-~]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
+                                            <input class="form-control" name="paper_eng" type="text" placeholder="ชื่อเอกสาร English " pattern="^[!-~\s]+$" title="กรุณากรอกชื่อภาษาอังกฤษ" required="required" data-validation-required-message="Please enter your Paper name english.">
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ $q3 = mysqli_query($con, $a3);
                                     </div>
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <h5 style="color:#ffffff">คำหลัก</h5>
+                                            <h5 style="color:#ffffff">คำเฉพาะ</h5>
                                             <input class="form-control" name="keyword" type="text" placeholder="คำหลัก" required="required" data-validation-required-message="Please enter your Keyword.">
                                             <p class="help-block text-danger"></p>
                                         </div>
