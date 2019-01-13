@@ -39,6 +39,8 @@ if ($r_name['role'] != 3) {
 //footer
 $a3 = "SELECT * FROM banner ";
 $q3 = mysqli_query($con, $a3);
+$r_3 = mysqli_fetch_array($q3);
+
 
 if (isset($_POST['gogo'])) {
     $ext = pathinfo(basename($_FILES["money"]["name"]), PATHINFO_EXTENSION);
@@ -141,12 +143,12 @@ if (isset($_POST['gogo'])) {
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:20px">ผู้เข้าร่วมการประชุมวิชาการ</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="collapse navbar-collapse text-center" id="navbarResponsive">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:20px">ผู้เข้าร่วมการประชุมวิชาการ</a>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
@@ -163,7 +165,7 @@ if (isset($_POST['gogo'])) {
             </div>
         </nav>
 
-        <header class="masthead" >
+        <!-- <header class="masthead" >
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-lg-12 my-auto">
@@ -173,119 +175,128 @@ if (isset($_POST['gogo'])) {
                     </div>
                 </div>
             </div>
-        </header>
-
+        </header> -->
+        <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%" srcset="">
         <section class="text-center" id="first" style="background-color:#F6F8FA;">
             <div class="container">
-                <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
-                <hr class="star-dark mb-5">
-                <div class="card">
-                    <h5 class="card-title">ข้อมูล</h5>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6" style="text-align:left">
-                                <h5>ประเภท :</h5>
+                <h3 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h3>
+                <br>
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <h5>ประเภท :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left"> 
+                                            <label>ผู้เข้าร่วมการประชุมวิชาการ</label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <h5>ชื่อ-นามสกุล :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label><?php echo $row['first_name'] . "  " . $row['last_name']; ?></label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <h5>เพศ :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label><?php echo $row['gender']; ?></label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <h5>E-mail :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label><?php echo $row['email']; ?></label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <h5>สถานะการชำระค่าบริการ :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label><?php
+                                            $status = $r_bill['status'];
+                                            if ($status == '6') {
+                                                echo "รอการตรวจสอบจากเจ้าหน้าที่";
+                                            } elseif ($status == '4') {
+                                                echo "แก้ไขหลักฐานการชำระค่าบริการ";
+                                            } elseif ($status == '7') {
+                                                echo "ยังไม่ได้ชำระ";
+                                            } elseif ($status == '8') {
+                                                echo "ชำระแล้ว";
+                                            } else {
+                                                
+                                            }
+                                            ?></label>
+                                        </div>
+                                    </div>
                             </div>
-                            <div class="col-lg-6" style="text-align:left"> 
-                                <span>ผู้เข้าร่วมการประชุมวิชาการ</span>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <h5>ชื่อ-นามสกุล :</h5>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <span><?php echo $row['first_name'] . "  " . $row['last_name']; ?></span>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <h5>เพศ :</h5>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <span><?php echo $row['gender']; ?></span>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <h5>E-mail :</h5>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <span><?php echo $row['email']; ?></span>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <h5>สถานะการชำระค่าบริการ :</h5>
-                            </div>
-                            <div class="col-lg-6" style="text-align:left">
-                                <span><?php
-$status = $r_bill['status'];
-if ($status == '6') {
-    echo "รอการตรวจสอบจากเจ้าหน้าที่";
-} elseif ($status == '4') {
-    echo "แก้ไขหลักฐานการชำระค่าบริการ";
-} elseif ($status == '7') {
-    echo "ยังไม่ได้ชำระ";
-} elseif ($status == '8') {
-    echo "ชำระแล้ว";
-} else {
-    
-}
-?></span>
-                            </div>
-                        </div>
+                        </div>  
                     </div>
-                </div>  
-            </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div><br><br>
         </section>
 <?php if ($status == 4 || $status == 7) { ?>
             <section class="text-center" id="second" style="background-color:#F6F8FA;">
                 <div class="container">
-                    <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการชำระค่าบริการ</h2>
-                    <hr class="star-dark mb-5">
-                    <div class="card">
-                        <h5 class="card-title">ช่องทางการชำระค่าบริการ</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6" style="text-align:left">
-                                    <h5>ธนาคารกรุงเทพ :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <span>546-4678-153</span>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <h5>ธนาคารกสิกร :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <span>487984-54984-210</span>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <h5>ธนาคารไทยพาณิช :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <span>123-488-8791</span>
-                                </div>
-                                <div class="col-lg-12" style="text-align:left">
-                                    <br>
-                                </div>
-                                <div class="col-lg-12" style="text-align: right">
-                                    <span>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</span>
+                    <h3 class="text-center text-uppercase text-secondary mb-0">ช่องทางการชำระค่าบริการ <i class="fa fa-university" aria-hidden="true"></i></h3>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารกรุงเทพ :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>546-4678-153</label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารกสิกร :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>487984-54984-210</label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารไทยพาณิช :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>123-488-8791</label>
+                                        </div>
+                                        <div class="col-lg-12" style="text-align:left">
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-12" style="text-align: right">
+                                            <label>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-1"></div>
                     </div>
                 </div><br>
 
-                <h2 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h2>
-                <hr><br>
+                <h3 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h3><br>
                 <form action="guest.php" method="post"  enctype="multipart/form-data" >
                     <input type="file" name="money" accept=".pdf,.jpg,.png" required>
                     <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
                 </form>
-
+                        <br><br>
             </section>
 <?php } else { ?>
             <section class="text-center" id="second" style="background-color:#F6F8FA;">
                 <div class="container">
-                    <h2 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h2>
+                    <h3 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h3><br>
                     <div class="card">
                         <br>
                         <div class="row">
                             <div class="col-lg-12" style="text-align:center">
-                                <img src="../bill/<?php echo $r_bill['tmp_name'] ?>" alt="Bill" style="text-align:center;width:auto;height:500px;" >
+                                <img src="../bill/<?php echo $r_bill['tmp_name'] ?>" class="img-responsive" alt="Bill" style="text-align:center;width:auto;height:500px;" >
                             </div>
                             <br>
                             <div class="col-lg-12" style="text-align:center">
@@ -302,7 +313,7 @@ if ($status == '6') {
                             </div>
                         </div>   
                     </div>
-                </div>
+                </div><br><br>
             </section>
 
     <?php }
@@ -314,7 +325,6 @@ if ($status == '6') {
                     <div class="col-lg-6">
         <?php
         //htis site is show footer.
-        $r_3 = mysqli_fetch_array($q3);
         echo $r_3['footer'];
         ?>
                     </div><!-- content -->
