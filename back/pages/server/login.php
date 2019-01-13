@@ -10,6 +10,7 @@
     $sql = "SELECT * FROM admin WHERE id='$username' AND password='$password' ";
     $result = mysqli_query($con,$sql);
     $r_a = mysqli_fetch_array($result);
+    
     if($r_a){
         $_SESSION['online']=1;
         header("Location: ../report.php");
