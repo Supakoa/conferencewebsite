@@ -114,13 +114,13 @@
         <section class="text-center" id="login" style="background-color:#F6F8FA;">
             <div class="section-heading text-center">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เข้าสู่ระบบ</h2>
-                <hr>
-            </div><br>
+                <br>
+            </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 mx-auto">
-                        <div class="card text-center">
-                            <div class="card-body" style="background-color:#dd99ff">
+                    <div class="col-lg-4 mx-auto" >
+                        <div class="card text-center" style="border-radius: 10px;">
+                            <div class="card-body" style="background-color:#dd99ff;border-radius: 10px;">
                                 <form  action = "server/login.php" method = "POST">
                                     <div class="form-group">
                                         <h4 style="color:#ffffff">Username</h4>
@@ -138,15 +138,15 @@
                         <div class="badges"></div>
                     </div>
                 </div>
-            </div>
+            </div><br><br>
         </section>
 
-        <section class="features" id="register" style="background-color:#F6F8FA;">
-            <div class="container">
-                <div class="section-heading text-center">
+        <section class="" id="register" style="background-color:#F6F8FA;">
+            <div class="section-heading text-center">
                     <h2 class="text-center text-uppercase text-secondary mb-0" >สมัครสมาชิก</h2>
-                    <hr>
+                    <br>
                 </div>
+            <div class="container">
                 <div class="card" style="background-color:#dd99ff">
                     <div class="card-body">
                         <form action="server/register.php" method="POST">
@@ -244,8 +244,8 @@
                             </div>
                             <br>
                             <div id="success"></div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-secondary btn-xl"  name="r_b">ตกลง</button>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-secondary btn-lg"  name="r_b">ตกลง</button>
                             </div>
                         </form>    
                     </div>
@@ -257,7 +257,7 @@
 
         <footer>
             <div class="container">
-                <h2 style="color:white">เว็บไซต์ที่เกี่ยวข้อง  และ  เอกสารที่เผยแพร่</h2>
+                <h3 style="color:white">เว็บไซต์ที่เกี่ยวข้อง และ เอกสารที่เผยแพร่</h3>
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="list-inline list-social">
