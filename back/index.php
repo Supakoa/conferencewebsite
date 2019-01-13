@@ -1,9 +1,7 @@
 <?php
     //connect server in this page used to destroy session
     require './pages/server.php';
-
     session_destroy();
-
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +17,6 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
-    <!-- sweet alert 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     <style>
 
@@ -115,8 +108,15 @@
         .container .info span .fa {
         color: #EF3B3A;
         }
+
+        
         
     </style>
+
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 <body>
     <div class="container-fluid">
     <div class="container">
@@ -134,8 +134,10 @@
         </div>
     
     </div>
-</body>
 
+    
+
+</body>
     <!-- php check alert -->
     <?php 
         require '../alert.php'; 
