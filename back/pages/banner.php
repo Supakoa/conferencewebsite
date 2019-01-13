@@ -50,6 +50,10 @@
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -128,6 +132,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 
 </body>
 

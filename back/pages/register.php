@@ -1,26 +1,7 @@
 <?php
     require 'server.php';
     require 'server/check_login.php';
-    require 'server/show_alert.php';
 
-    //alert
-    if(isset($_SESSION['register_alert'])){
-        if ($_SESSION['register_alert']==1) {
-          echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
-        }elseif ($_SESSION['register_alert']==2) {
-          echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
-        }elseif ($_SESSION['register_alert']==3) {
-          echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
-        }
-      }
-    if(isset($_SESSION['register_match'])){
-        if($_SESSION['register_match']==1){
-          echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
-        }
-    }
-    //turn alsert variable
-    $_SESSION['register_alert']=0;
-    $_SESSION['register_match']=0;
 
 ?>
 

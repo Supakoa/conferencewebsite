@@ -16,9 +16,28 @@
         $s1 = "UPDATE `setting_timmer` SET `time_start`='$a',`time_end`='$b' WHERE `order` = '1' ";
         $s2 = "UPDATE `setting_timmer` SET `time_start`='$c',`time_end`='$d' WHERE `order` = '2' ";
         $s3 = "UPDATE `setting_timmer` SET `time_start`='$h',`time_end`='$i' WHERE `order` = '3' ";
-        $q1 = mysqli_query($con,$s1);
-        $q2 = mysqli_query($con,$s2);
-        $q3 = mysqli_query($con,$s3);
+
+        if($q1 = mysqli_query($con,$s1)){
+            $_SESSION['alert'] = 3;
+        }
+        else{
+            $_SESSION['alert'] = 4;
+        }
+        
+        if($q2 = mysqli_query($con,$s2)){
+            $_SESSION['alert'] = 3;
+        }
+        else{
+            $_SESSION['alert'] = 4;
+        }
+
+        if($q3 = mysqli_query($con,$s3)){
+            $_SESSION['alert'] = 3;
+        }
+        else{
+            $_SESSION['alert'] = 4;
+        }
+
     }
 
     $st =  "SELECT * FROM `setting_timmer` WHERE `order` = '1'";
@@ -64,7 +83,11 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
-
+    
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
     
 
 </head>
@@ -139,6 +162,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 </body>
 
 </html>

@@ -33,6 +33,12 @@ if (isset($_POST['update'])) {
         $que = mysqli_query($con, $qinq);
         if ($que) {
             $count++;
+            $_SESSION['alert'] = 3;
+        }
+        else{
+            $_SESSION['alert'] = 4;
+            exit();
+            header("Location: paper.php");
         }
         $id = $id + 1;
     }
@@ -58,18 +64,27 @@ if (isset($_POST['update'])) {
 
         if ($_FILES[$sum2]["name"] != "") {
 
-            if ($_FILES[$sum2]["size"] > 8000000) {
+            if ($_FILES[$sum2]["size"] > 60000000) {
                 echo "Sorry, your file is too large.";
                 $uploadOk = 0;
+                $_SESSION['alert'] = 15;
+                exit();
+            header("Location: paper.php");
             }
        // Allow certain file formats
             if ($imageFileType != "pdf") {
                 echo "Sorry, only PDF files are allowed.";
                 $uploadOk = 0;
+                $_SESSION['alert'] = 16;
+            exit();
+            header("Location: paper.php");
             }
        // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
+                $_SESSION['alert'] = 4;
+            exit();
+            header("Location: paper.php");
        // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES[$sum2]["tmp_name"], $upload_path)) {
@@ -81,30 +96,46 @@ if (isset($_POST['update'])) {
                     $result = mysqli_query($con, $q);
                     if ($result) {
                         $count++;
+                        $_SESSION['alert'] = 3;
                     }
                 } else {
                     echo "Sorry, there was an error uploading your file.";
+                    $_SESSION['alert'] = 4;
+            exit();
+            header("Location: paper.php");
                 }
             }
 
         } else {
 
-
+            $_SESSION['alert'] = 3;
             $count++;
         }
 
         $q_text = "UPDATE `show_url` SET `text`='$ed1' WHERE `id` = '$id' ";
-        $result = mysqli_query($con, $q_text);
+        if($result = mysqli_query($con, $q_text)){
+            $_SESSION['alert'] = 10;
+        }
+        else{
+            $_SESSION['alert'] = 11;
+        }
 
         $q = "UPDATE `show_url` SET `hide`='$ed3' WHERE `id` = '$id' ";
-        $result = mysqli_query($con, $q);
+        if($result = mysqli_query($con, $q)){
+            $_SESSION['alert'] = 10;
+        }
+        else{
+            $_SESSION['alert'] = 11;
+        }
+
+
         $id = $id + 1;
     }
 
     if ($count == $id) {
-        echo '<script type="text/javascript">alert("แก้ไขข้อมูลสมบูรณ์.");</script>';
+        $_SESSION['alert'] = 10;
     } else {
-        echo '<script type="text/javascript">alert("แก้ไขข้อมูลไม่สมบูรณ์.");</script>';
+         $_SESSION['alert'] = 11;
     }
 }
 
@@ -153,6 +184,10 @@ $_SESSION['set_page'] = 8;
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -262,6 +297,8 @@ $_SESSION['set_page'] = 8;
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 </body>
 
 </html>

@@ -7,12 +7,12 @@
      
      if($result_up){
          
-        $_SESSION['counter_up'] = 1;
+      $_SESSION['alert'] = 3;
 
        
      }
      else{
-        $_SESSION['counter_up'] = 2;
+      $_SESSION['alert'] = 4;
      }
     
      header("Location: ../money.php");
