@@ -243,35 +243,41 @@ if (isset($_POST['gogo'])) {
                 <div class="container">
                     <h3 class="text-center text-uppercase text-secondary mb-0">ช่องทางการชำระค่าบริการ <i class="fa fa-university" aria-hidden="true"></i></h3>
                     <br>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6" style="text-align:center">
-                                    <h5>ธนาคารกรุงเทพ :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <label>546-4678-153</label>
-                                </div>
-                                <div class="col-lg-6" style="text-align:center">
-                                    <h5>ธนาคารกสิกร :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <label>487984-54984-210</label>
-                                </div>
-                                <div class="col-lg-6" style="text-align:center">
-                                    <h5>ธนาคารไทยพาณิช :</h5>
-                                </div>
-                                <div class="col-lg-6" style="text-align:left">
-                                    <label>123-488-8791</label>
-                                </div>
-                                <div class="col-lg-12" style="text-align:left">
-                                    <br>
-                                </div>
-                                <div class="col-lg-12" style="text-align: right">
-                                    <label>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</label>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-10">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารกรุงเทพ :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>546-4678-153</label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารกสิกร :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>487984-54984-210</label>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:center">
+                                            <h5>ธนาคารไทยพาณิช :</h5>
+                                        </div>
+                                        <div class="col-lg-6" style="text-align:left">
+                                            <label>123-488-8791</label>
+                                        </div>
+                                        <div class="col-lg-12" style="text-align:left">
+                                            <br>
+                                        </div>
+                                        <div class="col-lg-12" style="text-align: right">
+                                            <label>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-1"></div>
                     </div>
                 </div><br>
 
