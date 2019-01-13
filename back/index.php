@@ -1,3 +1,11 @@
+<?php
+    //connect server in this page used to destroy session
+    require './pages/server.php';
+
+    session_destroy();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,11 +13,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Log-in Admin Conference</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     <style>
 
@@ -111,21 +125,26 @@
             <h2 style="text-align:center">Admin Conference</h2>
 
              <div class="form">
-            <form action="pages/server/login.php" method="post" class="login-form">
-                <input type="text" name="username" placeholder="username"/>
-                <input type="password" name="password" placeholder="password"/>
-                <button type="submit">login</button>
-            </form>
-
-        </div>
+                <form action="pages/server/login.php" method="post" class="login-form">
+                    <input type="text" name="username" placeholder="username"/>
+                    <input type="password" name="password" placeholder="password"/>
+                    <button type="submit">login</button>
+                </form>
+            </div>
         </div>
     
     </div>
 </body>
-<script>
-    $('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-</script>
+
+    <!-- php check alert -->
+    <?php 
+        require '../alert.php'; 
+    ?>
+
+    <script>
+        $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
 
 </html>

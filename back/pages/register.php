@@ -57,7 +57,10 @@
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-    
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -81,19 +84,19 @@
                                     <form action="server/insert_register.php" method="POST">
                                         <div class="form-group">
                                             <label >Username **</label>
-                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" >
+                                            <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
 
                                             <label for="password">Password **</label>
-                                            <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" >
+                                            <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
                                             <label for="conpassword">ยืนยัน Password </label>
-                                            <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" >
+                                            <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
                                             <label for="fname">ชื่อ **</label>
-                                            <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" >
+                                            <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
                                             <label for="lname">นามสกุล **</label>
-                                            <input type="text" class="form-control" name="lname" placeholder="นามสกุล" >
+                                            <input type="text" class="form-control" name="lname" placeholder="นามสกุล"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
                                             <label for="gender">เพศ</label>
                                             <select class="form-control" name="gender" required>
@@ -103,13 +106,13 @@
                                             </select>
 
                                             <label for="address">ที่อยู่</label>
-                                            <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea>
+                                            <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea required>
                                         
-                                            <label for="username">Email *</label>
-                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์" >
+                                            <label for="email">Email *</label>
+                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
                                             
-                                            <label for="password">ยืนยัน Email *</label>
-                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์" >
+                                            <label for="comemail">ยืนยัน Email *</label>
+                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
 
                                             </div>
                                             <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button><br>
@@ -128,7 +131,7 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -142,6 +145,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 
 </body>
 

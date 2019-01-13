@@ -1,6 +1,8 @@
 <?php
 require 'server.php';
 require 'server/check_login.php';
+require 'server/show_alert.php';
+
 
 $q = "SELECT * FROM paper WHERE status = 5 ";
 $result = mysqli_query($con, $q);
@@ -21,7 +23,7 @@ $_SESSION['set_page'] = 2;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin  - Admin Conference Page ยังไม่ได้ตรวจ</title>
+    <title>Admin  - Admin Conference Page ยังไม่ได้เลือกผู้ตรวจ</title>
     <link rel="stylesheet" href="../DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
 
@@ -59,9 +61,9 @@ $_SESSION['set_page'] = 2;
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">ยังไม่ได้ตรวจ</h1>
-                        <table id="table" class="display responsive">
+                <h1 class="page-header">ยังไม่ได้ตรวจ</h1>
+                <div class="col-lg-12 table-responsive-lg">
+                <table id="table1" class="display table">
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
@@ -74,8 +76,8 @@ $_SESSION['set_page'] = 2;
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php while ($row = mysqli_fetch_array($result)) { ?>
                                 <tr>
-                                <?php while ($row = mysqli_fetch_array($result)) { ?>
                                         <?php
                                         $id_paper = $row["paper_id"];
 
@@ -100,25 +102,20 @@ $_SESSION['set_page'] = 2;
                                         <td><p style="font-size: 5">ยังไม่ได้ระบุ</p> </td>
                                         <td><p style="font-size: 5">ยังไม่ได้ระบุ</p></td>
                                         <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
-                                        <td>
-                                        <?php require 'modal/modal.php' ?>
-                                        </td>
+                                        <td><?php require 'modal/modal.php' ?></td>
+                                        
                                         </tr> 
-                                      <?php 
+                                        <?php 
                                     } ?>
-                                  
-                               
+                                      
                             </tbody>
-                        </table>
-                    
-            </div>
-        </div>
-
+                </table>
+               
                 </div>
             </div>
-           
-
+        </div>
     </div>
+            
     
 
     <!-- jQuery -->
@@ -126,7 +123,7 @@ $_SESSION['set_page'] = 2;
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -142,10 +139,10 @@ $_SESSION['set_page'] = 2;
     <script src="../dist/js/sb-admin-2.js"></script>
     <script type="text/javascript">
         $(document).ready( function () {
-            $('#table').DataTable();
+            $('#table1').DataTable();
         } );
 
-        $('#myModal').on('shown.bs.modal', function () {
+        $('#myModal ').on('shown.bs.modal', function () {
         $('#myInput').focus()
         })
 	</script>

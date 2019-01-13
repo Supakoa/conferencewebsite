@@ -83,13 +83,12 @@
             </div>
                 
                                     <div class="container-fluid ">
-                                        <div class="jumbotron" >
-                                            <div style="text-align:left">
-                                                <img src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="banner">
-                                            </div>
+                                        <div class="jumboton" >
+                                                <img style="max-width: 100%;height: auto;" class="img-fluid"  src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="Responsive image">
+                                            
                                         </div>
                                         <div class="container" style="text-align:center;">
-                                                    <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">Update Banner</button>
+                                                    <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">อัพเดต Banner</button>
 
                                         <div class="modal fade" id="submit_modal_banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-sm" role="document">
@@ -115,7 +114,7 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

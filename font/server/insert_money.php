@@ -31,7 +31,7 @@ if ($_FILES["money"]["size"] > 8000000) {
 
     // Allow certain file formats
 if ($imageFileType != "pdf" && $imageFileType != "jpg" && $imageFileType != "png") {
-    echo "Sorry, only PDF files are allowed.";
+    echo "Sorry, only PDF,JPG,PNG files are allowed.";
     $uploadOk = 0;
 }
 
@@ -69,6 +69,6 @@ if ($uploadOk == 0) {
             header("Location: ../user.php");
         }
     }
-
+    header("Location: ../user.php");
     // echo '<br><button><a href="form_insert_paper.php">Click Me!!</a></button>';
     ?>

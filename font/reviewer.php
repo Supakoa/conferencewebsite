@@ -92,7 +92,7 @@ if($r_name['role']!=2){
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >WELLCOM TO WEBSITE REVIEWER</h1>
+              <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป</h1>
             </div>
           </div>
         </div>
@@ -107,7 +107,8 @@ if($r_name['role']!=2){
         </div>
         <div class="row">
         <div class="col-lg-10 mx-auto">
-                <table id="table1" class=" responsive display">
+        <div class="table-responsive-lg">
+        <table id="table1" class="table display">
                 <thead>
                     <tr>
                         <th>รหัสเอกสาร</th>
@@ -139,6 +140,8 @@ if($r_name['role']!=2){
                 </tbody>
             </table>
         </div>
+                
+        </div>
         </div>
         
       </div>
@@ -149,8 +152,9 @@ if($r_name['role']!=2){
       <h2 class="text-center text-uppercase text-secondary mb-0">ตรวจแล้ว</h2>
             <hr class="star-dark mb-5">
         <div class="row">
-        <div class="col-lg-10 mx-auto">
-            <table id="table2" class=" responsive display">
+        <div class="col-lg-10 mx-auto ">
+            <div class="table-responsive-lg">
+            <table id="table2" class="table display">
             <thead>
                 <tr>
                     <th>รหัสเอกสาร</th>
@@ -181,6 +185,7 @@ if($r_name['role']!=2){
             } ?>
             </tbody>
             </table>
+            </div>
       </div>
     </div>
   </div>

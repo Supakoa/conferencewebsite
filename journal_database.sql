@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2018 at 11:35 AM
+-- Generation Time: Sep 06, 2018 at 05:32 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -49,15 +49,34 @@ INSERT INTO `admin` (`id`, `password`) VALUES
 CREATE TABLE `banner` (
   `order` int(11) NOT NULL,
   `name` text NOT NULL,
-  `tmp_name` text NOT NULL
+  `tmp_name` text NOT NULL,
+  `footer` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `banner`
 --
 
-INSERT INTO `banner` (`order`, `name`, `tmp_name`) VALUES
-(1, 'WIN_20180829_20_55_28_Pro.jpg', 'banner_5b878fd8d1b76.jpg');
+INSERT INTO `banner` (`order`, `name`, `tmp_name`, `footer`) VALUES
+(1, 'WIN_20180829_20_55_28_Pro.jpg', 'banner_5b878fd8d1b76.jpg', 'สำนักวิชาการศึกษาทั่วไปและนวัตกรรมการเรียนรู้อิเล็กทรอนิกส์ มหาวิทยาลัยราชภัฎสวนสุนันทา\r\nเลขที่ 1 อาคาร 34 ชั้น 1 ถนนอู่ทองนอก แขวงวชิระ เขตดุสิต กรุงเทพมหานคร 10300       โทร. 02-160-1265-70 Fax. 02-160-1268 www.gen-ed.ssru.ac.th');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bill_guest`
+--
+
+CREATE TABLE `bill_guest` (
+  `username` text NOT NULL,
+  `tmp_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bill_guest`
+--
+
+INSERT INTO `bill_guest` (`username`, `tmp_name`) VALUES
+('eiei', 'Bill_5b8f90abb145d.jpg');
 
 -- --------------------------------------------------------
 
@@ -84,15 +103,8 @@ CREATE TABLE `paper` (
 --
 
 INSERT INTO `paper` (`paper_id`, `field`, `file_name`, `file_tmp_name`, `name_th`, `name_eng`, `abstract`, `key_word`, `status`, `money_status`, `tmp_money`) VALUES
-(10000, 'อิอิ', 'อิอิ', 'pdf_5b7d9d3f20bc3.pdf', 'อิอิ อะโรห้าาา', 'eiei alohaaa', 'ไม่มี', 'อิอิจัง', 1, 0, ''),
-(10001, 'asdhs', 'adfhdfh', 'sdfhdfh', 'dsfh', 'sdfh', 'dsfh', 'dsfh', 3, 0, ''),
-(10002, 'asdhs', 'adfhdfh', 'sdfhdfh', 'dsfh', 'sdfh', 'dsfh', 'dsfh', 1, 0, ''),
-(10003, 'asdhs', 'adfhdfh', 'sdfhdfh', 'dsfh', 'sdfh', 'dsfh', 'dsfh', 5, 0, ''),
-(10004, 'อิอิ', 'อิอิ', 'sdfhdfh', 'อิอิ อะโรห้าาา', 'eiei alohaaa', 'ไม่มี', 'อิอิจัง', 1, 0, ''),
-(10005, 'อิอิ', 'อิอิ', 'sdfhdfh', 'อิอิ อะโรห้าาา', 'eiei alohaaa', 'ไม่มี', 'อิอิจัง', 1, 0, ''),
-(10006, '', 'ตารางเรียน GE.pdf', 'pdf_5b8b958ec9103.pdf', 'สิงของลองส่งตาราง', 'Singkholongsongtalang', 'asd', 'asd', 2, 8, 'Bill_5b8c2613344e9.jpg'),
-(10007, '', 'ตารางเรียน GE.pdf', 'pdf_5b8b9a6571939.pdf', 'สิงของลองส่งตาราง2', 'Singkholongsongtalang2', '2+63', '263.', 2, 8, ''),
-(10008, '', 'ตารางเรียน GE.pdf', 'pdf_5b8b9c4dcef3a.pdf', 'สิงของลองส่งตาราง3', 'Singkholongsongtalang3', '465\r\n3', 'asd', 2, 4, '');
+(10011, '', 'ตารางเรียน GE.pdf', 'pdf_5b8e7c8b37c17.pdf', 'ทดสอบ', 'test', 'test', 'test', 1, 7, 'Bill_5b8e6c9d7efff.jpg'),
+(10012, '', 'ตารางเรียน GE.pdf', 'pdf_5b8e359db4b63.pdf', 'ทดสอบ', 'test', 'test', 'test', 1, 0, '');
 
 -- --------------------------------------------------------
 
@@ -121,7 +133,13 @@ INSERT INTO `reviewer_answer` (`order`, `reviewer_id`, `paper_id`, `status`, `co
 (5, '321654', '10007', '2', 'น่าจะเสร็จ', 32),
 (6, '123456', '10007', '2', '55555', 55),
 (7, '321654', '10008', '2', '55555', 55),
-(8, '123456', '10008', '2', 'น่าจะเสร็จ', 32);
+(8, '123456', '10008', '2', 'น่าจะเสร็จ', 32),
+(11, '321654', '10010', '2', 'น่าจะเสร็จ', 55),
+(12, '123456', '10010', '2', '55555', 123),
+(13, '321654', '10011', ' ', ' ', 0),
+(14, '123456', '10011', ' ', ' ', 0),
+(15, '123456', '10012', '', '', 0),
+(16, '321654', '10012', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -143,7 +161,11 @@ INSERT INTO `reviewer_paper` (`paper_id`, `reviewer1`, `reviewer2`) VALUES
 ('10000', '321654', '123456'),
 ('10006', '321654', '123456'),
 ('10007', '321654', '123456'),
-('10008', '321654', '123456');
+('10008', '321654', '123456'),
+('10009', '321654', '123456'),
+('10010', '321654', '123456'),
+('10011', '321654', '123456'),
+('10012', '123456', '321654');
 
 -- --------------------------------------------------------
 
@@ -163,8 +185,8 @@ CREATE TABLE `setting_timmer` (
 --
 
 INSERT INTO `setting_timmer` (`order`, `name_time`, `time_start`, `time_end`) VALUES
-(1, 'a', 'a', 'a'),
-(2, 'b', 'b', 'b');
+(1, 'a', '2018-09-01', '2018-09-15'),
+(2, 'b', '2018-09-01', '2018-09-15');
 
 -- --------------------------------------------------------
 
@@ -244,13 +266,15 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`order`, `username`, `password`, `gender`, `first_name`, `last_name`, `address`, `email`, `member`, `role`) VALUES
-(1, 'singha', 'cHB6eDAw', 'male', 'ตะวัน', 'เข็มทอง', 'ไม่มี', 'ไม่มี', '', 1),
+(1, 'singha', 'cHB6eDAw', 'male', 'นาย พลเมือง', 'ดีเด่น', 'ไม่มี', 'ไม่มี', '', 1),
 (2, 'singha2', 'cHB6eDAw', 'male', 'ตะวัน', 'เข็มทอง', 'ไม่มี', 'ไม่มี', '', 1),
-(3, '321654', 'cHB6eDAw', 'male', 'นาย ก', 'ไก่', 'เล้า(อยู่กับแม่)', 'ไก้ไก่ๆไกลไก้ไกลไก่ไกๆไก่@coldmail.com', '', 2),
+(3, '321654', 'cHB6eDAw', 'male', 'นาย แบงค์', 'แก้วศรี', 'เล้า(อยู่กับแม่)', 'ไก้ไก่ๆไกลไก้ไกลไก่ไกๆไก่@coldmail.com', '', 2),
 (4, '123456', 'cHB6eDAw', 'male', 'นาย ข', 'ไข่', 'ไม่ให้ๆอย่ามาเอานะเค้าหวง', '8e88@morning.com', '', 2),
 (21, 'singha2', 'dGF3YW4=', 'male', 'yerm', 'cheao', 'as', '8e88@morning.com', '', 2),
 (22, 'singha2', 'dGF3YW4=', 'male', 'yerm', 'cheao', 'as', '8e88@morning.com', '', 2),
-(23, 'singha2', 'dGF3YW4=', 'male', 'yerm', 'cheao', 'as', '8e88@morning.com', '', 2);
+(23, 'singha2', 'dGF3YW4=', 'male', 'yerm', 'cheao', 'as', '8e88@morning.com', '', 2),
+(24, '123456', 'MTIzNDU2', 'male', 'ทดสอบ', 'ทดสอบ', 'ทดสอบ', 'ทดสอบ', '', 2),
+(27, 'eiei', 'MTIzNA==', 'male', 'นาย ตาหวาน', 'เข็มทองคำ', '76/431 ซ.5/4 ต.บางคูรัด อ.บางบัวทอง จ.นนทบุรี', 'singcomnet@hotmail.com', '-', 3);
 
 -- --------------------------------------------------------
 
@@ -272,7 +296,11 @@ INSERT INTO `user_paper` (`username`, `paper_id`) VALUES
 ('singha2', '10002'),
 ('singha', '10006'),
 ('singha', '10007'),
-('singha', '10008');
+('singha', '10008'),
+('singha', '10009'),
+('singha', '10010'),
+('singha', '10011'),
+('singha', '10012');
 
 --
 -- Indexes for dumped tables
@@ -334,13 +362,13 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `paper`
 --
 ALTER TABLE `paper`
-  MODIFY `paper_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10009;
+  MODIFY `paper_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10013;
 
 --
 -- AUTO_INCREMENT for table `reviewer_answer`
 --
 ALTER TABLE `reviewer_answer`
-  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `setting_timmer`
@@ -364,7 +392,7 @@ ALTER TABLE `status_tb`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,35 +1,33 @@
 <?php
-    require 'server.php';
-    require 'server/check_login.php';
-    $q_banner = "SELECT * FROM `banner` ";
-    $result_banner = mysqli_query($con,$q_banner);
-    $row_banner = mysqli_fetch_array($result_banner);
+require 'server.php';
+require 'server/check_login.php';
+$q_banner = "SELECT * FROM `banner` ";
+$result_banner = mysqli_query($con, $q_banner);
+$row_banner = mysqli_fetch_array($result_banner);
 
 
 
-    if(isset($_POST['gogogo'])){
-        $a = $_POST['commentf'];
-        $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
-        $q_b = mysqli_query($con,$b);
-        if($q_b){
-            $_SESSION['alert'] = 2 ;
-           
-        }else{
-            $_SESSION['alert'] = 0 ;
-        }
+if (isset($_POST['gogogo'])) {
+    $a = $_POST['commentf'];
+    $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
+    $q_b = mysqli_query($con, $b);
+    if ($q_b) {
+        $_SESSION['alert'] = 2;
+
+    } else {
+        $_SESSION['alert'] = 0;
     }
-    if(isset($_SESSION['alert'])){
-        if($_SESSION['alert'] == 0 ){
-          echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-        }
-        elseif ($_SESSION['alert'] == 1) {
-          echo '<script>alert("อัพเดท Banner เรียบร้อย.");</script>';
-        }
-        elseif ($_SESSION['alert'] == 2) {
-          echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
-        }
-        unset($_SESSION['alert']);
-      }
+}
+if (isset($_SESSION['alert'])) {
+    if ($_SESSION['alert'] == 0) {
+        echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
+    } elseif ($_SESSION['alert'] == 1) {
+        echo '<script>alert("อัพเดท Banner เรียบร้อย.");</script>';
+    } elseif ($_SESSION['alert'] == 2) {
+        echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
+    }
+    unset($_SESSION['alert']);
+}
 ?>
 
 
@@ -81,26 +79,25 @@
         </nav>
 
         <div id="page-wrapper">
+            <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12">
                     <h1 class="page-header">Footer</h1>
                     <br><h2 class="text-center">ตั้งค่า footer</h2>
-                <form action="footer.php" method="POST">
-                <div class="row">
-                    <div class="col-lg-12" style="text-align:center">
-                    <textarea  name="commentf" cols="110" rows="10" ><?php echo $row_banner['footer']  ?></textarea>   
-                    <br><br>
-                    </div>
-                    <div class="col-lg-12" style="text-align:center">
-                    <button class="btn btn-success btn-md "   type="submit" name="gogogo">Upload</button>
-                    </div>
-                </div>
-                </form>
+                <div class="col-lg-12" style="text-align:center">
+                    <form action="footer.php" method="POST">
+                            <textarea class="form-control"  name="commentf" cols="100" rows="10" ><?php echo $row_banner['footer'] ?></textarea>   
+                                <br><br>
+                    
                     <br>
                 </div>
+                    <div class="col-lg-12" style="text-align:center">
+                        <button class="btn btn-success btn-md "   type="submit" name="gogogo">อัพโหลด</button>
+                    </div>
+                    </form>
             </div>
-           
-
+            </div>
+            
+        </div>
     </div>
     
 
@@ -108,7 +105,7 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

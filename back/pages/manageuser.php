@@ -5,7 +5,7 @@
     require 'server/show_alert.php';
 
     //connect database form table user
-    $a = "SELECT * FROM user";
+    $a = "SELECT * FROM user ";
     $r_a = mysqli_query($con,$a);
 
 ?>
@@ -69,9 +69,12 @@
                                 <th>ชื่อ</th>
                                 <th>นามสกุล</th>
                                 <th>เพศ</th>
-                                <th>ที่อยู่</th>
+                                <th>สังกัด</th>
                                 <th>E-mail</th>
-                                <th>สมาชิค</th>
+                                <th>เบอร์โทรศัพท์</th>
+                                <th>Member</th>
+                                
+                                <th>สถานะ</th>
                                 <th>แก้ไข</th>
                                 <th>ลบ</th>
                             </thead>
@@ -85,7 +88,21 @@
                                             <td><?php echo $ro_a['gender'] ?></td>
                                             <td><?php echo $ro_a['address'] ?></td>
                                             <td><?php echo $ro_a['email'] ?></td>
+                                            <td><?php echo $ro_a['Tel'] ?></td>
                                             <td><?php echo $ro_a['member'] ?></td>
+                                            <td>
+                                            <?php
+                                            if($ro_a['role']=='1'){
+                                                echo "ผู้ใช้";
+                                            } 
+                                            else if($ro_a['role']=='2'){
+                                                echo "ผู้ทรงคุณวุฒิ";
+                                            }else{
+                                                echo "ผู้เข้าร่วมการประชุม" ; 
+                                            }
+                                            
+                                            ?>
+                                            </td>
 
                                     <td>
                                         <!-- Button trigger modal -->
@@ -102,19 +119,54 @@
                                                 <h3 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูลสมาชิค</h3>
                                                 </button>
                                             </div>
-                                            <div class="modal-body" style="text-align:center" >
-                                                <span>username : </span><input type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username"><br>
-                                                <span>password : </span><input type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password"><br>
-                                                <span>เพศ : </span><select name="gender" required>
+                                            <div class="modal-body"  >
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="user_name">username  </label>
+                                                            <input class="form-control" id="user_name" type="text" name="username" value="<?php echo $ro_a['username'] ?>" placeholder="username" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="pass_word">password  </label>
+                                                            <input class="form-control" id="pass_word" type="text" name="password" value="<?php echo base64_decode($ro_a['password']) ?>" placeholder="password" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label for="f_name">ชื่อ  </label>
+                                                            <input id="f_name" class="form-control" type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label fpr="l_name">นามสกุล  </label>
+                                                            <input id="l_name" class="form-control" type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                        <label for="gen_der">เพศ  </label>
+                                                        <select class="form-control" id="gen_der" name="gender" required>
                                                                             <option hidden  selected value="<?php echo $ro_a['gender'] ?>"><?php echo $ro_a['gender'] ?></option>
                                                                             <option value="male">ขาย</option>
                                                                             <option value="female" required>หญิง</option>
-                                                                        </select><br>
-                                                <span>ชื่อ : </span><input type="text" name="first_name" value="<?php echo $ro_a['first_name'] ?>" placeholder="firstname"><br>
-                                                <span>นามสกุล : </span><input type="text" name="last_name" value="<?php echo $ro_a['last_name'] ?>" placeholder="lastname"><br>
-                                                <span>ที่อยู่ : </span><input type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address"><br>
-                                                <span>email : </span><input type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email"><br>
-                                                <span>สมาชิค : </span><textarea name="member" value="<?php echo $ro_a['member'] ?>" cols="30" rows="10" placeholder="member"></textarea><br>
+                                                                        </select>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="addre">สังกัด  </label>
+                                                            <input id="addre" class="form-control" type="text" name="address" value="<?php echo $ro_a['address'] ?>" placeholder="address">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                       
+                                                        <div class="col-lg-6">
+                                                            <label for="e_mail">e-mail  </label>
+                                                            <input id="e_mail" class="form-control" type="text" name="email" value="<?php echo $ro_a['email'] ?>" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label for="tel">เบอร์โทรศัพท์</label>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
+                                                        </div>
+                                                    </div>
+                                                
                                             </div>
                                             <div class="modal-footer" style="text-align:center">
                                                     <button type="submit" class="btn btn-success">ยืนยัน</button>
@@ -170,7 +222,7 @@
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

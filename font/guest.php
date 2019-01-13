@@ -1,7 +1,7 @@
 <?php
 require 'server/server.php';
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
+if ($_SESSION['status'] != 1) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 
@@ -14,11 +14,18 @@ $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= 
 $result_name = mysqli_query($con, $q_name);
 $r_name = mysqli_fetch_assoc($result_name);
 
+$q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";
+$result_pay_time = mysqli_query($con, $q_pay_time);
+$r_pay_time = mysqli_fetch_assoc($result_pay_time);
+
+date_default_timezone_set("Asia/Bangkok");
+$today = date('Y-m-d');
+$pay_start = $r_pay_time['time_start'];
+$pay_end = $r_pay_time['time_end'];
 
 
-
-if($r_name['role']!=3){
-  $_SESSION['online'] = 0 ;
+if ($r_name['role'] != 3) {
+  $_SESSION['online'] = 0;
   header("Location: index.php");
 }
 
@@ -72,25 +79,25 @@ $q3 = mysqli_query($con, $a3);
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:25px">ผู้เข้าร่วมการประชุมวิชาการ</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size:20px">ผู้เข้าร่วมการประชุมวิชาการ</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">ช่องทางการจ่ายเงิน</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
-            </li>
-          </ul>
-        </div>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#first" style="font-size:20px">ข้อมูลส่วนตัว</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#second" style="font-size:20px">ช่องทางการจ่ายเงิน</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="server/logout.php" style="font-size:20px">ออกจากระบบ</a>
+              </li>
+            </ul>
+          </div>
       </div>
     </nav>
 
@@ -99,16 +106,16 @@ $q3 = mysqli_query($con, $a3);
         <div class="row h-100">
           <div class="col-lg-12 my-auto">
             <div class="header-content mx-auto">
-              <h1 class="mb-5" >การประชุมวิชาการ สำนักการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
+              <h1 class="mb-5" >การประชุมวิชาการ สำนักวิชาการศึกษาทั่วไป <br> CONFERENCE <br> GE SSRU</h1>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="text-center" id="first" style="background-color:#d9d9d9;">
+    <section class="text-center" id="first" style="background-color:#F6F8FA;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">ข้อมูลส่วนตัว</h2>
             <hr class="star-dark mb-5">
                 <div class="card">
                     <h5 class="card-title">ข้อมูล</h5>
@@ -138,19 +145,15 @@ $q3 = mysqli_query($con, $a3);
                             <div class="col-lg-6" style="text-align:left">
                                 <span><?php echo $row['email']; ?></span>
                             </div>
-                            <div class="col-lg-6" style="text-align:left">
-                          
-                        
                         </div>
                     </div>
                 </div>  
-        </div>
       </div>
     </section>
 
-    <section class="text-center" id="second" style="background-color:#d9d9d9;">
+    <section class="text-center" id="second" style="background-color:#F6F8FA;">
       <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">ช่องทางการจ่ายเงิน</h2>
             <hr class="star-dark mb-5">
             <div class="card">
                 <h5 class="card-title">ช่องทางการจ่ายเงิน</h5>
@@ -177,19 +180,19 @@ $q3 = mysqli_query($con, $a3);
                             <div class="col-lg-12" style="text-align:left">
                                 <br>
                             </div>
-                         
                             <div class="col-lg-12" style="text-align: right">
                                 <span>โอนแล้ว กรุณาส่งหลักฐานการโอนด้านล่าง</span>
                             </div>
                     </div>
                 </div>
             </div>
-        </div><br>
+      </div><br>
+        
         <h2 class="text-center text-uppercase text-secondary mb-0">หลักฐานการชำระค่าบริการ</h2>
         <hr><br>
         <form action="guest.php" method="post"  enctype="multipart/form-data" >
-        <input type="file" name="money" >
-        <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
+          <input type="file" name="money" accept=".pdf,.jpg,.png" required>
+          <button type="submit" name = "gogo"class="btn btn-md btn-info">อัพโหลดใบเสร็จ</button>
         </form>
         <?php
         if (isset($_POST['gogo'])) {
@@ -198,9 +201,9 @@ $q3 = mysqli_query($con, $a3);
           $target_path = "../Bill/";
           $upload_path = $target_path . $new_taget_name;
           $uploadOk = 1;
-        
+
           $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
-        
+
           if ($_FILES["money"]["size"] > 8000000) {
             echo "Sorry, your file is too large.";
             $uploadOk = 0;
@@ -217,37 +220,39 @@ $q3 = mysqli_query($con, $a3);
             echo "Sorry, your file was not uploaded.";
           } else {
             if ($pay_start <= $today && $today <= $pay_end) {
-        
-        
-        
+
+
+
               if (move_uploaded_file($_FILES["money"]["tmp_name"], $upload_path)) {
-                echo 'Move success.';
+                echo 'Move success.<br>';
               } else {
                 echo 'Move fail';
               }
-        
-        
+
+
               $paper = $_FILES["money"]["name"];
               $b = $new_taget_name;
-              echo $b . "  " . $id_paper;
-              $a = "UPDATE `bill_guest` SET `tmp_name`='$b' WHERE `username` = $id ;";
-        
+
+              $a = "UPDATE `bill_guest` SET `tmp_name`='$b',`status`='6' WHERE `username` = '$id' ;";
+
               $r_a = mysqli_query($con, $a);
-        
-              if ($r_a){
-               echo "<img src=\"banner/".$b."\" alt=\"banner\">";
-              } else {
-                // แสดงข้อความว่าผิดพลาด
-              }
-              
+
+              if ($r_a) {
+                ?>
+               <img src="../bill/<?php echo $b ?>" alt="banner">
+               <?php
+
             } else {
+                // แสดงข้อความว่าผิดพลาด
+            }
+
+          } else {
         
               // แสดงข้อความว่าเกินเวลา
-            }
           }
         }
-        ?>
-      </div>
+      }
+      ?>
     </section>
   
 

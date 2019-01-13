@@ -57,12 +57,9 @@ $result2 = mysqli_query($con, $q2);
         </nav>
 
         <div id="page-wrapper">
-            <div class="row">
-                <div class=" col-lg-12">
-                    <div class="container-fluid">
+                    <div class="container-fluid table-responsive-lg">
                         <h1 class="page-header">รายงาน</h1>
-
-                        <table id="tablepaper" class="display responsive" >
+                        <table id="tablepaper" class="display table" >
                             <thead>
                                 <tr>
                                     <th>รหัสเอกสาร</th>
@@ -126,8 +123,6 @@ $result2 = mysqli_query($con, $q2);
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -137,7 +132,7 @@ $result2 = mysqli_query($con, $q2);
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

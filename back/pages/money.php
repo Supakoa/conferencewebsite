@@ -57,7 +57,7 @@ $result = mysqli_query($con, $q);
 
         <div id="page-wrapper">
             <div class="row">
-            <h1 class="page-header">การเงิน</h1>
+            <h1 class="page-header">ผู้ส่งเอกสาร</h1>
 
                 <div class="col-lg-12">
                     <table id="moneytable" class="display rseponsive">
@@ -110,7 +110,7 @@ $result = mysqli_query($con, $q);
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

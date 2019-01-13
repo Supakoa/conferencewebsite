@@ -97,7 +97,7 @@
 
                 <div class="col-lg-6">
                 <h3>ใบเสร็จ(เอกสาร)</h3>
-                    <span>เวลาเริ่มอัพโหลดเอกสาร : </span>
+                    <span>เวลาเริ่มอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="start_slip1" value="<?php echo $r_t2['time_start'] ?>"><br>
                     <span>เวลาสิ้นสุดอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="end_slip1" value="<?php echo $r_t2['time_end'] ?>"><br><br>
@@ -105,7 +105,7 @@
 
                 <div class="col-lg-6">
                 <h3>ใบเสร็จ(ผู้เข้าชม)</h3>
-                    <span>เวลาเริ่มอัพโหลดเอกสาร : </span>
+                    <span>เวลาเริ่มอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="start_slip2" value="<?php echo $r_t3['time_start'] ?>"><br>
                     <span>เวลาสิ้นสุดอัพโหลดใบเสร็จ : </span>
                     <input class="form-control" type="date" name="end_slip2" value="<?php echo $r_t3['time_end'] ?>"><br><br>
@@ -124,7 +124,7 @@
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../DataTables/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../DataTables/datatables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7/dist/sweetalert2.all.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 

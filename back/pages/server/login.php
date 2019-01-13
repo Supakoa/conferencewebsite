@@ -14,7 +14,7 @@
         $_SESSION['online']=1;
         header("Location: ../report.php");
     }else{
-        $_SESSION['online']=0;
+        $_SESSION['alert'] = 14;
         header("Location: ../../index.php");
     }
 
