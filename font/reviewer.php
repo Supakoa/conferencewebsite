@@ -118,7 +118,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%" srcset="">
 
 
-    <section class="text-center" id="uncheck" style="background-color:#d9d9d9;">
+    <section class="text-center" id="uncheck" style="background-color:#F6F8FA;">
       <div class="container">
         <div class="section-heading text-center">
         <h2 class="text-center text-uppercase text-secondary mb-0">ยังไม่ได้ตรวจ</h2>
@@ -161,7 +161,7 @@ $r_name = mysqli_fetch_assoc($result_name);
       </div><br><br>
     </section>
 
-     <section class="text-center" id="check" style="background-color:#d9d9d9;">
+     <section class="text-center" id="check" style="background-color:#F6F8FA;">
             <div class="container">
             <h2 class="text-center text-uppercase text-secondary mb-0">ตรวจแล้ว</h2>
               <div class="row">

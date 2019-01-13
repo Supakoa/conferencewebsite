@@ -115,7 +115,7 @@
                 <div class="row">
                     <div class="col-lg-4 mx-auto" >
                         <div class="card text-center" style="border-radius: 10px;">
-                            <div class="card-body" style="background-color:#dd99ff;border-radius: 10px;">
+                            <div class="card-body" style="background-color:#e766ff;border-radius: 10px;">
                                 <form  action = "server/login.php" method = "POST">
                                     <div class="form-group">
                                         <h4 style="color:#ffffff">Username</h4>
@@ -142,7 +142,7 @@
                     <br>
                 </div>
             <div class="container">
-                <div class="card" style="background-color:#dd99ff">
+                <div class="card" style="background-color:#e766ff">
                     <div class="card-body">
                         <form action="server/register.php" method="POST">
                             <div class="control-group">
