@@ -105,6 +105,10 @@ $_SESSION['set_page'] = 4;
                                             $row_reviewer_name = mysqli_fetch_array($result_reviewer_name);
                                             
                                             ?>
+
+                                             <td><p style="font-size: 5"><?php echo $row_reviewer_name['first_name']." ".$row_reviewer_name['last_name'] ?></p> </td>
+
+                                            <?php } ?>
                                             <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
                                             <td><?php require 'modal/modal3.php' ?></td>
                                         </tr> 
