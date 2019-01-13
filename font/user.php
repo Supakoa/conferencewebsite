@@ -131,7 +131,6 @@ $q3 = mysqli_query($con, $a3);
         <section class="text-center" id="first" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เอกสาร</h2>
-                <hr class="star-dark mb-5">
                 <div class="table-responsive-lg">
                     <table id="table_id" class="table display">
                         <thead>
@@ -173,7 +172,7 @@ $q3 = mysqli_query($con, $a3);
                 </div>
 
             </div>
-        </div>
+        </div><br><br>
     </section>
     <?php if ($paper_start <= $today && $today <= $paper_end) { ?>
 
@@ -181,7 +180,6 @@ $q3 = mysqli_query($con, $a3);
         <section class="features" id="second" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">เพิ่มเอกสาร</h2>
-                <hr class="star-dark mb-5">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
                         <div class="card">
@@ -236,7 +234,7 @@ $q3 = mysqli_query($con, $a3);
 
                     </div>
                 </div>
-            </div>
+            </div><br><br>
         </section>
     <?php }
     ?>
@@ -244,7 +242,6 @@ $q3 = mysqli_query($con, $a3);
         <section class="text-center" id="third" style="background-color:#F6F8FA;">
             <div class="container">
                 <h2 class="text-center text-uppercase text-secondary mb-0">จ่ายเงิน</h2>
-                <hr class="star-dark mb-5">
                 <div class="table-responsive-lg">
                     <table id="table" class="table display">
                         <thead>

@@ -103,7 +103,6 @@ if($r_name['role']!=2){
       <div class="container">
         <div class="section-heading text-center">
         <h2 class="text-center text-uppercase text-secondary mb-0">ยังไม่ได้ตรวจ</h2>
-            <hr class="star-dark mb-5">
         </div>
         <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -143,52 +142,50 @@ if($r_name['role']!=2){
                 
         </div>
         </div>
-        
-      </div>
+      </div><br><br>
     </section>
 
      <section class="text-center" id="check" style="background-color:#d9d9d9;">
-      <div class="container">
-      <h2 class="text-center text-uppercase text-secondary mb-0">ตรวจแล้ว</h2>
-            <hr class="star-dark mb-5">
-        <div class="row">
-        <div class="col-lg-10 mx-auto ">
-            <div class="table-responsive-lg">
-            <table id="table2" class="table display">
-            <thead>
-                <tr>
-                    <th>รหัสเอกสาร</th>
-                    <th>คำนำ</th>
-                    <th>สถานะ</th>
-                    <th>แก้ไข</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php while ($row2 = mysqli_fetch_array($result2)) {
-                $id_paper = $row2["paper_id"];
+            <div class="container">
+            <h2 class="text-center text-uppercase text-secondary mb-0">ตรวจแล้ว</h2>
+              <div class="row">
+              <div class="col-lg-10 mx-auto ">
+                  <div class="table-responsive-lg">
+                  <table id="table2" class="table display">
+                  <thead>
+                      <tr>
+                          <th>รหัสเอกสาร</th>
+                          <th>คำนำ</th>
+                          <th>สถานะ</th>
+                          <th>แก้ไข</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                  <?php while ($row2 = mysqli_fetch_array($result2)) {
+                      $id_paper = $row2["paper_id"];
 
-                ?>
-              <tr>
-                  <td><?php echo $row2['paper_id'] ?></td>
-                    <td><?php echo $row2['name_th'] ?></td>
-                    <td><?php echo $row2['status'] ?></td>
-                    <td> 
+                      ?>
+                    <tr>
+                        <td><?php echo $row2['paper_id'] ?></td>
+                          <td><?php echo $row2['name_th'] ?></td>
+                          <td><?php echo $row2['status'] ?></td>
+                          <td> 
 
-                    <?php 
-                    require 'modal/modal4.php';
-                    ?>
+                          <?php 
+                          require 'modal/modal4.php';
+                          ?>
 
-                    
-                    </td>
-                </tr>
-            <?php 
-            } ?>
-            </tbody>
-            </table>
+                          
+                          </td>
+                      </tr>
+                  <?php 
+                  } ?>
+                  </tbody>
+                  </table>
+                  </div>
             </div>
-      </div>
-    </div>
-  </div>
+          </div>
+        </div><br><br>
     </section>
    
 
