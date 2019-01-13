@@ -81,14 +81,8 @@ $_SESSION['set_page'] = 4;
 
                                             $q_reviewer = "SELECT * FROM reviewer_paper WHERE paper_id =$id_paper ";
                                             $result_reviewer = mysqli_query($con, $q_reviewer);
-                                            $row_reviewer = mysqli_fetch_array($result_reviewer);
+                                            
 
-                                            $q_reviewer1 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer1 ";
-                                            $result_reviewer1 = mysqli_query($con, $q_reviewer1);
-                                            $row_reviewer1 = mysqli_fetch_array($result_reviewer1);
-                                            $q_reviewer2 = "SELECT user.first_name,user.last_name FROM reviewer_paper,user,status_tb WHERE paper_id =$id_paper And user.username = reviewer_paper.reviewer2 ";
-                                            $result_reviewer2 = mysqli_query($con, $q_reviewer2);
-                                            $row_reviewer2 = mysqli_fetch_array($result_reviewer2);
                                             $q_answer = "SELECT * FROM reviewer_answer WHERE paper_id = $id_paper ";
                                             $result_answer = mysqli_query($con, $q_answer);
                                             $row_answer = mysqli_fetch_array($result_answer);
@@ -104,8 +98,13 @@ $_SESSION['set_page'] = 4;
                                             <td style="text-align:left" ><p style="font-size: 5 "><?php echo $row['paper_id'] ?></p></td>
                                             <td><p style="font-size: 5"><?php echo $row['name_th'] ?></p></td>
                                             <td><p style="font-size: 5"><?php echo $row_user['first_name'] . " " . $row_user['last_name'] ?></p></td>
-                                            <td><p style="font-size: 5"><?php echo $row_reviewer1['first_name'] . " " . $row_reviewer1['last_name'] ?></p> </td>
-                                            <td><p style="font-size: 5"><?php echo $row_reviewer2['first_name'] . " " . $row_reviewer2['last_name'] ?></p></td>
+                                             <?php while($row_reviewer = mysqli_fetch_array($result_reviewer)){ 
+                                            $name = $row_reviewer['reviewer'];
+                                            $q_reviewer_name = "SELECT * FROM user WHERE username  = '$name' ";
+                                            $result_reviewer_name = mysqli_query($con, $q_reviewer_name);
+                                            $row_reviewer_name = mysqli_fetch_array($result_reviewer_name);
+                                            
+                                            ?>
                                             <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
                                             <td><?php require 'modal/modal3.php' ?></td>
                                         </tr> 
