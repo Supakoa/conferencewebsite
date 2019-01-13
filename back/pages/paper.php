@@ -208,10 +208,10 @@ $_SESSION['set_page'] = 8;
 
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">เอกสารที่เกี่ยวข้อง</h1>
-                    <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">ตั้งค่าเว็บไซต์ที่เกี่ยวข้อง</h4><br>
+            <h1 class="page-header">เอกสารที่เกี่ยวข้อง</h1>
 
+                <div class="col-lg-12">
+                    <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">เว็บไซต์ที่เกี่ยวข้อง</h4><br>
                     <form method="POST" action="paper.php" enctype="multipart/form-data">
                     <table class="table  table-responsive-lg">
                         <thead class="thead-drak">
@@ -243,7 +243,7 @@ $_SESSION['set_page'] = 8;
                     </table>
                 </div>
                 <div class="col-lg-12">
-                    <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">ตั้งค่าเอกสารเผยแพร่</h4><br>
+                    <h4 style="margin-left: 5px;color:#6ac7ed;text-align:center">เอกสารเผยแพร่</h4><br>
                         <table class="table  table-responsive-lg">
                             <thead class="thead-drak">
                                 <th scope="col" colp="2">ข้อที่</th>
