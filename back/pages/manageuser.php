@@ -2,7 +2,6 @@
     //require database check_online show_message
     require 'server.php';
     require 'server/check_login.php';
-    require 'server/show_alert.php';
 
     //connect database form table user
     $a = "SELECT * FROM user ";
@@ -41,6 +40,11 @@
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
+
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     
 
@@ -162,7 +166,7 @@
                                                         </div>
                                                         <div class="col-lg-6">
                                                             <label for="tel">เบอร์โทรศัพท์</label>
-                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
+                                                            <input id="tel" class="form-control" type="text" name="tel" value="<?php echo $ro_a['Tel'] ?>" maxlength="10" placeholder="Tel." pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" required>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -252,4 +256,8 @@
 
 </body>
 
+   <!-- php check alert -->
+   <?php 
+        require '../../alert.php'; 
+   ?>
 </html>

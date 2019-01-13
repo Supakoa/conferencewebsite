@@ -4,7 +4,8 @@
     
     //check online
     if($_SESSION['status_admin'] != 1){
-        $_SESSION['online'] = 0 ;
+        // $_SESSION['online'] = 0 ;
+        $_SESSION['alert'] = 2 ;
         header("Location: ../index.php");
     }
 
@@ -21,26 +22,25 @@
     $tel = $_POST['tel'];
 
     //Check user from databse is match or not match
-    $a = "SELECT * FROM user WHERE username = $username ";
+    $a = "SELECT * FROM user WHERE username = '$username' ";
     $r_a = mysqli_query($con,$a);
 
     //check username password email
-    $alert=0;
     if ($password!=$conpassword||$email!=$conemail) {
-        $_SESSION['register_alert']=3;
+        $_SESSION['alert'] = 6;
         if ($email==$conemail&&$password!=$conpassword) {
-            $_SESSION['register_alert']=1;
+            $_SESSION['alert'] = 7;
         }elseif ($email!=$conemail&&$password==$conpassword) {
-            $_SESSION['register_alert']=2;
+            $_SESSION['alert'] = 8;
         }
-        $alert=1;
+        header("Location:../register.php");
+        exit();
     }
-    if (mysqli_fetch_array($r_a)) {
-        $_SESSION['register_match']=1;
-        $alert=1;
-    }
-    if($alert==1){
+
+    if (mysqli_num_rows($r_a)>0) {
+        $_SESSION['alert'] = 9;
         header("Location: ../register.php");
+        exit();
     }
 
     //insert data into database
@@ -52,12 +52,10 @@
 
         $r_a = mysqli_query($con,$a);
         if ($r_a) {
-            $_SESSION['user_match']=2;
-            $_SESSION['alert'] = 2;
+            $_SESSION['alert'] = 3;
             header("Location: ../register.php");
         }else {
-            $_SESSION['user_match']=3;
-            $_SESSION['alert'] = 1;
+            $_SESSION['alert'] = 4;
             header("Location: ../register.php");
         }
     }
