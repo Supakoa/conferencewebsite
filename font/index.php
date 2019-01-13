@@ -311,9 +311,7 @@
         <script src="js/new-age.min.js"></script>
 
         <!-- php check alert -->
-        <?php 
-            require '../alert.php'; 
-        ?>
+        <?php require '../alert.php'; ?>
 
     </body>
 

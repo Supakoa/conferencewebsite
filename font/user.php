@@ -1,50 +1,67 @@
 <?php
-require 'server/server.php';
-require 'server/show_alert.php';
-if ($_SESSION['status'] != 1) {
-    $_SESSION['online'] = 0;
-    header("Location: index.php");
-}
-//$id = $_SESSION['id'];
-// $_SESSION['id'] = 'singha';
-$id = $_SESSION['id'];
-$q = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,user_paper,user,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = '$id' AND user_paper.username = user.username AND paper.status = status_tb.id group by paper.paper_id";
+    require 'server/server.php';
+    // require 'server/show_alert.php';
 
-$result = mysqli_query($con, $q);
-$q_money = "SELECT paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract, paper.key_word,user.first_name,user.last_name,status_tb.status FROM paper,user,user_paper,status_tb WHERE paper.paper_id = user_paper.paper_id AND user.username = user_paper.username AND status_tb.id = paper.money_status AND paper.status = 2 AND user_paper.username = user.username group by paper.paper_id";
-$result_money = mysqli_query($con, $q_money);
+    if ($_SESSION['status'] != 1) {
+        $_SESSION['online'] = 0;
+        header("Location: index.php");
+    }
 
-$q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
-$result_name = mysqli_query($con, $q_name);
-$r_name = mysqli_fetch_assoc($result_name);
+    //$id = $_SESSION['id'];
+    // $_SESSION['id'] = 'singha';
 
-$q_paper_time = "SELECT * FROM `setting_timmer` WHERE `order` = 1 ";
-$result_paper_time = mysqli_query($con, $q_paper_time);
-$r_paper_time = mysqli_fetch_assoc($result_paper_time);
+    $id = $_SESSION['id'];
+    $q = "SELECT paper.paper_id,paper.name_th,status_tb.status 
+    FROM paper,user_paper,user,status_tb 
+    WHERE paper.paper_id = user_paper.paper_id 
+        AND user.username = '$id' 
+        AND user_paper.username = user.username 
+        AND paper.status = status_tb.id 
+    group by paper.paper_id";
 
-$q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";
-$result_pay_time = mysqli_query($con, $q_pay_time);
-$r_pay_time = mysqli_fetch_assoc($result_pay_time);
+    $result = mysqli_query($con, $q);
+    $q_money = "SELECT  paper.money_status,paper.tmp_money,paper.paper_id, paper.name_th, paper.name_eng, paper.abstract
+                        , paper.key_word,user.first_name,user.last_name,status_tb.status 
+    FROM paper,user,user_paper,status_tb 
+    WHERE paper.paper_id = user_paper.paper_id 
+        AND user.username = user_paper.username 
+        AND status_tb.id = paper.money_status 
+        AND paper.status = 2 
+        AND user_paper.username = user.username 
+    group by paper.paper_id";
+    $result_money = mysqli_query($con, $q_money);
 
-date_default_timezone_set("Asia/Bangkok");
-$today = date('Y-m-d');
-$paper_start = $r_paper_time['time_start'];
-$paper_end = $r_paper_time['time_end'];
-$pay_start = $r_pay_time['time_start'];
-$pay_end = $r_pay_time['time_end'];
-$a3 = "SELECT * FROM banner ";
-$q3 = mysqli_query($con, $a3);
-$r_3 = mysqli_fetch_array($q3);
+    $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
+    $result_name = mysqli_query($con, $q_name);
+    $r_name = mysqli_fetch_assoc($result_name);
+
+    $q_paper_time = "SELECT * FROM `setting_timmer` WHERE `order` = 1 ";
+    $result_paper_time = mysqli_query($con, $q_paper_time);
+    $r_paper_time = mysqli_fetch_assoc($result_paper_time);
+
+    $q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";
+    $result_pay_time = mysqli_query($con, $q_pay_time);
+    $r_pay_time = mysqli_fetch_assoc($result_pay_time);
+
+    date_default_timezone_set("Asia/Bangkok");
+    $today = date('Y-m-d');
+    $paper_start = $r_paper_time['time_start'];
+    $paper_end = $r_paper_time['time_end'];
+    $pay_start = $r_pay_time['time_start'];
+    $pay_end = $r_pay_time['time_end'];
+    $a3 = "SELECT * FROM banner ";
+    $q3 = mysqli_query($con, $a3);
+    $r_3 = mysqli_fetch_array($q3);
 
 
-if ($r_name['role'] != 1) {
-    $_SESSION['online'] = 0;
-    header("Location: index.php");
-}
+    if ($r_name['role'] != 1) {
+        $_SESSION['online'] = 0;
+        header("Location: index.php");
+    }
 
-//footer
-$a3 = "SELECT * FROM banner ";
-$q3 = mysqli_query($con, $a3);
+    //footer
+    $a3 = "SELECT * FROM banner ";
+    $q3 = mysqli_query($con, $a3);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +93,11 @@ $q3 = mysqli_query($con, $a3);
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
+
+        <!-- sweet alert 2 -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+        <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     </head>
 
@@ -154,13 +176,13 @@ $q3 = mysqli_query($con, $a3);
                                     <td> 
 
                                         <?php
-                                        if ($row['status'] == "ผ่าน" || $row['status'] == "ไม่ผ่าน") {
-                                            require 'modal/modal.php';
-                                        } elseif ($row['status'] == "แก้ไข") {
-                                            require 'modal/modal2.php';
-                                        } else {
-                                            
-                                        }
+                                            if ($row['status'] == "ผ่าน" || $row['status'] == "ไม่ผ่าน") {
+                                                require 'modal/modal.php';
+                                            } elseif ($row['status'] == "แก้ไข") {
+                                                require 'modal/modal2.php';
+                                            } else {
+                                                
+                                            }
                                         ?>
 
 
@@ -187,12 +209,14 @@ $q3 = mysqli_query($con, $a3);
                         <div class="card">
                             <div class="card-body" style="background-color:#cc66ff">
                                 <form action = "server/insert_paper.php" method ="POST" enctype="multipart/form-data">
+
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ไฟล์เอกสาร</h5>
                                             <input class="form-control" name="paper" type="file"  accept=".pdf" placeholder="File" required="required">
                                         </div>
                                     </div>
+
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ชื่อเอกสาร (Thai)</h5>
@@ -200,6 +224,7 @@ $q3 = mysqli_query($con, $a3);
                                             <p class="help-block text-danger"></p>
                                         </div>
                                     </div>
+
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ชื่อเอกสาร (English)</h5>
@@ -264,15 +289,12 @@ $q3 = mysqli_query($con, $a3);
                                     <td><?php echo $row_money['paper_id'] ?></td>
                                     <td><?php echo $row_money['name_th'] ?></td>
                                     <td><?php echo $row_money['status'] ?></td>
-                                    <td> 
-
+                                    <td>
                                         <?php
-                                        if ($row_money['money_status'] == "7" || $row_money['money_status'] == "4") {
-                                            require 'modal/modal_money.php';
-                                        }
+                                            if ($row_money['money_status'] == "7" || $row_money['money_status'] == "4") {
+                                                require 'modal/modal_money.php';
+                                            }
                                         ?>
-
-
                                     </td>
                                 </tr>
                             <?php }
@@ -324,6 +346,9 @@ $q3 = mysqli_query($con, $a3);
 
 <!-- Custom scripts for this template -->
 <script src="js/new-age.min.js"></script>
+
+<!-- php check alert -->
+<?php require '../alert.php'; ?>
 
 </body>
 

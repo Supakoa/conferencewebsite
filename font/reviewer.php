@@ -4,20 +4,36 @@ require 'server/server.php';
 $id = $_SESSION['id'];
 // $id = "321654";
   
-if($_SESSION['status'] != 1){
-  $_SESSION['online'] = 0 ;
+if (!isset($_SESSION['status'])) {
+  // $_SESSION['online'] = 0;
+  $_SESSION['alert'] = 2;
   header("Location: index.php");
 }
 
-$q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb,reviewer_answer
-WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status = 1 And 
-reviewer_paper.reviewer = '$id'  AND (reviewer_answer.reviewer_id = $id AND reviewer_answer.paper_id = paper.paper_id AND reviewer_answer.status = ' ')  ";
-$result1 = mysqli_query($con, $q1); 
-$q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status FROM paper,reviewer_paper,user,status_tb WHERE paper.paper_id = reviewer_paper.paper_id AND user.username = '$id' AND paper.status = status_tb.id AND paper.status != 1  And reviewer_paper.reviewer = '$id' ";
-$result2 = mysqli_query($con, $q2);
-$q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
-$result_name = mysqli_query($con, $q_name);
-$r_name = mysqli_fetch_assoc($result_name);
+  $q1 = "SELECT paper.paper_id,paper.name_th,status_tb.status 
+  FROM paper,reviewer_paper,user,status_tb,reviewer_answer
+  WHERE paper.paper_id = reviewer_paper.paper_id 
+    AND user.username = '$id' 
+    AND paper.status = status_tb.id 
+    AND paper.status = '1'
+    And reviewer_paper.reviewer = '$id'  
+    AND (reviewer_answer.reviewer_id = '$id'
+    AND reviewer_answer.paper_id = paper.paper_id 
+    AND reviewer_answer.status = ' ') ";
+  $result1 = mysqli_query($con, $q1); 
+
+  $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status 
+  FROM paper,reviewer_paper,user,status_tb 
+  WHERE paper.paper_id = reviewer_paper.paper_id 
+    AND user.username = '$id' 
+    AND paper.status = status_tb.id 
+    AND paper.status != 1  
+    And reviewer_paper.reviewer = '$id' ";
+  $result2 = mysqli_query($con, $q2);
+  
+  $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
+  $result_name = mysqli_query($con, $q_name);
+  $r_name = mysqli_fetch_assoc($result_name);
 
 if($r_name['role']!=2){
   $_SESSION['online'] = 0 ;
@@ -118,8 +134,8 @@ if($r_name['role']!=2){
                     </tr>
                 </thead>
                 <tbody>
-                <?php while ($row1 = mysqli_fetch_array($result1)) {
-                    $id_paper = $row1["paper_id"];
+                    <?php while ($row1 = mysqli_fetch_array($result1)) {
+                      $id_paper = $row1["paper_id"];
 
                     ?>
                   <tr>
@@ -127,12 +143,9 @@ if($r_name['role']!=2){
                         <td><?php echo $row1['name_th'] ?></td>
                         <td><?php echo $row1['status'] ?></td>
                         <td> 
-
                         <?php 
-                        require 'modal/modal3.php';
-                        ?>
-
-                         
+                          require 'modal/modal3.php';
+                        ?> 
                         </td>
                     </tr>
                 <?php 
@@ -216,12 +229,15 @@ if($r_name['role']!=2){
     <script type="text/javascript" src="DataTables/datatables.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-    $(document).ready( function () {
-    $('#table1').DataTable();
-    } );
-    $(document).ready( function () {
-    $('#table2').DataTable();
-    } );
+
+      $(document).ready( function () {
+      $('#table1').DataTable();
+      } );
+
+      $(document).ready( function () {
+      $('#table2').DataTable();
+      } );
+
     </script>
 
     <!-- Plugin JavaScript -->

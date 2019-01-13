@@ -1,26 +1,7 @@
 <?php
     require 'server.php';
     require 'server/check_login.php';
-    require 'server/show_alert.php';
 
-    //alert
-    if(isset($_SESSION['register_alert'])){
-        if ($_SESSION['register_alert']==1) {
-          echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
-        }elseif ($_SESSION['register_alert']==2) {
-          echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
-        }elseif ($_SESSION['register_alert']==3) {
-          echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
-        }
-      }
-    if(isset($_SESSION['register_match'])){
-        if($_SESSION['register_match']==1){
-          echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
-        }
-    }
-    //turn alsert variable
-    $_SESSION['register_alert']=0;
-    $_SESSION['register_match']=0;
 
 ?>
 
@@ -77,52 +58,74 @@
 
                 <div id="page-wrapper">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <h1 class="page-header">สมัครผู้ตรวจ </h1>
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-9">
                             <div class="container-fluid">
-                                <h3 style="text-align:center">สมัคร ผู้ตรวจ </h3><hr>
-                                
                                     <form action="server/insert_register.php" method="POST">
-                                        <div class="form-group">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-6">
                                             <label >Username **</label>
                                             <input type="text" class="form-control" name="username" placeholder="ชื่อผู้ใช้" pattern="([!-~]{6,})" title="ขั้นต่ำ 6 ตัวอักษร เฉพาะภาษาอังกฤษ ตัวเลขหรือสัญญาลักษณ์พิเศษ" required>
 
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="password">Password **</label>
                                             <input type="text" class="form-control" name="password" placeholder="รหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
                                             <label for="conpassword">ยืนยัน Password </label>
                                             <input type="text" class="form-control" name="conpassword" placeholder="ยืนยันรหัสผ่าน" pattern="({6,})" title="ขั้นต่ำ 6 ตัวอักษร" required>
 
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="fname">ชื่อ **</label>
                                             <input type="text" class="form-control" name="fname" placeholder="ชื่อจริง" pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="lname">นามสกุล **</label>
                                             <input type="text" class="form-control" name="lname" placeholder="นามสกุล"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" required>
 
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="gender">เพศ</label>
                                             <select class="form-control" name="gender" required>
                                                 <option disabled selected value="">เพศ</option>
                                                 <option value="male">ชาย</option>
                                                 <option value="female">หญิง</option>
                                             </select>
-
+                                            </div>
+                                            <div class="col-lg-12">
                                             <label for="address">ที่อยู่</label>
                                             <textarea class="form-control" name="address" rows="3" placeholder="ที่อยู่"></textarea required>
                                         
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="email">Email *</label>
                                             <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
                                             
+                                            </div>
+                                            <div class="col-lg-6">
                                             <label for="comemail">ยืนยัน Email *</label>
                                             <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
                                             
-                                            <label for="Tel"เบอร์โทรศัพท์มือถือ *></label>
+                                            </div>
+                                            <div class="col-lg-6">
+                                            <label for="Tel"เบอร์โทรศัพท์มือถือ *>เบอร์โทรศัพท์มือถือ</label>
                                             <input class="form-control" name="tel" type="text" maxlength="10" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
                                             
                                             </div>
+                                        </div>
+                                            </div>
+                                            <div class="text-center">
                                             <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button><br>
+                                                
+                                            </div>
                                     </form><br>
                                 </div>
                             </div>
-                        <div class="col-lg-4"></div>
+                        <div class="col-lg-2"></div>
                     </div>
             </div>
            

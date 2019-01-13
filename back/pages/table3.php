@@ -43,6 +43,10 @@ $_SESSION['set_page'] = 4;
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -105,6 +109,10 @@ $_SESSION['set_page'] = 4;
                                             $row_reviewer_name = mysqli_fetch_array($result_reviewer_name);
                                             
                                             ?>
+
+                                             <td><p style="font-size: 5"><?php echo $row_reviewer_name['first_name']." ".$row_reviewer_name['last_name'] ?></p> </td>
+
+                                            <?php } ?>
                                             <td><p style="font-size: 5"><?php echo $row_status['status'] ?></p></td>
                                             <td><?php require 'modal/modal3.php' ?></td>
                                         </tr> 
@@ -150,6 +158,8 @@ $_SESSION['set_page'] = 4;
         
 	</script>
 
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 </body>
 
 </html>

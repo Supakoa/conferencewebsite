@@ -161,7 +161,7 @@
                 echo "
                     <script>
                         Swal({
-                            type: 'question',
+                            type: 'error',
                             title: 'ข้อมูลไม่ถูกต้อง',
                             text: 'เข้าสู่ระบบอีกครั้ง.',
                             // footer: '<a href>Why do I have this issue?</a>'
@@ -200,6 +200,18 @@
                             type: 'error',
                             title: 'อัพโหลดได้เฉพาะไฟล์ JPG,PNG  เท่านั้น',
                             text: 'ลองอัพโหลดใหม่อีกครั้ง.',
+                            // footer: '<a href>Why do I have this issue?</a>'
+                        });                    
+                    </script>";
+            break;
+
+            case '18':
+                echo "
+                    <script>
+                        Swal({
+                            type: 'warning',
+                            title: 'อยู่นอกช่วงเวลาที่กำหนด',
+                            text: 'กรุณาอัปโหลดลงในช่วงเวลาที่กำหนด.',
                             // footer: '<a href>Why do I have this issue?</a>'
                         });                    
                     </script>";

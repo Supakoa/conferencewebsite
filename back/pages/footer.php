@@ -12,22 +12,13 @@ if (isset($_POST['gogogo'])) {
     $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
     $q_b = mysqli_query($con, $b);
     if ($q_b) {
-        $_SESSION['alert'] = 2;
+        $_SESSION['alert'] = 3;
 
     } else {
-        $_SESSION['alert'] = 0;
+        $_SESSION['alert'] = 1;
     }
 }
-if (isset($_SESSION['alert'])) {
-    if ($_SESSION['alert'] == 0) {
-        echo '<script>alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง.");</script>';
-    } elseif ($_SESSION['alert'] == 1) {
-        echo '<script>alert("อัพเดท Banner เรียบร้อย.");</script>';
-    } elseif ($_SESSION['alert'] == 2) {
-        echo '<script>alert("อัพเดท Footer เรียบร้อย.");</script>';
-    }
-    unset($_SESSION['alert']);
-}
+
 ?>
 
 
@@ -64,6 +55,10 @@ if (isset($_SESSION['alert'])) {
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
 
 </head>
 
@@ -80,9 +75,8 @@ if (isset($_SESSION['alert'])) {
 
         <div id="page-wrapper">
             <div class="container-fluid">
+            <h1 class="page-header">Footer</h1>
             <div class="row">
-                    <h1 class="page-header">Footer</h1>
-                    <br><h2 class="text-center">ตั้งค่า footer</h2>
                 <div class="col-lg-12" style="text-align:center">
                     <form action="footer.php" method="POST">
                             <textarea class="form-control"  name="commentf" cols="100" rows="10" ><?php echo $row_banner['footer'] ?></textarea>   
@@ -119,6 +113,8 @@ if (isset($_SESSION['alert'])) {
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 
 </body>
 

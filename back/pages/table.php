@@ -45,6 +45,11 @@ $_SESSION['set_page'] = 2;
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
+    
 
 </head>
 
@@ -147,6 +152,8 @@ $_SESSION['set_page'] = 2;
         })
 	</script>
 
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 </body>
 
 </html>

@@ -33,7 +33,7 @@
         }elseif ($email!=$conemail&&$password==$conpassword) {
             $_SESSION['alert'] = 8;
         }
-        header("Location:../register.php");
+        header("Location: ../register.php");
         exit();
     }
 
