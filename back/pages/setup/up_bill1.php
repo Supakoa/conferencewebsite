@@ -15,7 +15,7 @@
       $_SESSION['alert'] = 4;
      }
     
-     header("Location: ../money.php");
+     header("Location: ../money1.php");
 
 
 

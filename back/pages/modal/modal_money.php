@@ -22,24 +22,9 @@
                                 <h5> สถานะ : <?php echo $row['status'] ?></h5>
                                 <h5> คำหลัก : <?php echo $row['key_word'] ?></h5>
                                 <h5> บาทความ : <?php echo $row['abstract'] ?></h5>
-                                <label>Download ใบเสร็จ :</label>
-           
-                                <a class="btn btn-info btn-sm" Download href="../../Bill/<?php echo $row['tmp_money'] ?>">Click Here</a>
-                                <?php
-                                $i = 1;
-                                $q_RA = "SELECT user.first_name,user.last_name,reviewer_answer.status,reviewer_answer.score,reviewer_answer.comment,status_tb.status
-                                FROM user,reviewer_answer,status_tb WHERE reviewer_answer.paper_id =$id_paper AND reviewer_answer.reviewer_id = user.username AND status_tb.id = reviewer_answer.status";
-                                $result_RA = mysqli_query($con, $q_RA);
-                                while ($row_RA = mysqli_fetch_array($result_RA)) { ?>
-                                <h4> สถานะผู้ตรวจคนที่ <?php echo $i++ ?> </h4>
-                                    <p> ชื่อ : <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?> </p>
-                                    <p> คะแนน : <?php echo $row_RA['score'] ?></p>
-                                    <p> ผลตรวจ : <?php echo $row_RA['status'] ?></p>
-                                    <p> คอมเมนต์ : <?php echo $row_RA['comment'] ?></p>
-                                   
-                                <?php 
-                            } ?>
-                            <br>
+                                <br>
+                                <img src="../../Bill/<?php echo $row ['tmp_money']?>" class="img-fluid" style="width:100%" alt="Responsive image">
+                            <br><br>
                              <p>ยืนยันสถานะ : </p><select class="form-control" name="done" required>
                                                <option disabled selected >เลือกสถานะ</option>
                                               <option  value = "8" >ชำระแล้ว</option>

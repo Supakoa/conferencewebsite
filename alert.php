@@ -161,7 +161,7 @@
                 echo "
                     <script>
                         Swal({
-                            type: 'question',
+                            type: 'error',
                             title: 'ข้อมูลไม่ถูกต้อง',
                             text: 'เข้าสู่ระบบอีกครั้ง.',
                             // footer: '<a href>Why do I have this issue?</a>'
