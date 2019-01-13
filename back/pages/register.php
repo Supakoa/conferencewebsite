@@ -110,7 +110,10 @@
                                             
                                             <label for="comemail">ยืนยัน Email *</label>
                                             <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
-
+                                            
+                                            <label for="Tel"เบอร์โทรศัพท์มือถือ *></label>
+                                            <input class="form-control" name="tel" type="text" maxlength="10" pattern="[0-9]{10}" title="ตัวอย่าง 0888888888" placeholder="เบอร์โทรศัพท์มือถือ **" required="required" data-validation-required-message="Please enter your Phone number.">
+                                            
                                             </div>
                                             <button class="btn btn-info btn-fill pull-center" name="submit" type="submit">ตกลง</button><br>
                                     </form><br>

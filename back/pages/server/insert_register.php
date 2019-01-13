@@ -18,6 +18,7 @@
     $address = $_POST['address'];
     $email = $_POST['email'];  
     $conemail = $_POST['conemail'];
+    $tel = $_POST['tel'];
 
     //Check user from databse is match or not match
     $a = "SELECT * FROM user WHERE username = $username ";
@@ -46,8 +47,8 @@
     else {
 
         //insert to database
-        $a = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,role) 
-            VALUES ('$username','$password','$gender','$fname','$lname','$address','$email','2')";
+        $a = "INSERT INTO user (username,password,gender,first_name,last_name,address,email,Tel,role) 
+            VALUES ('$username','$password','$gender','$fname','$lname','$address','$email','$tel','2')";
 
         $r_a = mysqli_query($con,$a);
         if ($r_a) {
