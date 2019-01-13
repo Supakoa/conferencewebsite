@@ -203,8 +203,6 @@ $r_name = mysqli_fetch_assoc($result_name);
           </div>
         </div><br><br>
     </section>
-   
-
 
     <footer>
       <div class="container">
