@@ -70,15 +70,15 @@
 
         <div id="page-wrapper">
             <div class="row">
+            <h1 class="page-header">Banner</h1>
                 <div class="col-lg-12">
-                            <h1 class="page-header">Banner</h1>
-                            <h5 style="text-align:center">ไฟล์เอกสาร</h5><br>
                             <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
                         <div class="row">
-                            <div class=" col-lg-6">
+                        <div class="col-lg-4"></div>
+                            <div class=" col-lg-4">
                             <input class="form-control" name="banner" type="file" placeholder="File" required="required">
                             </div>
-                            <div class=" col-lg-6" >
+                            <div class=" col-lg-4" >
                                 <button type="submit" class="btn btn-success" >อัพโหลด</button>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                            </div><br>
+                                            </div><br><br><br><br>
                                     </div>
                 
             </div>

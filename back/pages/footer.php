@@ -75,9 +75,8 @@ if (isset($_POST['gogogo'])) {
 
         <div id="page-wrapper">
             <div class="container-fluid">
+            <h1 class="page-header">Footer</h1>
             <div class="row">
-                    <h1 class="page-header">Footer</h1>
-                    <br><h2 class="text-center">ตั้งค่า footer</h2>
                 <div class="col-lg-12" style="text-align:center">
                     <form action="footer.php" method="POST">
                             <textarea class="form-control"  name="commentf" cols="100" rows="10" ><?php echo $row_banner['footer'] ?></textarea>   

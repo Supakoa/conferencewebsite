@@ -105,8 +105,9 @@
 
         <div id="page-wrapper">
             <div class="row">
+            <h1 class="page-header">ตั้งค่าเวลา</h1>
+
                 <div class="col-lg-12">
-                    <h1 class="page-header">ตั้งค่าเวลา</h1>
                 </div>
                 <form action="set_timing.php" method="post">
 
