@@ -1,6 +1,6 @@
 <?php
 require 'server/server.php';
-require 'server/show_alert.php';
+// require 'server/show_alert.php';
 if ($_SESSION['status'] != 1) {
     $_SESSION['online'] = 0;
     header("Location: index.php");
@@ -76,6 +76,10 @@ $q3 = mysqli_query($con, $a3);
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
+          <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
 
     </head>
 
@@ -322,6 +326,8 @@ $q3 = mysqli_query($con, $a3);
 <!-- Custom scripts for this template -->
 <script src="js/new-age.min.js"></script>
 
+    <!-- php check alert -->
+    <?php require '../alert.php'; ?>
 </body>
 
 </html>
