@@ -86,7 +86,8 @@
 
                 $r_a = "INSERT INTO `reviewer_answer`( `paper_id`) VALUES ('$last_paper')";
                 $r_r_a = mysqli_query($con, $r_a);
-
+                $r_r_a = mysqli_query($con, $r_a);
+                
                 if($r_r_a){
                     $_SESSION['alert'] = 3;
                 }else{
