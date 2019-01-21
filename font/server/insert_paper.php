@@ -7,7 +7,7 @@
     }
     //give value from form_insert_paper.php
 
-    $q_paper_time = "SELECT * FROM `setting_timmer` WHERE `order` = 1 ";
+    $q_paper_time = "SELECT * FROM `setting_timmer` WHERE `order` = '1' ";
     $result_paper_time = mysqli_query($con, $q_paper_time);
     $r_paper_time = mysqli_fetch_assoc($result_paper_time);
 
@@ -81,7 +81,7 @@
 
                 $id = $_SESSION['id'];
 
-                $p_u = "INSERT INTO `user_paper`( `paper_id`,username) VALUES ('$last_paper','$id')";
+                $p_u = "INSERT INTO `user_paper`( `paper_id`,`username`) VALUES ('$last_paper','$id')";
                 $r_p_u = mysqli_query($con, $p_u);
 
                 $r_a = "INSERT INTO `reviewer_answer`( `paper_id`) VALUES ('$last_paper')";

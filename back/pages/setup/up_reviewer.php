@@ -15,9 +15,9 @@ if ($reviewer1 == $reviewer2) {
 
     $up = "INSERT INTO `reviewer_paper`(`paper_id`, `reviewer`) VALUES ('$id','$reviewer2')";
     $result_up = mysqli_query($con, $up);
-    $u_r1 = "UPDATE `reviewer_answer` SET `reviewer_id`='$reviewer1'WHERE  paper_id = $id AND reviewer_id = ' ' limit 1";
+    $u_r1 = "UPDATE `reviewer_answer` SET `reviewer_id`='$reviewer1'WHERE  paper_id = $id AND reviewer_id IS NULL limit 1";
     $re_u_r1 = mysqli_query($con, $u_r1);
-    $u_r2 = "UPDATE `reviewer_answer` SET `reviewer_id`='$reviewer2'WHERE  paper_id = $id AND reviewer_id = ' ' limit 1 ";
+    $u_r2 = "UPDATE `reviewer_answer` SET `reviewer_id`='$reviewer2'WHERE  paper_id = $id AND reviewer_id IS NULL limit 1 ";
     $re_u_r2 = mysqli_query($con, $u_r2);
     $up_status = "UPDATE `paper` SET `status`= 1 WHERE paper_id = $id";
     $result_up_status = mysqli_query($con, $up_status);

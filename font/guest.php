@@ -30,6 +30,7 @@ $pay_start = $r_pay_time['time_start'];
 $pay_end = $r_pay_time['time_end'];
 
 
+$status = $r_bill['status'];
 if ($r_name['role'] != 3) {
     $_SESSION['alert'] = 2;
     header("Location: index.php");
@@ -238,7 +239,7 @@ if (isset($_POST['gogo'])) {
                 </div>
             </div><br><br>
         </section>
-<?php if ($status == 4 || $status == 7) { ?>
+<?php if ($status == '4' || $status == '7') { ?>
             <section class="text-center" id="second" style="background-color:#F6F8FA;">
                 <div class="container">
                     <h3 class="text-center text-uppercase text-secondary mb-0">ช่องทางการชำระค่าบริการ <i class="fa fa-university" aria-hidden="true"></i></h3>
