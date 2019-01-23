@@ -48,8 +48,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-        <!-- Plugin CSS -->
-        <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+        
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
