@@ -4,6 +4,7 @@
     if ($_SESSION['status'] != 1) {
         $_SESSION['online'] = 0;
         header("Location: ../index.php");
+        exit();
     }
     //give value from form_insert_paper.php
 

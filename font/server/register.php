@@ -1,10 +1,10 @@
 <?php
     require 'server.php';
 
-    if ($_SESSION['status'] != 1) {
-        $_SESSION['online'] = 0;
-        header("Location: index.php");
-    }
+    // if ($_SESSION['status'] != 1) {
+    //     $_SESSION['online'] = 0;
+    //     header("Location: index.php");
+    // }
  
     $username = $_POST['username'];
     $password = $_POST['password'];

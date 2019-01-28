@@ -3,6 +3,7 @@
  if($_SESSION['status'] != 1){
      $_SESSION['online'] = 0 ;
      header("Location: ../index.php");
+     exit();
    }
  $id = $_GET['id'];
  $ext = pathinfo(basename($_FILES["paper"]["name"]), PATHINFO_EXTENSION);
