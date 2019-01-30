@@ -23,7 +23,7 @@
                                 $result_status = mysqli_query($con, $q_status);
                                 $row_status = mysqli_fetch_array($result_status);
                                 ?>
-              <div class="row">
+                                 <div class="row">
                                   <div class="col col-6-lg ms-auto">
                                 <h5 style="margin-left:10px">รหัสเอกสาร : </h5>
                                   </div>
@@ -48,7 +48,7 @@
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['abstract'] ?></span><br></div> 
                                 </div>
 
- <div class="row">
+                                <div class="row">
                                 <?php
                                 $i = 1;
                                 $q_RA = "SELECT user.first_name,user.last_name,reviewer_answer.status,reviewer_answer.score,reviewer_answer.comment,status_tb.status
