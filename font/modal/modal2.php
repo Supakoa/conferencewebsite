@@ -92,7 +92,7 @@
                             <div class="container">
                             <form action="server/update_paper.php?id=<?php echo $row['paper_id'] ?>" method="post" enctype="multipart/form-data" ><hr>
                             <h4>ส่งไฟล์แก้ไข</h4>
-                            <input type="file" name="paper" accept=".pdf" required="required" >
+                            <input type="file" name="paper" accept=".doc,.docx" required="required" >
                             <br>
                             
                             

@@ -25,15 +25,20 @@ $uploadOk = 1;
 
 $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
 
-if ($_FILES["money"]["size"] > 8000000) {
+if ($_FILES["money"]["size"] > 62914560) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
+    $_SESSION['alert'] = 15;
+    header("Location: ../user.php");
+    exit();
 }
 
     // Allow certain file formats
 if ($imageFileType != "pdf" && $imageFileType != "jpg" && $imageFileType != "png") {
     echo "Sorry, only PDF,JPG,PNG files are allowed.";
-    $uploadOk = 0;
+    $_SESSION['alert'] = 17;
+    header("Location: ../user.php");
+    exit();
 }
 
     // Check if $uploadOk is set to 0 by an error
@@ -46,28 +51,34 @@ if ($uploadOk == 0) {
 
             if (move_uploaded_file($_FILES["money"]["tmp_name"], $upload_path)) {
                 echo 'Move success.';
+                $paper = $_FILES["money"]["name"];
+                $b = $new_taget_name;
+                echo $b . "  " . $id_paper;
+                $a = "UPDATE `paper` SET`money_status`='6',`tmp_money`='$b' WHERE paper_id = '$id_paper'";
+                
+                $r_a = mysqli_query($con, $a);
+    
+                if ($r_a) {
+                    $_SESSION['alert'] = 3;
+                  
+                } else {
+                    $_SESSION['alert'] = 18;
+                    header("Location: ../user.php");
+                    exit();
+                }
             } else {
-                echo 'Move fail';
+                $_SESSION['alert'] = 18;
+                header("Location: ../user.php");
+                exit();
             }
 
 
-            $paper = $_FILES["money"]["name"];
-            $b = $new_taget_name;
-            echo $b . "  " . $id_paper;
-            $a = "UPDATE `paper` SET`money_status`='6',`tmp_money`='$b' WHERE paper_id = '$id_paper'";
-
-            $r_a = mysqli_query($con, $a);
-
-            if ($r_a) {
-
-            } else {
-
-            }
-            header("Location: ../user.php");
+           
         }
         else{
-            
+            $_SESSION['alert'] = 4;
             header("Location: ../user.php");
+            exit();
         }
     }
     header("Location: ../user.php");

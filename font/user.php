@@ -198,7 +198,7 @@ $q3 = mysqli_query($con, $a3);
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                             <h5 style="color:#ffffff">ไฟล์เอกสาร(pdf)</h5>
-                                            <input class="form-control" name="paper" type="file"  accept=".pdf" placeholder="File" required="required">
+                                            <input class="form-control" name="paper" type="file"  accept=".doc,.docx" placeholder="File" required="required">
                                         </div>
                                     </div>
 
