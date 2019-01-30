@@ -15,11 +15,11 @@ FROM paper,reviewer_paper,user,status_tb,reviewer_answer
 WHERE paper.paper_id = reviewer_paper.paper_id 
   AND user.username = '$id' 
   AND paper.status = status_tb.id 
-  AND paper.status = 1 
+  AND paper.status = '1' 
   And reviewer_paper.reviewer = '$id'  
   AND (reviewer_answer.reviewer_id = '$id' 
   AND reviewer_answer.paper_id = paper.paper_id 
-  AND reviewer_answer.status = ' ')  ";
+  AND reviewer_answer.status IS NULL)  ";
 $result1 = mysqli_query($con, $q1); 
 
 $q2 = "SELECT paper.paper_id,paper.name_th,status_tb.status 
@@ -27,7 +27,7 @@ FROM paper,reviewer_paper,user,status_tb
 WHERE paper.paper_id = reviewer_paper.paper_id 
   AND user.username = '$id' 
   AND paper.status = status_tb.id 
-  AND paper.status != 1  
+  AND paper.status != '1'  
   And reviewer_paper.reviewer = '$id' ";
 $result2 = mysqli_query($con, $q2);
 $q_name = "SELECT `first_name`,`last_name`,`role` FROM `user` WHERE `username`= '$id' ";
@@ -72,7 +72,7 @@ $r_name = mysqli_fetch_assoc($result_name);
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+    <!-- <link rel="stylesheet" href="device-mockups/device-mockups.min.css"> -->
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.css" rel="stylesheet">

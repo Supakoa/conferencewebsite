@@ -4,6 +4,7 @@ require 'server.php';
 if ($_SESSION['status'] != 1) {
     $_SESSION['online'] = 0;
     header("Location: ../index.php");
+    exit();
 }
     //give value from form_insert_paper.php
 $q_pay_time = "SELECT * FROM `setting_timmer` WHERE `order` = 2 ";

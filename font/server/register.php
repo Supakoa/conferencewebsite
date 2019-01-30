@@ -1,10 +1,10 @@
 <?php
     require 'server.php';
 
-    if ($_SESSION['status'] != 1) {
-        $_SESSION['online'] = 0;
-        header("Location: index.php");
-    }
+    // if ($_SESSION['status'] != 1) {
+    //     $_SESSION['online'] = 0;
+    //     header("Location: index.php");
+    // }
  
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -69,7 +69,7 @@
 
 
         $r_a = mysqli_query($con,$a);
-        $b = "INSERT INTO `bill_guest`(`username`, `status`) VALUES ('$username','7')";
+        $b = "INSERT INTO `bill_guest`(`username`,`status`) VALUES ('$username','7')";
 
         $r_b = mysqli_query($con,$b);
         

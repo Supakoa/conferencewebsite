@@ -6,7 +6,7 @@
     if(!isset($_SESSION['status_admin'])){
         // $_SESSION['online'] = 0 ;
         $_SESSION['alert'] = 2 ;
-        header("Location: ../index.php");
+        header("Location: ../../index.php");
         exit();
     }
 
