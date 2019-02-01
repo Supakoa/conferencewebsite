@@ -37,8 +37,9 @@ if (isset($_POST['update'])) {
         }
         else{
             $_SESSION['alert'] = 4;
-            exit();
             header("Location: paper.php");
+            exit();
+            
         }
         $id = $id + 1;
     }
