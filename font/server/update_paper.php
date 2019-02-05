@@ -50,29 +50,31 @@
 
     $paper = $_FILES["paper"]["name"];
     $b = $new_taget_name;
-    $a = "UPDATE `paper` SET `file_name`='$paper',`file_tmp_name`='$b',`status`= 1 WHERE paper_id = '$id' ";
-    $r_a = mysqli_query($con,$a);
-    if($r_a){
-        // $_SESSION['alert'] = 2 ;
-        $re_c++;
-    }
-    else{
-        // $_SESSION['alert'] = 0 ;
-        
-    }
+
     $update_a = "UPDATE `reviewer_answer` SET `status` = NULL,`comment` = NULL,`score` = NULL WHERE paper_id = '$id' ";
     $r_u = mysqli_query($con,$update_a);
 
     if($r_u){
-        // $_SESSION['alert'] = 10;
+        $_SESSION['alert'] = 10;
         $re_c++;
     }else{
-        // $_SESSION['alert'] = 11;
+        $_SESSION['alert'] = 11;
+        header("Location: ../user.php");
+        exit();
     }
 
     // all complete
-    if($re_c == 3){
-        $_SESSION['alert'] = 10;
+    if($re_c == 2){
+       
+        $a = "UPDATE `paper` SET `file_name`='$paper',`file_tmp_name`='$b',`status`= 1 WHERE paper_id = '$id' ";
+        $r_a = mysqli_query($con,$a);
+        if($r_a){
+            $_SESSION['alert'] = 10;
+        }
+        else{
+            $_SESSION['alert'] = 11 ;
+            
+        }
     }else{
         $_SESSION['alert'] = 11;
     }
