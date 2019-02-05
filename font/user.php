@@ -3,7 +3,11 @@ require 'server/server.php';
 // require 'server/show_alert.php';
 if ($_SESSION['status'] != 1) {
     $_SESSION['online'] = 0;
+    $_SESSION['alert'] = 2;
+    
+     
     header("Location: index.php");
+    exit();
 }
 //$id = $_SESSION['id'];
 // $_SESSION['id'] = 'singha';
@@ -37,7 +41,7 @@ $q3 = mysqli_query($con, $a3);
 $r_3 = mysqli_fetch_array($q3);
 
 
-if ($r_name['role'] != 1) {
+if ($r_name['role'] != '1') {
     $_SESSION['online'] = 0;
     header("Location: index.php");
 }
@@ -76,11 +80,7 @@ $q3 = mysqli_query($con, $a3);
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
-          <!-- sweet alert 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="../sweetalert2/dist/sweetalert2.min.css">
-
+        
         <!-- sweet alert 2 -->
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <script src="../sweetalert2/dist/sweetalert2.all.min.js"></script>
@@ -197,8 +197,8 @@ $q3 = mysqli_query($con, $a3);
 
                                     <div class="control-group">
                                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                            <h5 style="color:#ffffff">ไฟล์เอกสาร</h5>
-                                            <input class="form-control" name="paper" type="file"  accept=".pdf" placeholder="File" required="required">
+                                            <h5 style="color:#ffffff">ไฟล์เอกสาร(pdf)</h5>
+                                            <input class="form-control" name="paper" type="file"  accept=".doc,.docx" placeholder="File" required="required">
                                         </div>
                                     </div>
 

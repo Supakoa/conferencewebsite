@@ -186,7 +186,7 @@
                     <script>
                         Swal({
                             type: 'error',
-                            title: 'อัพโหลดได้เฉพาะไฟล์ pdf เท่านั้น',
+                            title: 'อัพโหลดได้เฉพาะไฟล์ doc,docx เท่านั้น',
                             text: 'ลองอัพโหลดใหม่อีกครั้ง.',
                             // footer: '<a href>Why do I have this issue?</a>'
                         });                    

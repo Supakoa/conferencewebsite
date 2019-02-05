@@ -11,28 +11,7 @@
             echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
         }
     }
-    // if (isset($_SESSION['register_alert'])) {
-    //     if ($_SESSION['register_alert'] == 1) {
-    //         echo '<script>alert("ท่านกรอกรหัสผ่านไม่ถูกต้อง.");</script>';
-    //     } elseif ($_SESSION['register_alert'] == 2) {
-    //         echo '<script>alert("ท่านกรอกอีเมลไม่ถูกต้อง.");</script>';
-    //     } elseif ($_SESSION['register_alert'] == 3) {
-    //         echo '<script>alert("ท่านกรอกรหัสผ่านและอีเมลไม่ถูกต้อง.");</script>';
-    //     }
-    // }
-    // if (isset($_SESSION['register_match'])) {
-    //     if ($_SESSION['register_match'] == 1) {
-    //         echo '<script>alert("ชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว.");</script>';
-    //     }
-    // }
-    // if (isset($_SESSION['user_match'])) {
-    //     if ($_SESSION['user_match'] == 2) {
-    //         echo '<script>alert("ลงทะเบียนสำเร็จ.");</script>';
-    //     }
-    //     if ($_SESSION['user_match'] == 3) {
-    //         echo '<script>alert("เกิดข้อผิดพลาด.");</script>';
-    //     }
-    // }
+
 
     session_destroy();
 
@@ -69,8 +48,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-        <!-- Plugin CSS -->
-        <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+        
 
         <!-- Custom styles for this template -->
         <link href="css/new-age.css" rel="stylesheet">
@@ -181,7 +159,7 @@
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <div class="row">
                                         <div class="col-lg-6 mx-auto">
-                                            <h5 style="color:#ffffff">ชื่อ ** </h5>
+                                            <h5 style="color:#ffffff">ชื่อ ** (ไม่ต้องใส่คำนำหน้า) </h5>
                                             <input class="form-control" name="fname" type="text" placeholder="ชื่อ" required="required"  pattern="^[ก-๛!-@[-`{-~\s]+$" title="กรุณากรอกเฉพาะภาษาไทย" data-validation-required-message="Please enter your firstname.">
                                             <p class="help-block text-danger"></p>
                                         </div>
@@ -252,9 +230,9 @@
 
         <footer>
             <div class="container">
-                <h3 style="color:white">เว็บไซต์ที่เกี่ยวข้อง และ เอกสารที่เผยแพร่</h3>
                 <div class="row">
                     <div class="col-md-6">
+                    <h3 style="color:white">เว็บไซต์ที่เกี่ยวข้อง</h3>
                         <ul class="list-inline list-social">
                             <li>
                                 <div class="text-center">
@@ -266,6 +244,7 @@
                         </ul>
                     </div>
                     <div class="col-md-6">
+                    <h3 style="color:white">เอกสารที่เผยแพร่</h3>
                         <ul class="list-inline list-social">
                             <li>
                                 <div class="text-center">

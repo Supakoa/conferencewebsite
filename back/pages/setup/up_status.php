@@ -16,7 +16,7 @@
                $_SESSION['alert'] = 4;
             }
          }elseif($status==4){
-            $up2 = "UPDATE `reviewer_answer` SET `reviewer_id`=' ',status`=' ',`comment`=' ',`score`=' ' WHERE `paper_id` = '$id' ";
+            $up2 = "UPDATE `reviewer_answer` SET `reviewer_id` IS NULL,`status` IS NULL,`comment` IS NULL,`score` IS NULL WHERE `paper_id` = '$id' ";
             $result_up2 = mysqli_query($con,$up2);
             if($result_up2){
                $_SESSION['alert'] = 3;

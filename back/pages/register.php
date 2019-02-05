@@ -58,7 +58,7 @@
 
                 <div id="page-wrapper">
                     <div class="row">
-                        <h1 class="page-header">สมัครผู้ตรวจ </h1>
+                        <h1 class="page-header">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h1>
                         <div class="col-lg-1"></div>
                         <div class="col-lg-9">
                             <div class="container-fluid">
