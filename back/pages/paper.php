@@ -74,10 +74,10 @@ if (isset($_POST['update'])) {
             
             }
        // Allow certain file formats
-            if ($imageFileType != "pdf") {
+            if ($imageFileType != "pdf"&&$imageFileType != "doc"&&$imageFileType != "docx") {
                 echo "Sorry, only PDF files are allowed.";
                 $uploadOk = 0;
-                $_SESSION['alert'] = 16;
+                $_SESSION['alert'] = 19;
                 header("Location: paper.php");
             exit();
             

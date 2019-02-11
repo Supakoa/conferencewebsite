@@ -158,7 +158,16 @@ $q3 = mysqli_query($con, $a3);
                                 <tr>
                                     <td><?php echo $row['paper_id'] ?></td>
                                     <td><?php echo $row['name_th'] ?></td>
-                                    <td><?php echo $row['status'] ?></td>
+                                    <td><?php
+                                      if ($row['status'] == "รอผลการตรวจสอบ" || $row['status'] == "รอผลจากแอดมิน" || $row['status'] == "ยังไม่ได้เลือกผู้ตรวจ") {
+                                        echo "รอผลการตรวจสอบ";
+                                      }
+                                      else{
+                                        echo $row['status'] ;
+                                      }
+
+                                                                       
+                                     ?></td>
                                     <td> 
 
                                         <?php
