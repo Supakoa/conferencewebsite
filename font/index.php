@@ -86,7 +86,7 @@
         </nav>
 
 
-        <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%" srcset="">
+        <img src="../back/pages/banner/<?php echo $r_3['tmp_name'] ?>" class="img-responsive" alt="" style="width:100%;heigth:auto" srcset="">
 
         <section class="text-center" id="login" style="background-color:#F6F8FA;">
             <div class="section-heading text-center">
