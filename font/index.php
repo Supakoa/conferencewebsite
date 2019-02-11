@@ -76,6 +76,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#register" style="font-size:20px">สมัครสมาชิก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#manual" style="font-size:20px">คู่มือการใช้งาน</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -227,7 +231,7 @@
             </div>
         </section>
 
-
+        <section id = "manual">
         <footer>
             <div class="container">
                 <div class="row">
@@ -273,6 +277,8 @@
                 <p>&copy; Your Website 2018. All Rights Reserved.</p>
             </div>
         </footer>
+        </section>                                      
+        
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
