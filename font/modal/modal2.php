@@ -72,7 +72,7 @@
                                 $result_RA = mysqli_query($con, $q_RA);
                                 while ($row_RA = mysqli_fetch_array($result_RA)) { ?>
                                     <div class="col col-12-lg ms-auto">
-                                    <h4 style="margin-left:20px"> สถานะผู้ตรวจคนที่ <?php echo $i++ ?> </h4>
+                                    <h4 style="margin-left:20px"> สถานะผู้ทรงคุณวุฒิคนที่ <?php echo $i++ ?> </h4>
                                     <p style="margin-left:20px"> ชื่อ : <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?> </p>
                                     <p style="margin-left:20px"> คะแนน : <?php echo $row_RA['score'] ?></p>
                                     <p style="margin-left:20px"> ผลตรวจ : <?php echo $row_RA['status'] ?></p>
@@ -92,7 +92,7 @@
                             <div class="container">
                             <form action="server/update_paper.php?id=<?php echo $row['paper_id'] ?>" method="post" enctype="multipart/form-data" ><hr>
                             <h4>ส่งไฟล์แก้ไข</h4>
-                            <input type="file" name="paper" accept=".pdf" required="required" >
+                            <input type="file" name="paper" accept=".doc,.docx" required="required" >
                             <br>
                             
                             

@@ -1,6 +1,6 @@
 <?php
    require '../server.php';
-   require 'server/check_login.php';
+   require 'check_login.php';
 
    if($_GET['id']==1){
     $b1 =$_SESSION['name_banner'];

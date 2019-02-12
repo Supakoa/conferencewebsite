@@ -37,8 +37,9 @@ if (isset($_POST['update'])) {
         }
         else{
             $_SESSION['alert'] = 4;
-            exit();
             header("Location: paper.php");
+            exit();
+            
         }
         $id = $id + 1;
     }
@@ -73,10 +74,10 @@ if (isset($_POST['update'])) {
             
             }
        // Allow certain file formats
-            if ($imageFileType != "pdf") {
+            if ($imageFileType != "pdf"&&$imageFileType != "doc"&&$imageFileType != "docx") {
                 echo "Sorry, only PDF files are allowed.";
                 $uploadOk = 0;
-                $_SESSION['alert'] = 16;
+                $_SESSION['alert'] = 19;
                 header("Location: paper.php");
             exit();
             
@@ -259,7 +260,7 @@ $_SESSION['set_page'] = 8;
                                     <th scope="row"><?php echo $a . " )." ?></th>
                                     <td><input class="form-control" type="text" name="text<?php echo $i ?>" value="<?php echo $row2['text'] ?>" ></td>
                                     <th scope="row"><?php echo $row2['real_name'] ?></th>
-                                    <td><input class="form-control" type="file" name="link<?php echo $i ?>" ></td>
+                                    <td><input class="form-control" type="file" name="link<?php echo $i ?>"  accept=".doc,.docx,.pdf" ></td>
                                     <?php if ($row2['hide'] == 0) { ?>
                                     <td ><input class="form-control" type="checkbox" name="cb<?php echo $i ?>"></td>
                                     <?php 

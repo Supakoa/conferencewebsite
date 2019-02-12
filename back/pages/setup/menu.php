@@ -20,10 +20,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="register.php"><i class="fa fa-plus fa-fw"></i> สมัครผู้ตรวจ</a>
+                            <a href="register.php"><i class="fa fa-plus fa-fw"></i> เพิ่มข้อมูลผู้ทรงคุณวุฒิ</a>
                         </li>
                         <li>
-                            <a href="manageuser.php"><i class="fa fa-user fa-fw"></i> จัดการสมาชิค</a>
+                            <a href="manageuser.php"><i class="fa fa-user fa-fw"></i> จัดการสมาชิก</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> ตั้งค่า<span class="fa arrow"></span></a>

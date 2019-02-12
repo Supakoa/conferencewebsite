@@ -13,6 +13,7 @@
     
     if($r_a){
         $_SESSION['online'] = 1;
+        $_SESSION['status_admin'] = 1;
         header("Location: ../report.php");
         exit();
     }else{

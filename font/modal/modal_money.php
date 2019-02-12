@@ -23,7 +23,7 @@
                                 $result_status = mysqli_query($con, $q_status);
                                 $row_status = mysqli_fetch_array($result_status);
                                 ?>
-              <div class="row">
+                                 <div class="row">
                                   <div class="col col-6-lg ms-auto">
                                 <h5 style="margin-left:10px">รหัสเอกสาร : </h5>
                                   </div>
@@ -48,7 +48,7 @@
                                   <div class="col col-6-lg ms-auto"><span><?php echo $row_q_p['abstract'] ?></span><br></div> 
                                 </div>
 
- <div class="row">
+                                <div class="row">
                                 <?php
                                 $i = 1;
                                 $q_RA = "SELECT user.first_name,user.last_name,reviewer_answer.status,reviewer_answer.score,reviewer_answer.comment,status_tb.status
@@ -58,7 +58,7 @@
                                 while ($row_RA = mysqli_fetch_array($result_RA)) { ?>
                                   
                                   <div class="col col-12-lg ms-auto">
-                                  <h4 style="margin-left:10px" > สถานะผู้ตรวจคนที่ <?php echo $i++ ?> </h4>
+                                  <h4 style="margin-left:10px" > สถานะผู้ทรงคุณวุฒิคนที่ <?php echo $i++ ?> </h4>
                                 <p style="margin-left:10px"> ชื่อ : <?php echo $row_RA['first_name'] . " " . $row_RA['last_name'] ?> </p>
                                     <p style="margin-left:10px"> คะแนน : <?php echo $row_RA['score'] ?></p>
                                     <p style="margin-left:10px"> ผลตรวจ : <?php echo $row_RA['status'] ?></p>
@@ -71,7 +71,7 @@
 
           <div class="col col-12-lg ms-auto">
           <form action="server/insert_money.php?id=<?php echo $row_money['paper_id'] ?>" method="POST" enctype="multipart/form-data" >
-                                <input type="file"  name="money"  required >
+                                <input type="file"  name="money" accept=".jpg,.png"  required >
                                
                              
                              

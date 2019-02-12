@@ -58,7 +58,7 @@
 
                 <div id="page-wrapper">
                     <div class="row">
-                        <h1 class="page-header">สมัครผู้ตรวจ </h1>
+                        <h1 class="page-header">เพิ่มข้อมูลผู้ทรงคุณวุฒิ </h1>
                         <div class="col-lg-1"></div>
                         <div class="col-lg-9">
                             <div class="container-fluid">
@@ -103,12 +103,12 @@
                                             </div>
                                             <div class="col-lg-6">
                                             <label for="email">Email *</label>
-                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="ตัวอย่าง examble@email.com" >
                                             
                                             </div>
                                             <div class="col-lg-6">
                                             <label for="comemail">ยืนยัน Email *</label>
-                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="ตัวอย่าง examble@email.com" >
                                             
                                             </div>
                                             <div class="col-lg-6">

@@ -82,13 +82,14 @@
                                 <button type="submit" class="btn btn-success">อัพโหลด</button>
                             </div>
                         </div>
+                        <h2 class="text-center" style="color:red">ขนาด 1900*1000 px</h2>
                         <br>
                     </form>
                 </div>
             </div>
 
             <div class="container-fluid ">
-                <div class="jumboton">
+                <div class="jumboton text-center">
                     <img style="max-width: 100%;height: auto;" class="img-fluid" src="banner/<?php echo $_SESSION['tmp_banner']?>"
                         alt="Responsive image">
 
@@ -116,6 +117,8 @@
             </div>
 
         </div>
+
+    </div>
     </div>
 
 
