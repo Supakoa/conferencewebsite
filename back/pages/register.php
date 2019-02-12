@@ -103,12 +103,12 @@
                                             </div>
                                             <div class="col-lg-6">
                                             <label for="email">Email *</label>
-                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                            <input type="text" class="form-control" name="email" placeholder="อีเมล์"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="ตัวอย่าง examble@email.com" >
                                             
                                             </div>
                                             <div class="col-lg-6">
                                             <label for="comemail">ยืนยัน Email *</label>
-                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="ตัวอย่าง examble@email.com" required>
+                                            <input type="text" class="form-control" name="conemail" placeholder="ยืนยันอีเมล์"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="ตัวอย่าง examble@email.com" >
                                             
                                             </div>
                                             <div class="col-lg-6">
