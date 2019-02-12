@@ -1,23 +1,21 @@
 <?php
-require 'server.php';
-require 'server/check_login.php';
-$q_banner = "SELECT * FROM `banner` ";
-$result_banner = mysqli_query($con, $q_banner);
-$row_banner = mysqli_fetch_array($result_banner);
+    require 'server.php';
+    require 'server/check_login.php';
+    $q_banner = "SELECT * FROM `banner` ";
+    $result_banner = mysqli_query($con, $q_banner);
+    $row_banner = mysqli_fetch_array($result_banner);
 
+    if (isset($_POST['gogogo'])) {
+        $a = $_POST['commentf'];
+        $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
+        $q_b = mysqli_query($con, $b);
+        if ($q_b) {
+            $_SESSION['alert'] = 3;
 
-
-if (isset($_POST['gogogo'])) {
-    $a = $_POST['commentf'];
-    $b = "UPDATE `banner` SET `footer`= '$a' WHERE `order`= '1' ";
-    $q_b = mysqli_query($con, $b);
-    if ($q_b) {
-        $_SESSION['alert'] = 3;
-
-    } else {
-        $_SESSION['alert'] = 1;
+        } else {
+            $_SESSION['alert'] = 1;
+        }
     }
-}
 
 ?>
 

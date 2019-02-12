@@ -29,9 +29,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin  - Admin Conference Page Banner</title>
+    <title>Admin - Admin Conference Page Banner</title>
     <link rel="stylesheet" href="../DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../DataTables/datatables.min.css" />
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    
+
     <!-- sweet alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
@@ -59,7 +59,7 @@
 
 <body style="font-family: 'Mitr', sans-serif;">
 
-    <div id="wrapper" >
+    <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <?php require 'setup/main.php' ?>
@@ -70,49 +70,54 @@
 
         <div id="page-wrapper">
             <div class="row">
-            <h1 class="page-header">Banner</h1>
+                <h1 class="page-header">Banner</h1>
                 <div class="col-lg-12">
-                            <form action = "server/insert_banner.php" method ="POST" enctype="multipart/form-data">
+                    <form action="server/insert_banner.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                        <div class="col-lg-4"></div>
+                            <div class="col-lg-4"></div>
                             <div class=" col-lg-4">
-                            <input class="form-control" name="banner" type="file" placeholder="File" required="required">
+                                <input class="form-control" name="banner" type="file" placeholder="File" required="required">
                             </div>
-                            <div class=" col-lg-4" >
-                                <button type="submit" class="btn btn-success" >อัพโหลด</button>
+                            <div class=" col-lg-4">
+                                <button type="submit" class="btn btn-success">อัพโหลด</button>
                             </div>
                         </div>
-                                <br></form> 
+                        <br>
+                    </form>
                 </div>
             </div>
-                
-                                    <div class="container-fluid ">
-                                        <div class="jumboton" >
-                                                <img style="max-width: 100%;height: auto;" class="img-fluid"  src="banner/<?php echo $_SESSION['tmp_banner']?>" alt="Responsive image">
-                                            
-                                        </div>
-                                        <div class="container" style="text-align:center;">
-                                                    <br><button  class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">อัพเดต Banner</button>
 
-                                        <div class="modal fade" id="submit_modal_banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-sm" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header" style="text-align:center" >
-                                                        <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
-                                                    </div>
-                                                    <div class="modal-footer" style="text-align:center">
-                                                        <a href="server/insert_banner.php?id=1"><button type="submit" class="btn btn-success" > ยืนยัน</button></a> 
-                                                        <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                            </div><br><br><br><br>
-                                    </div>
-                
+            <div class="container-fluid ">
+                <div class="jumboton">
+                    <img style="max-width: 100%;height: auto;" class="img-fluid" src="banner/<?php echo $_SESSION['tmp_banner']?>"
+                        alt="Responsive image">
+
+                </div>
+                <div class="container" style="text-align:center;">
+                    <br><button class="btn btn-info btn-md " data-toggle="modal" data-target="#submit_modal_banner">อัพเดต
+                        Banner</button>
+
+                    <div class="modal fade" id="submit_modal_banner" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="text-align:center">
+                                    <h3 class="modal-title" id="exampleModalLabel">ยืนยัน</h3>
+                                </div>
+                                <div class="modal-footer" style="text-align:center">
+                                    <a href="server/insert_banner.php?id=1"><button type="submit" class="btn btn-success">
+                                            ยืนยัน</button></a>
+                                    <button type="button" class="btn btn-danger " data-dismiss="modal">ยกเลิก</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br><br><br>
             </div>
+
+        </div>
     </div>
-    
+
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -132,7 +137,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-    
+
     <!-- php check alert -->
     <?php require '../../alert.php'; ?>
 
