@@ -3,6 +3,7 @@
     require 'server/server.php';
 
     //alert
+    
     if (isset($_SESSION['check_login'])) {
         echo '<script>alert("กรุณา Login เข้าสู่ระบบ.");</script>';
     }
@@ -11,9 +12,10 @@
             echo '<script>alert("Username หรือ Password ไม่ถูกต้อง.");</script>';
         }
     }
-
-
-    session_destroy();
+    if(!isset($_SESSION['status_admin'])){
+        session_destroy();
+    }
+    
 
     $a = "SELECT * FROM show_url WHERE hide='0' && group_url = '1' ";
     $b = "SELECT * FROM show_url WHERE hide='0' && group_url = '2' ";
