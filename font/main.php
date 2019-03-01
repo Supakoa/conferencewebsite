@@ -32,11 +32,9 @@
 
 <body>
     <!-- banner -->
-    <div class="container-fluid">
-        <div class="container" style="background-color:lightpink;height:200px">
-            <div class="text-center">
-                <h2>Banner</h2>
-            </div>
+    <div class="container-fluid" style="background-color:lightpink;height:200px">
+        <div class="text-center">
+            <h2>Banner</h2>
         </div>
     </div><br>
     <!-- banner -->
@@ -183,7 +181,7 @@
     <!-- Custom scripts for this template -->
     <!-- <script src="js/new-age.min.js"></script> -->
 
-    
+
 </body>
 
 </html> 
