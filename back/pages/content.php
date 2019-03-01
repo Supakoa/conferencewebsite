@@ -45,7 +45,7 @@
                         <div class="container text-center">
                         <form action="content.php" method="post">
                             <label for="header">ชื่อหัวข้อ</label>
-                            <input type="text" name="header" id="">
+                            <input type="text" name="header" id="" required>
 
                             <div id="summernote"></div>
                             <br>
