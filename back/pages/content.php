@@ -174,17 +174,17 @@ if (isset($_POST['code'])) {
 
         });
         $('#delete').modal({
-            keyboard: false,
+            // keyboard: false,
             backdrop: 'static'
         })
         $('#add').modal({
-            keyboard: false,
+            // keyboard: false,
             backdrop: 'static'
         })
         // $('#basicModal').modal(options)
-        $('#basicModal').modal('show')
+        // $('#basicModal').modal('show')
         // $('#basicModal').modal('toggle')
-        $('#basicModal').modal('handleUpdate')
+        // $('#basicModal').modal('handleUpdate')
     </script>
 </body>
 
