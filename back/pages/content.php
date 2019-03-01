@@ -57,12 +57,16 @@ if (isset($_POST['code'])) {
                                         <td>เปรมชัยหนีคดี</td>
                                         <td>2/3/2562 , 0:40 น.</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
+                                            <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#basicModal"><i class="glyphicon glyphicon-pencil"></i></a>
+                                            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -74,14 +78,14 @@ if (isset($_POST['code'])) {
 
 
 
-    <?php if(isset($_GET['id'])){ 
-            $id = $_GET['id'];
-          $q_edit_content = "SELECT * FROM `news` WHERE `news_id` = '$id' ";
-          $result_edit_content = mysqli_query($con, $q_edit_content);
-          $row_edit_content = mysqli_fetch_array($result_edit_content);
-        
-    ?>
-    
+    <?php if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $q_edit_content = "SELECT * FROM `news` WHERE `news_id` = '$id' ";
+        $result_edit_content = mysqli_query($con, $q_edit_content);
+        $row_edit_content = mysqli_fetch_array($result_edit_content);
+
+        ?>
+
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -92,8 +96,8 @@ if (isset($_POST['code'])) {
                 <div class="modal-body">
 
                     <label for="header">ชื่อหัวข้อ</label>
-                    <input class="form-control" type="text" name="header" id="" value = "<?php echo $row_edit_content['name'] ?>">
-                    
+                    <input class="form-control" type="text" name="header" id="" value="<?php echo $row_edit_content['name'] ?>">
+
                     <br>
                     <div id="summernote"></div>
 
@@ -110,7 +114,46 @@ if (isset($_POST['code'])) {
             </div>
         </div>
     </div>
-    <?php } ?>
+    <?php 
+} ?>
+
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
+                </div>
+                <div class="modal-body">
+                    <h3>Modal Body</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
+                </div>
+                <div class="modal-body">
+                    <h3>Modal Body</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
@@ -121,13 +164,22 @@ if (isset($_POST['code'])) {
 
             });
 
-            var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
+            var markupStr2 = '<?php echo $row_edit_content['
+            content '] ?>';
             $('#summernote').summernote('code', markupStr2);
         });
         $('#basicModal').modal({
             keyboard: false,
             backdrop: 'static'
 
+        });
+        $('#delete').modal({
+            keyboard: false,
+            backdrop: 'static'
+        })
+        $('#add').modal({
+            keyboard: false,
+            backdrop: 'static'
         })
         // $('#basicModal').modal(options)
         $('#basicModal').modal('show')
