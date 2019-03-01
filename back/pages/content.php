@@ -99,19 +99,10 @@ if (isset($_POST['code'])) {
                 <div class="col-4"></div>
                 <div class="col-6">
                     <div class="container">
-                        <form action="content.php" method="post">
-                            <label for="header">ชื่อหัวข้อ</label>
-                            <input class="form-control" type="text" name="header" id="">
 
-                            <div id="summernote"></div>
-                            <br>
-                            <div class="text-center input-group">
-                                <button class="btn btn-lg" id="gogo"> Submit</button>
-                                <input class="form-control" type="hidden" id="code" name="code" value="">
-                            </div>
+                    
+                        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
 
-                        </form>
-                        <div id="singha"></div>
                     </div>
                 </div>
             </div>
@@ -120,6 +111,38 @@ if (isset($_POST['code'])) {
 
 
 
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Basic Modal</h4>
+                </div>
+                <div class="modal-body">
+
+                    <label for="header">ชื่อหัวข้อ</label>
+                    <input class="form-control" type="text" name="header" id="">
+
+                    <div id="summernote"></div>
+                    <br>
+                    <div class="text-center input-group">
+                        <button class="btn btn-lg" id="gogo"> Submit</button>
+                        <input class="form-control" type="hidden" id="code" name="code" value="">
+                    </div>
+
+
+                    <br><br>
+
+                    <div class="text-center" id="singha"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $(document).ready(function() {
@@ -133,6 +156,15 @@ if (isset($_POST['code'])) {
 
 
         });
+        $('#basicModal').modal({
+            keyboard: false,
+            backdrop: 'static'
+           
+        })
+        // $('#basicModal').modal(options)
+        // $('#basicModal').modal('show')
+        $('#basicModal').modal('toggle')
+        $('#basicModal').modal('handleUpdate')
     </script>
 </body>
 
