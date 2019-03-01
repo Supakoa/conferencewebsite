@@ -4,9 +4,14 @@ require 'server/check_login.php';
 if (isset($_POST['code'])) {
     $head = $_POST['header'];
     $code = $_POST['code'];
-    $q_content = "INSERT INTO `news`( `name`, `content`) VALUES ('$head','$code')";
+    $status =$_POST['status'];
+    $id = $_POST['id'];
+    $q_content = "UPDATE `news` SET `name`='$head',`content`='$code',`status`='$status',`time`= CURRENT_TIMESTAMP WHERE `news_id` =  '$id' ";
     $result_content = mysqli_query($con, $q_content);
 }
+$q_show = "SELECT * FROM `news`";
+$result_show = mysqli_query($con, $q_show);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,16 +56,29 @@ if (isset($_POST['code'])) {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php 
+                                $i = 1 ;
+                                while( $row_show = mysqli_fetch_array($result_show)){ ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>On-air</td>
-                                        <td>เปรมชัยหนีคดี</td>
-                                        <td>2/3/2562 , 0:40 น.</td>
+                                        <td><?php echo $i."." ?></td>
+                                        <td><?php 
+                                        
+                                        if($row_show['status']==1){
+                                            echo "เปิดใช้งาน";
+                                        }else{
+                                            echo "ปิดทำงาน";
+                                        }
+                                        ?></td>
+                                        <td><?php echo $row_show['name'] ?></td>
+                                        <td><?php echo $row_show['time'] ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#basicModal"><i class="glyphicon glyphicon-pencil"></i></a>
+                                            <a href="content.php?id=<?php echo $row_show['news_id'] ?>" class="btn btn-sm btn-warning" ><i class="glyphicon glyphicon-pencil"></i></a>
                                             <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
                                         </td>
                                     </tr>
+                                <?php 
+                            $i++;
+                            } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -94,10 +112,28 @@ if (isset($_POST['code'])) {
                     <div class="alert alert-danger modal-title text-center" role="alert" id="myModalLabel">อย่าคลิกกากบาท</div>
                 </div>
                 <div class="modal-body">
-
-                    <label for="header">ชื่อหัวข้อ</label>
-                    <input class="form-control" type="text" name="header" id="" value="<?php echo $row_edit_content['name'] ?>">
-
+                <form action="content.php" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="header">ชื่อหัวข้อ</label>
+                        <input class="form-control" type="text" name="header" id="" value = "<?php echo $row_edit_content['name'] ?>">
+                    </div>
+                    <div class="col-md-6">
+                    <label for="st">สถานะ</label>
+                                        <select class="form-control" name="status" id = "st" required>
+                                            <?php if($row_edit_content['status']==0){
+                                                echo  '<option value="0">ปิดใช้งาน</option><option value="1">เปิด</option>';
+                                            }
+                                            else{
+                                                echo ' <option value="1">เปิดใช้งาน</option><option value="0">ปิด</option>';
+                                            }
+                                            
+                                            ?>
+                                           
+                                        </select>
+                    </div>
+                </div>
+                    
                     <br>
                     <div id="summernote"></div>
 
@@ -109,7 +145,9 @@ if (isset($_POST['code'])) {
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button class="btn btn-info" id="gogo"> Submit</button>
                         <input class="form-control" type="hidden" id="code" name="code" value="">
+                        <input type="hidden" name="id" value = "<?php echo $row_edit_content['news_id'] ?>">
                     </div>
+                    <form>
                 </div>
             </div>
         </div>
@@ -157,6 +195,7 @@ if (isset($_POST['code'])) {
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
+            
             $('#gogo').click(function(e) {
                 var markupStr = $('#summernote').summernote('code');
                 $('#singha').append(markupStr);
