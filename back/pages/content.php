@@ -1,3 +1,13 @@
+<?php 
+    require 'server.php';
+    require 'server/check_login.php';
+    if(isset($_POST['code'])){
+        $head = $_POST['header'];
+        $code = $_POST['code'];
+        $q_content = "INSERT INTO `news`( `name`, `content`) VALUES ('$head','$code')";
+        $result_content = mysqli_query($con, $q_content);
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -31,14 +41,21 @@
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col-6">
-                    <form action="">
+                    
                         <div class="container text-center">
+                        <form action="content.php" method="post">
+                            <label for="header">ชื่อหัวข้อ</label>
+                            <input type="text" name="header" id="">
 
                             <div id="summernote"></div>
-                            <button class="btn btn-lg" type="submit"> Submit</button>
-
+                            <br>
+                            <button class="btn btn-lg"  id = "gogo"> Submit</button>
+                            <input type="hidden" id="code" name="code" value="">
+                        </form>
+                         <div id="singha"></div>
+                            
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -47,7 +64,18 @@
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
+            $('#gogo').click(function (e) { 
+              var markupStr = $('#summernote').summernote('code');
+              $('#singha').append(markupStr);
+              $('#code').val(markupStr);
+              
+            });
+           
+            
         });
+
+       
+
     </script>
 </body>
 
