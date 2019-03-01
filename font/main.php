@@ -71,10 +71,9 @@
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <div class="form-inline my-2 my-lg-0">
+                        <a href="index.php" class="btn btn-outline-success my-2 my-sm-0">sign-in</a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -98,13 +97,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-                        </li><br>
-                        <li class="nav-item">
-                            <div class="container">
-                                <a href="index.php" class="btn btn-sm btn-success">
-                                    sign-in</a>
-                            </div>
-                        </li><br>
+                        </li>
                     </ul>
 
 
