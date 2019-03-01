@@ -110,7 +110,14 @@ if (isset($_POST['code'])) {
     </div>
 
 
-
+    <?php if(isset($_GET['id'])){ 
+            $id = $_GET['id'];
+          $q_edit_content = "SELECT * FROM `news` WHERE `news_id` = '$id' ";
+          $result_edit_content = mysqli_query($con, $q_edit_content);
+          $row_edit_content = mysqli_fetch_array($result_edit_content);
+        
+    ?>
+    
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -121,8 +128,8 @@ if (isset($_POST['code'])) {
                 <div class="modal-body">
 
                     <label for="header">ชื่อหัวข้อ</label>
-                    <input class="form-control" type="text" name="header" id="">
-
+                    <input class="form-control" type="text" name="header" id="" value = "<?php echo $row_edit_content['name'] ?>">
+                    
                     <div id="summernote"></div>
                     <br>
                     <div class="text-center input-group">
@@ -143,7 +150,7 @@ if (isset($_POST['code'])) {
             </div>
         </div>
     </div>
-
+    <?php } ?>
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
@@ -154,7 +161,8 @@ if (isset($_POST['code'])) {
 
             });
 
-
+            var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
+            $('#summernote').summernote('code', markupStr2);
         });
         $('#basicModal').modal({
             keyboard: false,
@@ -162,8 +170,8 @@ if (isset($_POST['code'])) {
            
         })
         // $('#basicModal').modal(options)
-        // $('#basicModal').modal('show')
-        $('#basicModal').modal('toggle')
+        $('#basicModal').modal('show')
+        // $('#basicModal').modal('toggle')
         $('#basicModal').modal('handleUpdate')
     </script>
 </body>
