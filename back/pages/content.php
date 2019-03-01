@@ -40,7 +40,7 @@ if (isset($_POST['code'])) {
                 <div class="card-body">
                     <div class="container">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>#</th>
