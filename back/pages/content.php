@@ -32,113 +32,72 @@ if (isset($_POST['code'])) {
 </head>
 
 <body style="font-family: 'Mitr', sans-serif;">
-    <!-- navbar -->
+    <!-- table -->
+
     <div class="container-fluid">
         <div class="container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Brand</a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Link</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Link</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
-    </div>
-    <!-- navbar -->
-
-
-    <div class="container-fluid">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-6">
+            <div class="container-fluid">
+                <div class="card-body">
                     <div class="container">
-
-                    
-                        <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
-
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>สถานะ</th>
+                                        <th>หัวข้อ</th>
+                                        <th>แก้ไขล่าสุด</th>
+                                        <th>แก้ไข</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>On-air</td>
+                                        <td>เปรมชัยหนีคดี</td>
+                                        <td>2/3/2562 , 0:40 น.</td>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#basicModal">Click to open Modal</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- table -->
+
+
+
 
 
     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Basic Modal</h4>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+                    <div class="alert alert-danger modal-title text-center" role="alert" id="myModalLabel">อย่าคลิกกากบาท</div>
                 </div>
                 <div class="modal-body">
 
                     <label for="header">ชื่อหัวข้อ</label>
                     <input class="form-control" type="text" name="header" id="">
-
-                    <div id="summernote"></div>
                     <br>
-                    <div class="text-center input-group">
-                        <button class="btn btn-lg" id="gogo"> Submit</button>
-                        <input class="form-control" type="hidden" id="code" name="code" value="">
-                    </div>
-
+                    <div id="summernote"></div>
 
                     <br><br>
 
-                    <div class="text-center" id="singha"></div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <div class="card-body text-center" id="singha"></div>
+                    <br>
+                    <div class="text-center  modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button class="btn btn-info" id="gogo"> Submit</button>
+                        <input class="form-control" type="hidden" id="code" name="code" value="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,7 +118,7 @@ if (isset($_POST['code'])) {
         $('#basicModal').modal({
             keyboard: false,
             backdrop: 'static'
-           
+
         })
         // $('#basicModal').modal(options)
         // $('#basicModal').modal('show')
