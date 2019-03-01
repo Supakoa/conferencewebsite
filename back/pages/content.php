@@ -1,12 +1,12 @@
 <?php 
-    require 'server.php';
-    require 'server/check_login.php';
-    if(isset($_POST['code'])){
-        $head = $_POST['header'];
-        $code = $_POST['code'];
-        $q_content = "INSERT INTO `news`( `name`, `content`) VALUES ('$head','$code')";
-        $result_content = mysqli_query($con, $q_content);
-    }
+require 'server.php';
+require 'server/check_login.php';
+if (isset($_POST['code'])) {
+    $head = $_POST['header'];
+    $code = $_POST['code'];
+    $q_content = "INSERT INTO `news`( `name`, `content`) VALUES ('$head','$code')";
+    $result_content = mysqli_query($con, $q_content);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,38 +92,26 @@
     </div>
     <!-- navbar -->
 
-    <div class="row">
-        <div class="col-4">
-        <ul class="nav  nav-pills nav-stacked">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
-</ul>
-        </div>
-        <div class="col-8">
-            <div class="container-fluid">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-4"></div>
-                        <div class="col-6">
-                                <div class="container">
-                                <form action="content.php" method="post">
+
+    <div class="container-fluid">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-6">
+                    <div class="container">
+                        <form action="content.php" method="post">
                             <label for="header">ชื่อหัวข้อ</label>
-                            <input type="text" name="header" id="">
+                            <input class="form-control" type="text" name="header" id="">
 
                             <div id="summernote"></div>
                             <br>
-                            <button class="btn btn-lg"  id = "gogo"> Submit</button>
-                            <input type="hidden" id="code" name="code" value="">
-                        </form>
-                         <div id="singha"></div>
-                                    <div id="summernote"></div>
-                                    <div class="text-center">
-                                        <button class="btn btn-lg" type="submit"> Submit</button>
-                                    </div>
+                            <div class="text-center input-group">
+                                <button class="btn btn-lg" id="gogo"> Submit</button>
+                                <input class="form-control" type="hidden" id="code" name="code" value="">
+                            </div>
 
-                                </div>
-                        </div>
+                        </form>
+                        <div id="singha"></div>
                     </div>
                 </div>
             </div>
@@ -132,21 +120,19 @@
 
 
 
+
     <script>
         $(document).ready(function() {
             $('#summernote').summernote();
-            $('#gogo').click(function (e) { 
-              var markupStr = $('#summernote').summernote('code');
-              $('#singha').append(markupStr);
-              $('#code').val(markupStr);
-              
+            $('#gogo').click(function(e) {
+                var markupStr = $('#summernote').summernote('code');
+                $('#singha').append(markupStr);
+                $('#code').val(markupStr);
+
             });
-           
-            
+
+
         });
-
-       
-
     </script>
 </body>
 
