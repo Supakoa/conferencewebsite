@@ -203,8 +203,7 @@ $result_show = mysqli_query($con, $q_show);
 
             });
 
-            var markupStr2 = '<?php echo $row_edit_content['
-            content '] ?>';
+            var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
             $('#summernote').summernote('code', markupStr2);
         });
         $('#basicModal').modal({
@@ -215,13 +214,16 @@ $result_show = mysqli_query($con, $q_show);
         $('#delete').modal({
             // keyboard: false,
             backdrop: 'static'
-        })
+        });
         $('#add').modal({
             // keyboard: false,
             backdrop: 'static'
-        })
+        });
+        $('#delete').modal('hide');
+        $('#add').modal('hide');
+
         // $('#basicModal').modal(options)
-        // $('#basicModal').modal('show')
+        $('#basicModal').modal('show');
         // $('#basicModal').modal('toggle')
         // $('#basicModal').modal('handleUpdate')
     </script>
