@@ -1,16 +1,21 @@
 <?php 
-require 'server.php';
-require 'server/check_login.php';
-if (isset($_POST['code'])) {
-    $head = $_POST['header'];
-    $code = $_POST['code'];
-    $status =$_POST['status'];
-    $id = $_POST['id'];
-    $q_content = "UPDATE `news` SET `name`='$head',`content`='$code',`status`='$status',`time`= CURRENT_TIMESTAMP WHERE `news_id` =  '$id' ";
-    $result_content = mysqli_query($con, $q_content);
-}
-$q_show = "SELECT * FROM `news`";
-$result_show = mysqli_query($con, $q_show);
+    // connect database
+    require 'server.php';
+    // check login
+    require 'server/check_login.php';
+
+    if (isset($_POST['code'])) {
+        $head = $_POST['header'];
+        $code = $_POST['code'];
+        $status =$_POST['status'];
+        $id = $_POST['id'];
+        $q_content = "UPDATE `news` SET `name`='$head',
+            `content`='$code',`status`='$status',
+            `time`= CURRENT_TIMESTAMP WHERE `news_id` =  '$id' ";
+        $result_content = mysqli_query($con, $q_content);
+    }
+    $q_show = "SELECT * FROM `news`";
+    $result_show = mysqli_query($con, $q_show);
 
 ?>
 <!DOCTYPE html>
@@ -203,8 +208,7 @@ $result_show = mysqli_query($con, $q_show);
 
             });
 
-            var markupStr2 = '<?php echo $row_edit_content['
-            content '] ?>';
+            var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
             $('#summernote').summernote('code', markupStr2);
         });
         $('#basicModal').modal({
@@ -215,13 +219,16 @@ $result_show = mysqli_query($con, $q_show);
         $('#delete').modal({
             // keyboard: false,
             backdrop: 'static'
-        })
+        });
         $('#add').modal({
             // keyboard: false,
             backdrop: 'static'
-        })
+        });
+        $('#delete').modal('hide');
+        $('#add').modal('hide');
+
         // $('#basicModal').modal(options)
-        // $('#basicModal').modal('show')
+        $('#basicModal').modal('show');
         // $('#basicModal').modal('toggle')
         // $('#basicModal').modal('handleUpdate')
     </script>

@@ -6,6 +6,7 @@
     
     if (isset($_SESSION['check_login'])) {
         echo '<script>alert("กรุณา Login เข้าสู่ระบบ.");</script>';
+        unset($_SESSION['check_login']);
     }
     if (isset($_SESSION['status'])) {
         if ($_SESSION['status'] == 0) {
