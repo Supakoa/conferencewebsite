@@ -1,3 +1,7 @@
+<?php
+    require 'server/server.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -89,15 +93,13 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-                        </li>
+                        <?php
+                            while ($row = mysqli_fetch_array(mysqli_query($con," SELECT * FROM `news` WHERE status = 1 "))) { ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
+                                </li> 
+                           <?php }
+                        ?>
                     </ul>
 
 
