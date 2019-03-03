@@ -23,7 +23,8 @@
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,500" rel="stylesheet">
 
-
+    <!-- google font kanit -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <!-- <link href="css/new-age.css" rel="stylesheet"> -->
@@ -116,13 +117,12 @@
                         <?php  
                             $result2 = mysqli_query($con,$sql);
                             while ($row_content = mysqli_fetch_array($result2)) { ?>
-                                <div class="tab-pane fade text-cnter" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="tab-pane fade text-cnter" style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
                                     <?php
                                         echo $row_content['content'];
                                     ?>
                                 </div>
-                        <?php }
-                        ?>
+                        <?php } ?>
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container">
                                 <img src="journal_4.png" alt="Responsive image" class="img-fluid" style="">
