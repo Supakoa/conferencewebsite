@@ -12,8 +12,30 @@
         $q_content = "UPDATE `news` SET `name`='$head',
             `content`='$code',`status`='$status',
             `time`= CURRENT_TIMESTAMP WHERE `news_id` =  '$id' ";
-        $result_content = mysqli_query($con, $q_content);
+        if($result_content = mysqli_query($con, $q_content)){
+            $_SESSION['alert'] = 10;
+        }else{
+            $_SESSION['alert'] = 11;
+        }
+       
+      
+    }elseif(isset($_POST['del_id'])){
+        $id = $_POST['del_id'];
+        $q_content = "DELETE FROM `news` WHERE `news_id` = '$id' ";
+        if($result_content = mysqli_query($con, $q_content)){
+            $_SESSION['alert'] = 12;
+        }else{
+            $_SESSION['alert'] = 13;
+        }
+    }elseif(isset($_POST['add_news'])){
+        $q_content = "INSERT INTO `news`( `name`, `content`) VALUES ('ข่าวที่เพิ่มมาใหม่','ทดสอบๆ')";
+        if($result_content = mysqli_query($con, $q_content)){
+            $_SESSION['alert'] = 3;
+        }else{
+            $_SESSION['alert'] = 4;
+        }
     }
+    
     $q_show = "SELECT * FROM `news`";
     $result_show = mysqli_query($con, $q_show);
 
@@ -38,6 +60,12 @@
     <!-- include summernote css/js -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+
+    <!-- sweet alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="../../sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="../../sweetalert2/dist/sweetalert2.min.css">
+
 
 </head>
 
@@ -69,16 +97,16 @@
                                         <td><?php 
                                         
                                         if($row_show['status']==1){
-                                            echo "เปิดใช้งาน";
+                                            echo '<p style=""><span style="background-color: rgb(247, 247, 247); color: rgb(107, 165, 74);">เปิดใช้งาน</span></p>';
                                         }else{
-                                            echo "ปิดทำงาน";
+                                            echo '<p style=""><span style="background-color: rgb(239, 239, 239); color: rgb(255, 0, 0);">ปิดใช้งาน</span></p>';
                                         }
                                         ?></td>
                                         <td><?php echo $row_show['name'] ?></td>
                                         <td><?php echo $row_show['time'] ?></td>
                                         <td>
                                             <a href="content.php?id=<?php echo $row_show['news_id'] ?>" class="btn btn-sm btn-warning" ><i class="glyphicon glyphicon-pencil"></i></a>
-                                            <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
+                                            <a onclick = "  $('#del_id').val('<?php echo $row_show['news_id'] ?>');" href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
                                         </td>
                                     </tr>
                                 <?php 
@@ -98,7 +126,7 @@
 
     <!-- table -->
 
-
+                           
 
 
     <?php if (isset($_GET['id'])) {
@@ -127,10 +155,10 @@
                     <label for="st">สถานะ</label>
                                         <select class="form-control" name="status" id = "st" required>
                                             <?php if($row_edit_content['status']==0){
-                                                echo  '<option value="0">ปิดใช้งาน</option><option value="1">เปิด</option>';
+                                                echo  '<option value="0">ปิดใช้งาน</option><option value="1">เปิดใช้งาน</option>';
                                             }
                                             else{
-                                                echo ' <option value="1">เปิดใช้งาน</option><option value="0">ปิด</option>';
+                                                echo ' <option value="1">เปิดใช้งาน</option><option value="0">ปิดใช้งาน</option>';
                                             }
                                             
                                             ?>
@@ -167,12 +195,15 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
                 </div>
-                <div class="modal-body">
-                    <h3>Modal Body</h3>
+                <div class="modal-body text-center">
+                <form action="content.php" id = "del" method="post">
+                <input type="hidden" id="del_id" name = "del_id">
+                </form>
+                    <h3>ท่านต้องการจะลบข้อมูลนี้ ?</h3>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ไม่</button>
+                    <button type="submit" form = "del" class="btn btn-primary">ใช่</button>
                 </div>
             </div>
         </div>
@@ -186,11 +217,14 @@
                     <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
                 </div>
                 <div class="modal-body">
-                    <h3>Modal Body</h3>
+                    <h3>ท่านต้องการเพิ่มข่าวใหม่ ?</h3>
+                    <form action="content.php" method="post" id ="add_news">
+                    <input type="hidden" name="add_news">
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">ไม่</button>
+                    <button type="submit" form="add_news" class="btn btn-primary">ใช่</button>
                 </div>
             </div>
         </div>
@@ -199,15 +233,20 @@
 
     <script>
         $(document).ready(function() {
-            $('#summernote').summernote();
+           
+            $('#summernote').summernote({
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true                  // set focus to editable area after initializing summernote
+            });
             
             $('#gogo').click(function(e) {
                 var markupStr = $('#summernote').summernote('code');
-                $('#singha').append(markupStr);
                 $('#code').val(markupStr);
 
             });
-
+            $('#del_id').val('value');
             var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
             $('#summernote').summernote('code', markupStr2);
         });
@@ -224,14 +263,16 @@
             // keyboard: false,
             backdrop: 'static'
         });
-        $('#delete').modal('hide');
-        $('#add').modal('hide');
-
+        
+        $('*').modal('hide');
         // $('#basicModal').modal(options)
         $('#basicModal').modal('show');
+        
         // $('#basicModal').modal('toggle')
         // $('#basicModal').modal('handleUpdate')
     </script>
+    <!-- php check alert -->
+    <?php require '../../alert.php'; ?>
 </body>
 
 </html> 
