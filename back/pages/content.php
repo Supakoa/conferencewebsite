@@ -106,7 +106,7 @@
                                         <td><?php echo $row_show['time'] ?></td>
                                         <td>
                                             <a href="content.php?id=<?php echo $row_show['news_id'] ?>" class="btn btn-sm btn-warning" ><i class="glyphicon glyphicon-pencil"></i></a>
-                                            <a onclick = "  $('#del_id').val('<?php echo $row_show['news_id'] ?>');" href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
+                                            <a onclick = "  $('#del_id').val('<?php echo $row_show['news_id'] ?>')" href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
                                         </td>
                                     </tr>
                                 <?php 
@@ -116,7 +116,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center" >
                         <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></a>
                         <a href="../../font/main.php" target="_blank" class="btn btn-sm btn-success">ไปยังหน้าแสดงข่าว</a>
                     </div>
@@ -196,16 +196,18 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
                 </div>
-                <div class="modal-body text-center">
-                <form action="content.php" id = "del" method="post">
+              <form action="content.php" id = "del_singha" method="post">
+                <div class="modal-body text-center" id = "test">
                 <input type="hidden" id="del_id" name = "del_id">
-                </form>
+                
                     <h3>ท่านต้องการจะลบข้อมูลนี้ ?</h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">ไม่</button>
-                    <button type="submit" form = "del" class="btn btn-primary">ใช่</button>
+                    <button type="submit" id ="del_yes" class="btn btn-primary">ใช่</button>
+                    
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -263,7 +265,12 @@
             // keyboard: false,
             backdrop: 'static'
         });
-        
+        $('#del_yes').click(function () { 
+            // $('#test').append('123456');
+            $('#del_singha').submit();
+            
+        });
+      
         $('*').modal('hide');
         // $('#basicModal').modal(options)
         $('#basicModal').modal('show');
