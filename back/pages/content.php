@@ -248,7 +248,7 @@
                 $('#code').val(markupStr);
 
             });
-            $('#del_id').val('value');
+            // $('#del_id').val('value');
             var markupStr2 = '<?php echo $row_edit_content['content'] ?>';
             $('#summernote').summernote('code', markupStr2);
         });
