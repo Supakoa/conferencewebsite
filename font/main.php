@@ -37,12 +37,16 @@
 
 <body>
     <!-- banner -->
-    <div class="container-fluid" style="background-color:lightpink;height:200px">
+    <!-- <div class="container-fluid" style="background-color:lightpink;height:200px">
         <div class="text-center">
             <h2>Banner</h2>
         </div>
-    </div><br>
+    </div><br> -->
     <!-- banner -->
+    <div class="">
+    <img src="..\back\pages\banner\123456.png" style = "width:100%" alt="">
+    </div>
+    
 
     <!-- navbar -->
     <div class="container-fluid" style="background-color: #e3f2fd;">
