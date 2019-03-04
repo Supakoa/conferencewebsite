@@ -55,7 +55,7 @@
                             <a href="paper.php"><i class="fa fa-file-text fa-fw"></i> เอกสารที่เกี่ยวข้อง</a>
                         </li>
                         <li>
-                            <a href="content.php" target="_blank"><i class="fas fa-times-circle"></i> กำลังสร้าง...</a>
+                            <a href="content.php" target="_blank"><i class="fas fa-times-circle"></i> แก้ไขประกาศหน้าเว็บ</a>
                         </li>
                     </ul>
                 </div>
