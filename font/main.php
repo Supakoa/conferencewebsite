@@ -36,6 +36,9 @@
 </head>
 
 <body>
+    <body>
+        
+    
     <!-- banner -->
     <!-- <div class="container-fluid" style="background-color:lightpink;height:200px">
         <div class="text-center">
@@ -49,41 +52,35 @@
     
 
     <!-- navbar -->
-    <div class="container-fluid" style="background-color: #e3f2fd;">
+    <div class="container-fluid" style="background-color: #F3C6FB;">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand" href="#">Navbar</a>
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F3C6FB;">
+                <a class="navbar-brand" href="#">GE Conference</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+                    <ul class="navbar-nav mr-auto" role="tablist">
+                       
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                                ข้อมูลทั่วไป
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#" onclick = "content(10017)">หลักการและเหตุผล</a>
+                                <a class="dropdown-item" href="#" onclick = "content(10018)">วัตถุประสงค์</a>
+                                <a class="dropdown-item" href="#" onclick = "content(10019)">รูปแบบการในเสนอ</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="#" onclick = "content(10020)">ผู้ทรงคุณวุฒิ</a>
                         </li>
                     </ul>
                     <div class="form-inline my-2 my-lg-0">
-                        <a href="index.php" class="btn btn-outline-success my-2 my-sm-0">sign-in</a>
+                        <a href="index.php" class="btn btn-info my-2 my-sm-0">ส่งบทความ</a>
                     </div>
                 </div>
             </nav>
@@ -96,7 +93,7 @@
             <div class="row">
                 <div class="col-2">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs flex-column" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs flex-column myTab" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                 aria-controls="home" aria-selected="true">Home</a>
@@ -117,30 +114,36 @@
                 </div>
                 <div class="col-10">
                     <!-- Tab panes -->
-                    <div class="tab-content">
+                <div class="" style="font-family: 'Kanit', sans-serif;" id = "qry_content" ></div>
+
+                    <div class="tab-content" id = "main_content" >
+                    
+
                         <?php  
                             $result2 = mysqli_query($con,$sql);
                             while ($row_content = mysqli_fetch_array($result2)) { ?>
-                                <div class="tab-pane fade text-cnter" style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="tab-pane fade " style="font-family: 'Kanit', sans-serif;" id="<?php echo $row_content['news_id']; ?>" role="tabpanel" aria-labelledby="profile-tab">
                                     <?php
                                         echo $row_content['content'];
                                     ?>
                                 </div>
                         <?php } ?>
+                        
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="container">
-                                <img src="journal_4.png" alt="Responsive image" class="img-fluid" style="">
+                                <p align="center" style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><img src="http://www.gen-ed.ssru.ac.th/useruploads/images/20190212/e351519d4139d4016dec7fd8b96d2903d69a20ee.png" class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 821px;"></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; เปิดรับสมัครบทความจำนวนจำกัด (100 บทความ) เพื่อนำเสนองานประชุมวิชาการการศึกษาทั่วไปฯ มหาวิทยาลัยราชภัฏสวนสุนันทา ปี พ.ศ.2562 ตั้งแต่วันนี้ – 12 มีนาคม พ.ศ.2562&nbsp;</span></strong></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">โดยนักวิจัยสามารถสมัครเข้าร่วมโครงการฯ เพื่อส่งบทความและชำระเงินค่าลงทะเบียนได้ที่&nbsp;</span></strong></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 18px;">ค่าลงทะเบียน 3,000 บาท&nbsp;</span></strong></span><span style="color: rgb(147, 101, 184);"><strong><span style="font-size: 18px;"><strong><u><a href="http://www.geconference.ssru.ac.th/font/index.php" rel="noopener noreferrer" target="_blank" style="color: rgb(0, 0, 0); text-shadow: none;">&gt;&gt; คลิกเข้าระบบ</a>&nbsp;&lt;&lt;</u></strong>&nbsp;</span></strong></span></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; หัวข้อการเสนอผลงาน ได้แก่<br>&nbsp; &nbsp; 1.กลุ่มวิชาด้านมนุษยศาสตร์และสังคมศาสตร์<br>&nbsp; &nbsp; 2.กลุ่มวิชาด้านการศึกษา<br>&nbsp; &nbsp; 3.กลุ่มวิชาด้านวิทยาศาสตร์และเทคโนโลยี<br>&nbsp; &nbsp; 4.กลุ่มวิชาด้านภาษา<br>ผู้วิจัยที่ชำระเงินหลังวันที่ 12 มีนาคม พ.ศ.2562 เป็นต้นไป ทางผู้จัดขอสงวนสิทธิ์ไม่คืนเงินค่าลงทะเบียนในทุกกรณี</span></strong></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><br></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="font-size: 18px;"><strong><span style="color: rgb(41, 105, 176);">ติดต่อสอบถามรายละเอียดได้ที่ นางสาวภัททิยา ตรัยที่พึ่ง</span></strong></span></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(41, 105, 176);"><strong><span style="font-size: 18px;">หัวหน้าฝ่ายวิจัยและพัฒนานวัตกรรมการจัดการเรียนรู้</span></strong></span></p><p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><strong>เบอร์ติดต่อ 02-160-1265 ต่อ 301&nbsp;<strong>หรือโทร 086-0826655</strong></strong></span></span></p><div><span style="color: rgb(41, 105, 176);"><span style="font-size: 18px;"><strong><strong><br></strong></strong></span></span></div><p></p>
                             </div>
                         </div>
                 </div>
             </div>
         </div>
     </div><br>
-
-
-    <footer>
-        <div class="container text-center" style="background-color:lightpink">
-            <h1>footer</h1>
+    </body>
+    <br><br><br><br>
+    <footer class="text-center container-fluid" style="background-color:#F3C6FB;">
+        <div class="container " style="background-color:#F3C6FB;padding-top:10px;padding-bottom:2px">
+           <p>สำนักวิชาการศึกษาทั่วไปและนวัตกรรมการเรียนรู้อิเล็กทรอนิกส์ มหาวิทยาลัยราชภัฏสวนสุนันทา <br>เลขที่ 1 ถนนอู่ทองนอก เขตดุสิต กรุงเทพมหานคร 10300</p>
+           <p>อีเมล : pattiya.tr@ssru.ac.th เบอร์โทร : (+66) 1601265 ต่อ 301 โทรสาร : (+66)2 160 1268 </p>
         </div>
     </footer>
 
@@ -152,13 +155,31 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        $('#myTab a').on('click', function (e) {
-            e.preventDefault()
-            $(this).tab('show')
+    
+        $('.myTab a').on('click', function (e) {
+            $('#main_content').show();
+            $('#qry_content').hide();
+            e.preventDefault();
+            $(this).tab('show');
         })
         $(function () {
-            $('#myTab li:first-child a').tab('show')
+            $('.myTab li:first-child a').tab('show')
         })
+        function content (id) {
+				// alert(id);
+				// $("#edit_modal").append("eieieissssss");
+             
+                 
+				$.post("qry_content.php",{data : id},
+					function(result){
+                        $('#qry_content').show();
+                        $('#main_content').hide();
+						$("#qry_content").html(result);
+						// $("#del").modal("show");
+						}
+				
+			);
+		};
     </script>
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
