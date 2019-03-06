@@ -71,7 +71,6 @@
 
 <body style="font-family: 'Mitr', sans-serif;">
     <!-- table -->
-
     <div class="container-fluid">
         <div class="container">
             <div class="container-fluid">

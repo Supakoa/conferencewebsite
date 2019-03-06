@@ -92,11 +92,11 @@
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-lg-2">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs flex-column myTab" id="myTab" role="tablist">
+                        <ul class="nav nav-tabs nav-pills  flex-column myTab" id="myTab"  role="tablist" >
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                <a class="nav-link active" style="color:#000;" id="home-tab" data-toggle="tab" href="#home" role="tab"
                                     aria-controls="home" aria-selected="true">Home</a>
                             </li>
                             <?php
@@ -104,7 +104,7 @@
                         $result = mysqli_query($con,$sql);
                             while ($row = mysqli_fetch_array($result)){ ?>
                             <li class="nav-item">
-                                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#<?php echo $row['news_id'];?>"
+                                <a style="color:#000;" class="nav-link" id="settings-tab" data-toggle="tab" href="#<?php echo $row['news_id'];?>"
                                     role="tab" aria-controls="settings" aria-selected="false">
                                     <?php echo $row['name']; ?></a>
                             </li>
@@ -113,7 +113,7 @@
 
 
                     </div>
-                    <div class="col-10">
+                    <div class="col-lg-10">
                         <!-- Tab panes -->
                         <div class="" style="font-family: 'Kanit', sans-serif;" id="qry_content"></div>
 
@@ -133,9 +133,9 @@
 
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container">
-                                    <p align="center" style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><img
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;align:center; "><img
                                             src="http://www.gen-ed.ssru.ac.th/useruploads/images/20190212/e351519d4139d4016dec7fd8b96d2903d69a20ee.png"
-                                            class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 821px;"></p>
+                                            class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 100%;"></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span
                                                 style="font-size: 18px;">&nbsp; &nbsp; &nbsp;
                                                 เปิดรับสมัครบทความจำนวนจำกัด (100 บทความ)
