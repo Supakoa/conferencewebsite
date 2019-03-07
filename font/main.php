@@ -70,10 +70,10 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     ข้อมูลทั่วไป
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#" onclick="content(10017)">หลักการและเหตุผล</a>
-                                    <a class="dropdown-item" href="#" onclick="content(10018)">วัตถุประสงค์</a>
-                                    <a class="dropdown-item" href="#" onclick="content(10019)">รูปแบบการในเสนอ</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #F3C6FB;">
+                                    <a class="dropdown-item" href="#" onclick="content(10017)" >หลักการและเหตุผล</a>
+                                    <a class="dropdown-item" href="#" onclick="content(10018)" >วัตถุประสงค์</a>
+                                    <a class="dropdown-item" href="#" onclick="content(10019)" >รูปแบบการในเสนอ</a>
                                 </div>
                             </li>
                             <li class="nav-item">
