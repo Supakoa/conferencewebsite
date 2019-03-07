@@ -119,6 +119,24 @@
                         <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></a>
                         <a href="../../font/main.php" target="_blank" class="btn btn-sm btn-success">ไปยังหน้าแสดงข่าว</a>
                     </div>
+                    <div class="row">
+                <h1 class="page-header">อัพโหลดรูป</h1>
+                <div class="col-lg-12">
+                    <form action="server/insert_banner.php" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class=" col-lg-4">
+                                <input class="form-control" name="banner" type="file" placeholder="File" required="required">
+                            </div>
+                            <div class=" col-lg-4">
+                                <button type="submit" class="btn btn-success">อัพโหลด</button>
+                            </div>
+                        </div>
+                        <h4 class="text-center" style="color:red">ขนาด 1900*1000 px</h4>
+                        <br>
+                    </form>
+                </div>
+            </div>
                 </div>
             </div>
         </div>
