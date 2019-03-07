@@ -35,7 +35,52 @@
             $_SESSION['alert'] = 4;
         }
     }
+    if(isset($_FILES["banner"]["name"])){
+        $ext = pathinfo(basename($_FILES["banner"]["name"]), PATHINFO_EXTENSION);
+        $new_taget_name = 'banner_' . uniqid() . "." . $ext;
+        $target_path = "banner/";
+        $upload_path = $target_path . $new_taget_name;
+        $uploadOk = 1;
     
+        $imageFileType = strtolower(pathinfo($new_taget_name, PATHINFO_EXTENSION));
+    
+        if ($_FILES["banner"]["size"] > 60000000) {
+            echo "Sorry, your file is too large.";
+            $_SESSION['alert'] = 15 ;
+            header("Location: content.php");
+                exit();
+            $uploadOk = 0;
+        }
+    
+        // Allow certain file formats
+        if ($imageFileType != "jpg"&&$imageFileType != "png") {
+            echo "Sorry, only JPG , PNG files are allowed.";
+            $_SESSION['alert'] = 17 ;
+            header("Location: content.php");
+                exit();
+            $uploadOk = 0;
+        }
+    
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+            $_SESSION['alert'] = 4 ;
+            header("Location: content.php");
+                exit();
+        }
+    
+        else {
+            if (move_uploaded_file($_FILES["banner"]["tmp_name"], $upload_path)) {
+                echo 'Move success.';
+                $_SESSION['alert'] = 3 ;
+                
+    
+            }else {
+                echo 'Move fail';
+                $_SESSION['alert'] = 4 ;
+            }
+        }
+    }
     $q_show = "SELECT * FROM `news`";
     $result_show = mysqli_query($con, $q_show);
 
@@ -133,7 +178,7 @@
                     <div class="row">
                 <h1 class="page-header">อัพโหลดรูป</h1>
                 <div class="col-lg-12">
-                    <form action="server/insert_banner.php" method="POST" enctype="multipart/form-data">
+                    <form action="content.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-4"></div>
                             <div class=" col-lg-4">
@@ -144,6 +189,12 @@
                             </div>
                         </div>
                         <h4 class="text-center" style="color:red">ขนาด 1900*1000 px</h4>
+
+                        <?php if(isset($new_taget_name)){
+                            echo ' <img style="max-width: 100%;height: auto;" class="img-fluid" src="banner/'.$new_taget_name.'"';
+                        }
+
+                            ?>
                         <br>
                     </form>
                 </div>
