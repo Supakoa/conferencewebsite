@@ -78,7 +78,7 @@ require 'server/server.php';
                                 <a class="nav-link" href="#" onclick="content(10020)">ผู้ทรงคุณวุฒิ</a>
                             </li>
                             <li class="nav-item" style="color:#fff;">
-                                <a class="nav-link" href="#" onclick="content(10021)" style="color:#fff;">กองบรรณาธิการ</a>
+                                <a class="nav-link" href="#" onclick="content(10050)" style="color:#fff;">กองบรรณาธิการ</a>
                             </li>
                         </ul>
                         <div class="form-inline my-2 my-lg-0">

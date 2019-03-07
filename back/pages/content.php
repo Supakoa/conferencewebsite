@@ -188,13 +188,12 @@
                                 <button type="submit" class="btn btn-success">อัพโหลด</button>
                             </div>
                         </div>
-                        <h4 class="text-center" style="color:red">ขนาด 1900*1000 px</h4>
+                        <!-- <h4 class="text-center" style="color:red">ขนาด 1900*1000 px</h4> -->
 
                         <?php if(isset($new_taget_name)){
                             echo ' <img style="max-width: 100%;height: auto;" class="img-fluid" src="banner/'.$new_taget_name.'"';
                         }
-
-                            ?>
+                         ?>
                         <br>
                     </form>
                 </div>
