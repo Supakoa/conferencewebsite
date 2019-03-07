@@ -89,34 +89,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php 
+                                    <?php 
                                 $i = 1 ;
                                 while( $row_show = mysqli_fetch_array($result_show)){ ?>
                                     <tr>
-                                        <td><?php echo $i."." ?></td>
-                                        <td><?php 
+                                        <td>
+                                            <?php echo $i."." ?>
+                                        </td>
+                                        <td>
+                                            <?php 
                                         
                                         if($row_show['status']==1){
                                             echo '<p style=""><span style="background-color: rgb(247, 247, 247); color: rgb(107, 165, 74);">เปิดใช้งาน</span></p>';
                                         }else{
                                             echo '<p style=""><span style="background-color: rgb(239, 239, 239); color: rgb(255, 0, 0);">ปิดใช้งาน</span></p>';
                                         }
-                                        ?></td>
-                                        <td><?php echo $row_show['name'] ?></td>
-                                        <td><?php echo $row_show['time'] ?></td>
+                                        ?>
+                                        </td>
                                         <td>
-                                            <a href="content.php?id=<?php echo $row_show['news_id'] ?>" class="btn btn-sm btn-warning" ><i class="glyphicon glyphicon-pencil"></i></a>
-                                            <a onclick = "  $('#del_id').val('<?php echo $row_show['news_id'] ?>')" href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i class="glyphicon glyphicon-minus"></i></a>
+                                            <?php echo $row_show['name'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row_show['time'] ?>
+                                        </td>
+                                        <td>
+                                            <a href="content.php?id=<?php echo $row_show['news_id'] ?>" class="btn btn-sm btn-warning"><i
+                                                    class="glyphicon glyphicon-pencil"></i></a>
+                                            <a onclick="  $('#del_id').val('<?php echo $row_show['news_id'] ?>')" href="#"
+                                                class="btn btn-sm btn-danger" data-toggle="modal" data-target="#delete"><i
+                                                    class="glyphicon glyphicon-minus"></i></a>
                                         </td>
                                     </tr>
-                                <?php 
+                                    <?php 
                             $i++;
                             } ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="text-center" >
+                    <div class="text-center">
                         <a href="#" class="btn btn-sm btn-info" data-toggle="modal" data-target="#add"><i class="glyphicon glyphicon-plus"></i></a>
                         <a href="../../font/main.php" target="_blank" class="btn btn-sm btn-success">ไปยังหน้าแสดงข่าว</a>
                     </div>
@@ -127,7 +138,7 @@
 
     <!-- table -->
 
-                           
+
 
 
     <?php if (isset($_GET['id'])) {
@@ -146,16 +157,16 @@
                     <div class="alert alert-danger modal-title text-center" role="alert" id="myModalLabel">อย่าคลิกกากบาท</div>
                 </div>
                 <div class="modal-body">
-                <form action="content.php" method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="header">ชื่อหัวข้อ</label>
-                        <input class="form-control" type="text" name="header" id="" value = "<?php echo $row_edit_content['name'] ?>">
-                    </div>
-                    <div class="col-md-6">
-                    <label for="st">สถานะ</label>
-                                        <select class="form-control" name="status" id = "st" required>
-                                            <?php if($row_edit_content['status']==0){
+                    <form action="content.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="header">ชื่อหัวข้อ</label>
+                                <input class="form-control" type="text" name="header" id="" value="<?php echo $row_edit_content['name'] ?>">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="st">สถานะ</label>
+                                <select class="form-control" name="status" id="st" required>
+                                    <?php if($row_edit_content['status']==0){
                                                 echo  '<option value="0">ปิดใช้งาน</option><option value="1">เปิดใช้งาน</option>';
                                             }
                                             else{
@@ -163,25 +174,25 @@
                                             }
                                             
                                             ?>
-                                           
-                                        </select>
-                    </div>
-                </div>
-                    
-                    <br>
-                    <div id="summernote"></div>
 
-                    <br><br>
+                                </select>
+                            </div>
+                        </div>
 
-                    <div class="card-body text-center" id="singha"></div>
-                    <br>
-                    <div class="text-center  modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button class="btn btn-info" id="gogo"> Submit</button>
-                        <input class="form-control" type="hidden" id="code" name="code" value="">
-                        <input type="hidden" name="id" value = "<?php echo $row_edit_content['news_id'] ?>">
-                    </div>
-                    <form>
+                        <br>
+                        <div id="summernote"></div>
+
+                        <br><br>
+
+                        <div class="card-body text-center" id="singha"></div>
+                        <br>
+                        <div class="text-center  modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button class="btn btn-info" id="gogo"> Submit</button>
+                            <input class="form-control" type="hidden" id="code" name="code" value="">
+                            <input type="hidden" name="id" value="<?php echo $row_edit_content['news_id'] ?>">
+                        </div>
+                        <form>
                 </div>
             </div>
         </div>
@@ -196,17 +207,17 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <!-- <h4 class="modal-title" id="myModalLabel">Small Modal</h4> -->
                 </div>
-              <form action="content.php" id = "del_singha" method="post">
-                <div class="modal-body text-center" id = "test">
-                <input type="hidden" id="del_id" name = "del_id">
-                
-                    <h3>ท่านต้องการจะลบข้อมูลนี้ ?</h3>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">ไม่</button>
-                    <button type="submit" id ="del_yes" class="btn btn-primary">ใช่</button>
-                    
-                </div>
+                <form action="content.php" id="del_singha" method="post">
+                    <div class="modal-body text-center" id="test">
+                        <input type="hidden" id="del_id" name="del_id">
+
+                        <h3>ท่านต้องการจะลบข้อมูลนี้ ?</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">ไม่</button>
+                        <button type="submit" id="del_yes" class="btn btn-primary">ใช่</button>
+
+                    </div>
                 </form>
             </div>
         </div>
@@ -221,8 +232,8 @@
                 </div>
                 <div class="modal-body">
                     <h3>ท่านต้องการเพิ่มข่าวใหม่ ?</h3>
-                    <form action="content.php" method="post" id ="add_news">
-                    <input type="hidden" name="add_news">
+                    <form action="content.php" method="post" id="add_news">
+                        <input type="hidden" name="add_news">
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -234,23 +245,52 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-           
-            $('#summernote').summernote({
-                height: 300,                 // set editor height
-                minHeight: null,             // set minimum height of editor
-                maxHeight: null,             // set maximum height of editor
-                focus: true                  // set focus to editable area after initializing summernote
-            });
-            
-            $('#gogo').click(function(e) {
-                var markupStr = $('#summernote').summernote('code');
-                $('#code').val(markupStr);
+        $(document).ready(function () {
 
+            $('#summernote').summernote({
+                height: 300, // set editor height
+                minHeight: null, // set minimum height of editor
+                maxHeight: null, // set maximum height of editor
+                focus: true, // set focus to editable area after initializing summernote
+                callbacks: {
+                    onImageUpload: function (image) {
+                        uploadImage(image[0]);
+                    }
+                }
             });
-            // $('#del_id').val('value');
-            var markupStr2 = `<?php echo $row_edit_content['content'] ?>`;
-            $('#summernote').summernote('code', markupStr2);
+
+            function uploadImage(image) {
+                var data = new FormData();
+                data.append("image", image);
+                $.ajax({
+                    url: 'img_up.php',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    type: "post",
+                    success: function (url) {
+                        var image = $('<img>').attr('src', 'http://' + url);
+                        $('#summernote').summernote("insertNode", image[0]);
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+        
+
+
+
+
+        $('#gogo').click(function (e) {
+            var markupStr = $('#summernote').summernote('code');
+            $('#code').val(markupStr);
+
+        });
+        // $('#del_id').val('value');
+        var markupStr2 = `<?php echo $row_edit_content['content'] ?>`; $('#summernote').summernote('code',
+            markupStr2);
         });
         $('#basicModal').modal({
             keyboard: false,
@@ -265,16 +305,16 @@
             // keyboard: false,
             backdrop: 'static'
         });
-        $('#del_yes').click(function () { 
+        $('#del_yes').click(function () {
             // $('#test').append('123456');
             $('#del_singha').submit();
-            
+
         });
-      
+
         $('*').modal('hide');
         // $('#basicModal').modal(options)
         $('#basicModal').modal('show');
-        
+
         // $('#basicModal').modal('toggle')
         // $('#basicModal').modal('handleUpdate')
     </script>
@@ -282,4 +322,4 @@
     <?php require '../../alert.php'; ?>
 </body>
 
-</html> 
+</html>
