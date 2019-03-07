@@ -82,7 +82,7 @@
                                 <button type="submit" class="btn btn-success">อัพโหลด</button>
                             </div>
                         </div>
-                        <h2 class="text-center" style="color:red">ขนาด 1900*1000 px</h2>
+                        <h4 class="text-center" style="color:red">ขนาด 1900*1000 px</h4>
                         <br>
                     </form>
                 </div>
