@@ -32,6 +32,8 @@ if (isset($_POST['code'])) {
     } else {
         $_SESSION['alert'] = 4;
     }
+}
+
     if(isset($_FILES["banner"]["name"])){
         $ext = pathinfo(basename($_FILES["banner"]["name"]), PATHINFO_EXTENSION);
         $new_taget_name = 'banner_' . uniqid() . "." . $ext;
