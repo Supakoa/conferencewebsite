@@ -137,7 +137,7 @@ require 'server/server.php';
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;
                                                 เปิดรับสมัครบทความจำนวนจำกัด (100 บทความ)
                                                 เพื่อนำเสนองานประชุมวิชาการการศึกษาทั่วไปฯ มหาวิทยาลัยราชภัฏสวนสุนันทา
-                                                ปี พ.ศ.2562 ตั้งแต่วันนี้ – 12 มีนาคม พ.ศ.2562&nbsp;</span></strong></p>
+                                                ปี พ.ศ.2562 ตั้งแต่วันนี้ – 31 มีนาคม พ.ศ.2562&nbsp;</span></strong></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">โดยนักวิจัยสามารถสมัครเข้าร่วมโครงการฯ
                                                 เพื่อส่งบทความและชำระเงินค่าลงทะเบียนได้ที่&nbsp;</span></strong></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 18px;">ค่าลงทะเบียน 3,000 บาท&nbsp;</span></strong></span><span style="color: rgb(147, 101, 184);"><strong><span style="font-size: 18px;"><strong><u><a href="http://www.geconference.ssru.ac.th/font/index.php" rel="noopener noreferrer" target="_blank" style="color: rgb(0, 0, 0); text-shadow: none;">&gt;&gt;
@@ -146,7 +146,7 @@ require 'server/server.php';
                                                 &nbsp; 1.กลุ่มวิชาด้านมนุษยศาสตร์และสังคมศาสตร์<br>&nbsp; &nbsp;
                                                 2.กลุ่มวิชาด้านการศึกษา<br>&nbsp; &nbsp;
                                                 3.กลุ่มวิชาด้านวิทยาศาสตร์และเทคโนโลยี<br>&nbsp; &nbsp;
-                                                4.กลุ่มวิชาด้านภาษา<br>ผู้วิจัยที่ชำระเงินหลังวันที่ 12 มีนาคม พ.ศ.2562
+                                                4.กลุ่มวิชาด้านภาษา<br>ผู้วิจัยที่ชำระเงินหลังวันที่ 31 มีนาคม พ.ศ.2562
                                                 เป็นต้นไป ทางผู้จัดขอสงวนสิทธิ์ไม่คืนเงินค่าลงทะเบียนในทุกกรณี</span></strong></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><br></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><span style="font-size: 18px;"><strong><span style="color: rgb(41, 105, 176);">ติดต่อสอบถามรายละเอียดได้ที่
