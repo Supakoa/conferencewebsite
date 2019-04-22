@@ -48,7 +48,7 @@ require 'server/server.php';
     </div><br> -->
         <!-- banner -->
         <div class="">
-            <img src="..\back\pages\banner\123456.png" style="width:100%" alt="">
+            <img src="..\back\pages\banner\new_bg.png" style="width:100%" alt="">
         </div>
 
 
