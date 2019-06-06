@@ -73,7 +73,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse text-center" id="navbarResponsive">
-                <a class="navbar-brand js-scroll-trigger navbar-collapse" href="#page-top" style="font-size:25px">CONFERENCE
+                <a class="navbar-brand js-scroll-trigger navbar-collapse" href="main.php" style="font-size:25px">CONFERENCE
                     GE SSRU</a>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
