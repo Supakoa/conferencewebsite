@@ -133,7 +133,7 @@ require 'server/server.php';
 
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="container">
-                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;align:center; "><img src="http://www.gen-ed.ssru.ac.th/useruploads/images/20190212/e351519d4139d4016dec7fd8b96d2903d69a20ee.png" class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 100%;"></p>
+                                    <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;align:center; "><img src="img/con_.jpg" class="fr-fic fr-dib img-responsive" style="height: 302.47px; width: 100%;"></p>
                                     <p style="color: rgb(51, 51, 51); font-family: Kanit, sans-serif;"><strong><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp;
                                                 เปิดรับสมัครบทความจำนวนจำกัด (100 บทความ)
                                                 เพื่อนำเสนองานประชุมวิชาการการศึกษาทั่วไปฯ มหาวิทยาลัยราชภัฏสวนสุนันทา
