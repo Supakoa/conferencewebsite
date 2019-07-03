@@ -22,7 +22,7 @@
     $paper_eng = $_POST['paper_eng'];
     $abstract = $_POST['abstract'];
     $keyword = $_POST['keyword'];
-    echo $paper_th, $paper_eng, $abstract, $keyword;
+    // echo $paper_th, $paper_eng, $abstract, $keyword;
     $ext = pathinfo(basename($_FILES["paper"]["name"]), PATHINFO_EXTENSION);
     $new_taget_name = 'pdf_' . uniqid() . "." . $ext;
     $target_path = "../uploads/";
@@ -58,9 +58,9 @@
 
         if ($paper_start <= $today && $today <= $paper_end) {
             if (move_uploaded_file($_FILES["paper"]["tmp_name"], $upload_path)) {
-                echo 'Move success.';
+                // echo 'Move success.';
             } else {
-                echo 'Move fail';
+                // echo 'Move fail';
             }
 
             $paper = $_FILES["paper"]["name"];
